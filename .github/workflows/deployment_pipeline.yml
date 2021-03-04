@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   simple_deployment_pipeline:
@@ -30,6 +31,3 @@ jobs:
           heroku_email: richardzleung@gmail.com
           healthcheck: "https://my-app-full-stack-open.herokuapp.com/health"
           rollbackonhealthcheckfailed: true
-      - name: sucess push to slack
-
-      
