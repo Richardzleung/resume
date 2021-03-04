@@ -30,6 +30,3 @@ jobs:
           heroku_email: richardzleung@gmail.com
           healthcheck: "https://my-app-full-stack-open.herokuapp.com/health"
           rollbackonhealthcheckfailed: true
-      - name: sucess push to slack
-
-      
