@@ -1,0 +1,35 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: npm install
+        run: npm install
+      - name: lint
+        run: npm run lint
+      - name: build
+        run: npm run build
+      - name: test
+        run: npm test
+      - name: deploy
+        if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '),'#skip') }}
+        uses: akhileshns/heroku-deploy@v3.11.10 
+        with: 
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: rleung-resume
+          heroku_email: richardzleung@gmail.com
+          healthcheck: "https://my-app-full-stack-open.herokuapp.com/health"
+          rollbackonhealthcheckfailed: true
+      - name: sucess push to slack
+
+      
