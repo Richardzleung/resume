@@ -4,3 +4,7 @@ https://rleung-resume.herokuapp.com/
 
 ## Features
 * CI/CD through GitHub Actions
+
+## Libraries
+* React
+* Material UI
