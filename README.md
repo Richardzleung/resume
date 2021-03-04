@@ -2,5 +2,5 @@
 
 https://rleung-resume.herokuapp.com/
 
-##Features##
+## Features
 * CI/CD through GitHub Actions
