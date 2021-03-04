@@ -1,5 +1,11 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+/**
+ * starting point of app
+ * @returns webpage
+ */
 
 function App() {
   return (
