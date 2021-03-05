@@ -27,5 +27,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: rleung-resume
           heroku_email: richardzleung@gmail.com
-          healthcheck: "https://my-app-full-stack-open.herokuapp.com/health"
           rollbackonhealthcheckfailed: true
