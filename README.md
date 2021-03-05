@@ -5,6 +5,9 @@ https://rleung-resume.herokuapp.com/
 ## Features
 * CI/CD via GitHub Actions
 
-## Libraries
+## Libraries used
 * React
 * Material UI
+* Formik
+* Yup
+* Styled-components
