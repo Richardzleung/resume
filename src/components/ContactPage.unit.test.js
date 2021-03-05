@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, fireEvent, findByText } from '@testing-library/react';
 import ContactPage from './ContactPage';
 
@@ -7,7 +8,7 @@ describe('contact form', function() {
     expect(getByText('Name')).toBeInTheDocument()
   })
   test('validation', async () => {
-    const { getByText, container, getByLabelText, debug } = render(<ContactPage />)
+    const { getByText, container, getByLabelText } = render(<ContactPage />)
     const input = getByLabelText('Email');
 
     fireEvent.change(input, { target: { value: 'foobar' } });
