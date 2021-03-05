@@ -19,7 +19,7 @@
     "react"
   ],
   "rules": {
-    "object-curly-spacing": [2, "always"]
+    "object-curly-spacing": [2, "warn"]
   },
   "settings": {
     "react" : {
