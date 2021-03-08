@@ -9,6 +9,7 @@ import {
 import HomeBase from './components/Homebase';
 import ContactPage from './components/ContactPage';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer'
 import logo from './logo.svg';
 import './App.css';
 
@@ -66,6 +67,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      <Footer />
     </div>
   );
 }
