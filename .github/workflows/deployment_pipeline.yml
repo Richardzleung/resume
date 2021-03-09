@@ -29,4 +29,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: rleung-resume
           heroku_email: richardzleung@gmail.com
+          healthcheck: 'https://rleung-resume.herokuapp.com/ping'
           rollbackonhealthcheckfailed: true
