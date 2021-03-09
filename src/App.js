@@ -3,73 +3,43 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import HomeBase from './components/Homebase';
-import ContactPage from './components/ContactPage';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer'
 import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import ContactPage from './components/ContactPage';
+import AboutPage from './components/AboutPage';
 
 function Home() {
-  return <h2>Home</h2>;
-}
+    return <h2>Home</h2>;
+  }
 
-function About() {
-  return <h2>About</h2>;
-}
-
-
-function App() {
-  return (
-    <div className="App">
+const App = () => (
+  <div className="App">
+    <Router>
+      <NavBar />
       <header className="App-header">
-        <NavBar />
         <img src={logo} className="App-logo" alt="logo" />
         <HomeBase />
-        <a
-          className="GitHub"
-          href="https://github.com/Richardzleung"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
       </header>
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </nav>
+      <Switch>
+        <Route path='/about'>
+          <AboutPage />
+        </Route>
+        <Route path='/contact'>
+          <ContactPage />
+        </Route>
+        <Route path='/'>
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+    <Footer />
+  </div>
+);
 
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/contact">
-              <ContactPage />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-      <Footer />
-    </div>
-  );
-}
 
 export default App;
