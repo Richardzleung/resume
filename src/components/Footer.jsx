@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: 'black',
     marginTop: '2rem',
     minHeight: '10rem',
+    scrollBehavior: 'smooth'
   },
   buttonBar: {
     paddingTop: '2.125rem',
@@ -17,11 +18,11 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'space-evenly'
   },
   facebook: {
-    fontSize: '2.2em',
-    color: 'white'
+    fontSize: '2.1125em',
+    color: 'white',
   },
   github: {
-    fontSize: '1.90em',
+    fontSize: '1.94em',
     color: 'white',
   }
 }));
@@ -30,7 +31,7 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-  <div className={classes.root}>
+  <div className={classes.root} id='contact'>
     <div className={classes.buttonBar}>
       <IconButton 
         edge='start'

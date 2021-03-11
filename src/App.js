@@ -13,34 +13,36 @@ import './css/App.css';
 import ContactPage from './components/ContactPage';
 import AboutPage from './components/AboutPage';
 import SkillsPage from './components/SkillsPage';
+import ProjectsPage from './components/ProjectsPage';
 
-function Home() {
-    return <h2>Home</h2>;
-  }
+const Home = () => (
+  <header className="App-header">
+    <img src={logo} className="App-logo" alt="logo" />
+    <HomeBase />
+  </header>
+);
 
 const App = () => (
   <div className="App">
     <Router>
       <NavBar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <HomeBase />
-      </header>
       <Switch>
         <Route path='/about'>
           <AboutPage />
         </Route>
-        <Route path='/contact'>
-          <ContactPage />
-        </Route>
         <Route path='/skills'>
           <SkillsPage />
+        </Route>
+        <Route path='/projects'>
+          <ProjectsPage />
         </Route>
         <Route path='/'>
           <Home />
         </Route>
       </Switch>
     </Router>
+
+    <ContactPage/>
     <Footer />
   </div>
 );

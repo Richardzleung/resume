@@ -17,7 +17,10 @@ const Navbar = () => (
             <Link className='Navbar-tab' to='/skills'><span data-content='Skills' aria-hidden='true'></span>Skills</Link>
           </li>
           <li>
-            <Link className='Navbar-tab' to='/contact'><span data-content='Contact' aria-hidden='true'></span>Contact</Link>
+            <Link className='Navbar-tab' to='/projects'><span data-content='Projects' aria-hidden='true'></span>Projects</Link>
+          </li>
+          <li>
+            <a className='Navbar-tab' href='#contact'><span data-content='Contact' aria-hidden='true'></span>Contact</a>
           </li>
         </ul>
       </nav>
