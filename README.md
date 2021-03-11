@@ -3,7 +3,7 @@
 https://rleung-resume.herokuapp.com/
 
 ## Features
-* CI/CD via GitHub Actions
+* Hosted on Heroku using CI/CD via GitHub Actions
 
 ## Languages
 * Javascript (ES6)
