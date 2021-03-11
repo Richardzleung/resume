@@ -12,6 +12,7 @@ import logo from './logo.svg';
 import './css/App.css';
 import ContactPage from './components/ContactPage';
 import AboutPage from './components/AboutPage';
+import SkillsPage from './components/SkillsPage';
 
 function Home() {
     return <h2>Home</h2>;
@@ -31,6 +32,9 @@ const App = () => (
         </Route>
         <Route path='/contact'>
           <ContactPage />
+        </Route>
+        <Route path='/skills'>
+          <SkillsPage />
         </Route>
         <Route path='/'>
           <Home />

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
 
 const Navbar = () => (
-    <div >
+    <div>
       <nav className='Navbar-root'>
         <ul id='tabContainer'>
           <li>
@@ -12,6 +12,9 @@ const Navbar = () => (
           </li>
           <li>
             <Link className='Navbar-tab' to='/about'><span data-content='About' aria-hidden='true'></span>About</Link>
+          </li>
+          <li>
+            <Link className='Navbar-tab' to='/skills'><span data-content='Skills' aria-hidden='true'></span>Skills</Link>
           </li>
           <li>
             <Link className='Navbar-tab' to='/contact'><span data-content='Contact' aria-hidden='true'></span>Contact</Link>

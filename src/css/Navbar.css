@@ -1,5 +1,5 @@
 .Navbar-root {
-  background-color: white;
+  /* background-color: white; */
   display: flex;
   flex-direction: row-reverse;
 } 
@@ -17,8 +17,8 @@ li {
   position: relative;
   display: inline-block;
   font-size: 2em;
-  /* color: royalblue; */
-  color: black;
+  color: royalblue;
+  /* color: black; */
   font-weight: 800;
   text-decoration: none;
   overflow: hidden;
@@ -34,8 +34,8 @@ li {
 .Navbar-tab span::before {
   display: inline-block;
   content: attr(data-content);
-  /* color: midnightblue; */
-  color: white;
+  color: midnightblue;
+  /* color: white; */
   transform: translateX(100%);
   transition: transform 275ms ease;
   text-decoration: underline;
@@ -45,4 +45,7 @@ li {
 }
 .Navbar-tab:hover span::before {
   transform: translateX(0);
+}
+.Navbar-tab .title {
+  align-self: flex-end;
 }
