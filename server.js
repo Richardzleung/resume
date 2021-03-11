@@ -29,8 +29,8 @@ app.post('/contact', (req, res) => {
     }
   });
   const mailOptions = {
-    from: 'richardzleung@hotmail.com',
-    to: 'richardzleung@gmail.com',
+    from: process.env.EMAIL_USERNAME,
+    to: process.env.RECEIVING_EMAIL,
     subject: `Message from ${name} at ${email}!`,
     text: message
   };

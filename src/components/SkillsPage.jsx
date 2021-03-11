@@ -9,7 +9,7 @@ const A = styled.a`
   text-decoration: none;
 `;
 
-// Modular function to reduce repeptive code when assigning target and rel
+// Modular function to reduce repeptive code: target, rel, title
 // eslint-disable-next-line react/prop-types
 const Link = ({ href, link }) => (
   <li>
@@ -23,7 +23,7 @@ const Link = ({ href, link }) => (
     </A>
   </li>
 );
-
+// TODO fix urls
 const SkillsPage = () => (
   <div>
     <List>
