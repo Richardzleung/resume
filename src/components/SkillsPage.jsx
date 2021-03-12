@@ -29,13 +29,14 @@ const SkillsPage = () => (
     <List>
       <Link href='https://github.com/Richardzleung/resume' link='Javascript' />
       <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack' link='Typescript' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack' link='CSS' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack' link='HTML5' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack' link='React' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack' link='React Native' />
+      <Link href='https://github.com/Richardzleung/resume' link='CSS' />
+      <Link href='https://github.com/Richardzleung/resume' link='HTML5' />
+      <Link href='https://github.com/Richardzleung/resume' link='React' />
+      <Link href='https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux' link='Redux' />
+      <Link href='https://github.com/Richardzleung/rate-repository-app' link='React Native' />
       <Link href='https://www.codewars.com/users/Richardzleung' link='Data structures & Algorithms' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack' link='Test Driven Development' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack' link='NoSQL' />
+      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part5' link='Test Driven Development' />
+      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part5' link='MongoDB' />
     </List>
   </div> 
 );
