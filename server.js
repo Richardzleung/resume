@@ -9,7 +9,6 @@ const app = express();
 
 app.use(favicon(__dirname + '/build/favicon.ico'));
 app.use(express.static('build'));
-app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json())
 
 app.get('/ping', (req, res) => {
