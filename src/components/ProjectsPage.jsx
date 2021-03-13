@@ -16,38 +16,21 @@ import IconButton from '@material-ui/core/IconButton';
 import native from '../static/images/native.png';
 import patientator from '../static/images/patientator.png'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
     marginLeft: '5rem',
     padding: '2ch',
     flex: '0 1 auto'
   },
-  grid: {
-    width: 'auto'
-  },
   card: {
-    marginBottom: '2rem',
+    margin: '1em',
     minWidth: 0,
     maxWidth: '40%'
-  },
-  cardContent: {
-    height: '17vh'
-  },
-  paper: {
-    padding: theme.spacing(1),
-    textAlign: 'left',
-    color: theme.palette.text.secondary,
   },
   image: {
     width: '20vw',
     height: '20vh',
-  },
-  img: {
-    margin: 'auto',
-    display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
   },
   cardAction: {
     display: 'flex',
@@ -60,16 +43,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const RateReposDependancyList = (props) => (
+const RateReposDependancyList = props => (
   <ul {...props}>
     <li>React Native </li>
-    <li>React Native Paper</li>
     <li>Formik</li>
     <li>Yup</li>
   </ul>
 );
 
-const PatientatorDependancyList = (props) => (
+const PatientatorDependancyList = props => (
   <ul {...props}>
     <li>Typescript </li>
     <li>Express</li>
@@ -90,7 +72,7 @@ const ProjectCard = ({ image, DependencyList }) => {
             image={image}
             title="Contemplative Reptile"
           />
-          <CardContent className={classes.cardContent}>
+          <CardContent >
             <Typography gutterBottom variant="h6" component="h2">
               Rate Repository App
             </Typography>
@@ -125,7 +107,7 @@ const ProjectsPage = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Grid container spacing={2} minWidth='200rem' className={classes.grid}>
+      <Grid container spacing={2} minWidth='200rem' >
         <Grid container item xl='auto' spacing={3}>
           <ProjectCard image={native} DependencyList={RateReposDependancyList}/>
           <ProjectCard image={patientator} DependencyList={PatientatorDependancyList} />
