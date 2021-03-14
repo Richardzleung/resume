@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import styled from 'styled-components';
 import SendRoundedIcon from '@material-ui/icons/SendRounded';
+import ContactService from '../services/ContactService';
 
 const Div=styled.div`
   outline: solid;
@@ -34,8 +35,10 @@ const ContactPage = () => {
       message: '',
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async (values) => {
+      console.log('here');
+      return await ContactService(values); 
+      // alert(JSON.stringify(values, null, 2));
     },
   });
   return (
@@ -75,7 +78,6 @@ const ContactPage = () => {
             helperText={formik.touched.message && formik.errors.message}
           />
           <Button 
-            onClick={console.log(formik.values)} 
             style={{ margin: '1em' }}
             color="primary" 
             variant="contained" 
