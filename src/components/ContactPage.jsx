@@ -38,7 +38,6 @@ const ContactPage = () => {
       alert(JSON.stringify(values, null, 2));
     },
   });
-
   return (
     <Div>
       <h1>Contact</h1>
@@ -70,7 +69,7 @@ const ContactPage = () => {
             name="message"
             label="Message"
             value={formik.values.message}
-            multiline="true"
+            multiline={true}
             onChange={formik.handleChange}
             error={formik.touched.message && Boolean(formik.errors.message)}
             helperText={formik.touched.message && formik.errors.message}
