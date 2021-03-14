@@ -1,4 +1,4 @@
-const url = 'http://localhost:8080/contact'
+const url = '/contact'
 
 const ContactService = async (data) => {
   console.log('here',{ data });
