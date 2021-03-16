@@ -45,7 +45,7 @@ const ContactPage = () => {
     <Div>
       <h1>Contact</h1>
       <p>Have a question or want to work together?</p>
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit} id='contact-form'>
         <TextField
             fullWidth
             id="name"

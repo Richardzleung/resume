@@ -3,29 +3,31 @@ import { Link } from 'react-router-dom';
 
 import '../css/Navbar.css';
 
-const Span = props => (
-  <span {...props} aria-hidden='true'/>
+// eslint-disable-next-line react/prop-types
+const LinkSpan = ({ children, ...rest }) => (
+  <li>
+    <Link className='nav_tab' to={`/${children}`}>
+      <span {...rest} aria-hidden='true' data-content={children}/>
+      {children}
+    </Link>
+  </li>
+)
+
+const ScrollToContact = () => (
+  <li>
+    <a className='nav_tab' href='#contact'><span data-content='Contact'/>Contact</a>
+  </li>
 );
 
 const Navbar = () => (
     <div>
       <nav className='nav'>
         <ul id='container'>
-          <li>
-            <Link className='nav_tab' to='/'><Span data-content='Home' />Home</Link>
-          </li>
-          <li>
-            <Link className='nav_tab' to='/about'><Span data-content='About'/>About</Link>
-          </li>
-          <li>
-            <Link className='nav_tab' to='/skills'><Span data-content='Skills'/>Skills</Link>
-          </li>
-          <li>
-            <Link className='nav_tab' to='/projects'><Span data-content='Projects'/>Projects</Link>
-          </li>
-          <li>
-            <a className='nav_tab' href='#contact'><Span data-content='Contact'/>Contact</a>
-          </li>
+          <LinkSpan>Home</LinkSpan>
+          <LinkSpan>About</LinkSpan>
+          <LinkSpan>Skills</LinkSpan>
+          <LinkSpan>Projects</LinkSpan>
+          <ScrollToContact/>
         </ul>
       </nav>
     </div>
