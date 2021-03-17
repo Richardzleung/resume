@@ -9,9 +9,9 @@ const A = styled.a`
   text-decoration: none;
 `;
 
-// Modular function to reduce repeptive code: target, rel, title
+// Modular function to reduce repeptive props
 // eslint-disable-next-line react/prop-types
-const Link = ({ href, link }) => (
+const Link = ({ href, skill }) => (
   <li>
     <A 
       href={href} 
@@ -19,26 +19,25 @@ const Link = ({ href, link }) => (
       rel="noopener noreferrer"
       title={href}
     >
-      {link}
+      {skill}
     </A>
   </li>
 );
+
 // TODO fix urls
 const SkillsPage = () => (
-  <div>
-    <List>
-      <Link href='https://github.com/Richardzleung/resume' link='Javascript' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack' link='Typescript' />
-      <Link href='https://github.com/Richardzleung/resume' link='CSS' />
-      <Link href='https://github.com/Richardzleung/resume' link='HTML5' />
-      <Link href='https://github.com/Richardzleung/resume' link='React' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux' link='Redux' />
-      <Link href='https://github.com/Richardzleung/rate-repository-app' link='React Native' />
-      <Link href='https://www.codewars.com/users/Richardzleung' link='Data structures & Algorithms' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part5' link='Test Driven Development' />
-      <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part5' link='MongoDB' />
-    </List>
-  </div> 
+  <List>
+    <Link href='https://github.com/Richardzleung/resume' skill='Javascript' />
+    <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack' skill='Typescript' />
+    <Link href='https://github.com/Richardzleung/resume' skill='CSS' />
+    <Link href='https://github.com/Richardzleung/resume' skill='HTML5' />
+    <Link href='https://github.com/Richardzleung/resume' skill='React' />
+    <Link href='https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux' skill='Redux' />
+    <Link href='https://github.com/Richardzleung/rate-repository-app' skill='React Native' />
+    <Link href='https://www.codewars.com/users/Richardzleung' skill='Data structures & Algorithms' />
+    <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part5' skill='Test Driven Development' />
+    <Link href='https://github.com/Richardzleung/Fullstack-Open/tree/master/part5' skill='MongoDB' />
+  </List>
 );
 
 export default SkillsPage;

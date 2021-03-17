@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -40,63 +41,90 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const RateReposDependancyList = props => {
-  const dependencies = ['React Native', 'Formik', 'Yup'];
-  const listItems = dependencies.map((dependency) => 
-    <li key={dependency}>{dependency}</li>
-  );
-  return(
-    <ul {...props}>
-      {listItems}
-    </ul>
-  );
-};
-
-const PatientatorDependancyList = props => {
-  const dependencies = ['Typescript', 'Express', 'Cors'];
-  const listItems = dependencies.map((dependency) => 
-    <li key={dependency}>{dependency}</li>
-  );
-  return(
-    <ul {...props}>
-      {listItems}
-    </ul>
-  );
-};
-
-const ProjectCard = ({ image, gitHubProjectLink, DependencyList, projectLiveSite }) => {
-  const classes = useStyles();
-  return (
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia component="img" alt="Contemplative Reptile" image={image} title="project image" />
-        <CardContent >
-          <Typography gutterBottom variant="h6" component="h2">
-            Rate Repository App
-          </Typography>
-          <Typography variant="caption" color="textSecondary" component="p">
-            Make a review your favorite public GitHub repositories
-          </Typography>
-          <DependencyList className={classes.list}/>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className={classes.cardAction}>
-        <IconButton edge='start' aria-label='source code' size='medium' onClick={() => window.open(gitHubProjectLink)}>
-          <GitHubIcon titleAccess={gitHubProjectLink}  />
-        </IconButton>
-        <IconButton edge='start' aria-label='live site' size='medium' onClick={() => window.open(projectLiveSite)}>
-          <WebAssetIcon titleAccess={projectLiveSite}  />
-        </IconButton>
-      </CardActions>
-    </Card>
-)};
+// ** Backbone of an individual project (single node of projects page)
+const ProjectCard = ({ title, image, gitHubURL, projectURL, style, children, DependencyList }) => (
+  <Card className={style.card}>
+    <CardActionArea>
+      <CardMedia component="img" alt="Contemplative Reptile" image={image} title="project image" />
+      <CardContent >
+        <Typography gutterBottom variant="h6" component="h2">{title}</Typography>
+        <Typography variant="caption" color="textSecondary" component="p">{children}</Typography>
+        <DependencyList className={style.list}/>
+      </CardContent>
+    </CardActionArea>
+    <CardActions className={style.cardAction}>
+      <IconButton 
+        edge='start' 
+        aria-label='source code' 
+        size='medium' 
+        onClick={() => window.open(gitHubURL)}
+      >
+        <GitHubIcon titleAccess={gitHubURL}  />
+      </IconButton>
+      <IconButton 
+        edge='start' 
+        aria-label='live site' 
+        size='medium' 
+        onClick={() => window.open(projectURL)}
+      >
+        <WebAssetIcon titleAccess={projectURL}  />
+      </IconButton>
+    </CardActions>
+  </Card>
+);
 
 ProjectCard.propTypes = {
   gitHubProjectLink: PropTypes.string.isRequired,
   projectLiveSite: PropTypes.string.isRequired,
   DependencyList: PropTypes.func.isRequired,
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
+  style: PropTypes.object
 }
+
+const PatientatorProject = ({ style }) => {
+  const PatientatorDependancyList = () => {
+    const dependencies = ['Typescript', 'Express', 'Cors'];
+    const listItems = dependencies.map((dependency) => 
+      <li key={dependency}>{dependency}</li>
+    );
+    return <ul className={style.list}>{listItems}</ul>;
+  };
+  
+  return (
+    <ProjectCard 
+      title='Patientator'
+      image={patientator} 
+      style={style}
+      DependencyList={PatientatorDependancyList} 
+      gitHubURL='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack'
+      projectURL='https://mighty-fjord-81735.herokuapp.com'
+    >
+      Keep track of your patients  
+    </ProjectCard>
+  )
+};
+
+const RateRepositoriesProject = ({ style }) => {
+  const RateReposDependancyList = () => {
+    const dependencies = ['React Native', 'Formik', 'Yup'];
+    const listItems = dependencies.map((dependency) => 
+      <li key={dependency}>{dependency}</li>
+    );
+    return <ul className={style.list}> {listItems} </ul>;
+  };
+  return (
+    <ProjectCard 
+      title='Rate Repositories App'
+      image={native}
+      style={style}
+      DependencyList={RateReposDependancyList} 
+      gitHubURL='https://github.com/Richardzleung/rate-repository-app'
+      projectURL='https://stormy-plains-60070.herokuapp.com'
+    >
+      Make a review your favorite public GitHub repositories
+    </ProjectCard>
+  )
+};
 
 const ProjectsPage = () => {
   const classes = useStyles();
@@ -104,18 +132,8 @@ const ProjectsPage = () => {
     <div className={classes.root}>
       <Grid container spacing={2} >
         <Grid container item xl='auto' spacing={3}>
-          <ProjectCard 
-            image={native} 
-            DependencyList={RateReposDependancyList} 
-            gitHubProjectLink='https://github.com/Richardzleung/rate-repository-app'
-            projectLiveSite='https://stormy-plains-60070.herokuapp.com'
-          />
-          <ProjectCard 
-            image={patientator} 
-            DependencyList={PatientatorDependancyList} 
-            gitHubProjectLink='https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack'
-            projectLiveSite='https://mighty-fjord-81735.herokuapp.com'
-          />
+          <RateRepositoriesProject style={classes}/>
+          <PatientatorProject style={classes}/>
         </Grid>
       </Grid>
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip'
@@ -27,30 +28,44 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
+const GitHubButton = ({ styles }) => (
+  <IconButton 
+    // edge='start'
+    aria-label='GitHub.com' 
+    size='medium' 
+    >
+    <Tooltip title='Richardzleung' disableTouchListener>
+      <GitHubIcon 
+        className={styles} 
+        titleAccess='https://github.com/Richardzleung' 
+        onClick={() => window.open('https://github.com/Richardzleung')}/>
+    </Tooltip>
+  </IconButton>
+);
+
+const FaceBookButton = ({ styles }) => (
+  <IconButton 
+    // edge='start' 
+    aria-label='Facebook.com'
+    size='medium'
+  > 
+    <Tooltip title='RichardLeung13' disableTouchListener>
+      <FacebookIcon
+        className={styles} 
+        titleAccess='https://www.facebook.com/richardleung13' 
+        onClick={() => window.open('https://www.facebook.com/richardleung13')}/>
+    </Tooltip>
+  </IconButton>
+);
+
 const Footer = () => {
   const classes = useStyles();
 
   return (
-  <div className={classes.root} id='contact'>
+  <div className={classes.root} id='footer'>
     <div className={classes.buttonBar}>
-      <IconButton 
-        edge='start'
-        aria-label='GitHub.com' 
-        size='medium' 
-      >
-        <Tooltip title='Richardzleung' disableTouchListener>
-          <GitHubIcon titleAccess='https://github.com/Richardzleung' className={classes.github} onClick={() => window.open('https://github.com/Richardzleung')}/>
-        </Tooltip>
-      </IconButton>
-      <IconButton 
-        edge='start' 
-        aria-label='Facebook.com'
-        size='medium'
-      > 
-        <Tooltip title='RichardLeung13' disableTouchListener>
-          <FacebookIcon titleAccess='https://www.facebook.com/richardleung13' className={classes.facebook} onClick={() => window.open('https://www.facebook.com/richardleung13')}/>
-        </Tooltip>
-      </IconButton>
+      <GitHubButton styles={classes.github}/>
+      <FaceBookButton styles={classes.facebook}/>
     </div>
   </div>
   
