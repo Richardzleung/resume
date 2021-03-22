@@ -1,14 +1,15 @@
 import React from 'react';
 import { render, fireEvent, findByText } from '@testing-library/react';
-import ContactPage from './ContactPage';
 
-describe('contact form', function() {
+import Form from './Form'
+
+describe('form', function() {
   test('renders', () => {
-    const { getByText } = render(<ContactPage />)
+    const { getByText } = render(<Form />)
     expect(getByText('Name')).toBeInTheDocument()
   })
   test('validation', async () => {
-    const { getByText, container, getByLabelText } = render(<ContactPage />)
+    const { getByText, container, getByLabelText } = render(<Form />)
     const input = getByLabelText('Email');
 
     fireEvent.change(input, { target: { value: 'foobar' } });
@@ -19,3 +20,4 @@ describe('contact form', function() {
     expect(await findByText(container, 'Email must be a valid email')).toBeVisible();
   })
 });
+

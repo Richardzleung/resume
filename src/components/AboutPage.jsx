@@ -9,8 +9,11 @@ const P = styled.p`
   text-align: left;
 `;
 
-const TimeLineChild = (props) => (
-  <p className='timeline-child' {...props}/>
+// eslint-disable-next-line react/prop-types
+const TimeLineChild = ({ children }) => (
+  <p className='timeline-child'>
+    {children}
+  </p>
 );
 
 const AboutPage = () => (

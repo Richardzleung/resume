@@ -10,7 +10,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer/Footer.jsx'
 import logo from './logo.svg';
 import './css/App.css';
-import ContactPage from './components/ContactPage';
+import ContactForm from './views/ContactForm';
 import AboutPage from './components/AboutPage';
 import SkillsPage from './components/SkillsPage';
 import ProjectsPage from './views/ProjectsPage';
@@ -42,7 +42,7 @@ const App = () => (
       </Switch>
     </Router>
 
-    <ContactPage/>
+    <ContactForm/>
     <Footer />
   </div>
 );

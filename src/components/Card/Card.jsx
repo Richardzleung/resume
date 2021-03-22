@@ -38,7 +38,9 @@ const MyCard = ({ projectID }) => {
     image, 
     dependencies, 
     projectLiveSite,
-    gitHubProjectLink 
+    gitHubProjectLink,
+    title,
+    description
   } = projects.find(({ id }) => id === projectID);
 
   return (
@@ -47,10 +49,10 @@ const MyCard = ({ projectID }) => {
           <CardMedia component="img" alt="Contemplative Reptile" image={image} title="project image" />
           <CardContent >
             <Typography gutterBottom variant="h6" component="h2">
-              Rate Repository App
+              {title}
             </Typography>
             <Typography variant="caption" color="textSecondary" component="p">
-              Make a review your favorite public GitHub repositories
+              {description}
             </Typography>
             <RenderDependencyList dependencyList={dependencies}/>
           </CardContent>

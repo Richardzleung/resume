@@ -3,16 +3,8 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import styled from 'styled-components';
 import SendRoundedIcon from '@material-ui/icons/SendRounded';
-import ContactService from '../services/ContactService';
-
-const Div=styled.div`
-  outline: solid;
-  width: 500px;
-  margin: auto;
-  background-color: white;
-`;
+import ContactService from '../../services/ContactService';
 
 const validationSchema = yup.object({
   name: yup
@@ -80,16 +72,5 @@ const Form = () => {
         </Button>
     </form>
 )};
-  
 
-const ContactPage = () => {
-  return (
-    <Div>
-      <h1>Contact</h1>
-      <p>Have a question or want to work together?</p>
-      <Form />
-    </Div>
-  );
-};
-
-export default ContactPage;
+export default Form;

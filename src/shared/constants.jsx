@@ -34,7 +34,8 @@ const navItems = [
 const projects = [
   {
     id: "RATE_REPOSITORIES_APP",
-    descriptionId: "RATE_REPOSITORIES_APP_DESCRIPTION",
+    description: "Make a review your favorite public GitHub repositories",
+    title: "Rate Repository App",
     githubLink: "https://github.com/Richardzleung/rate-repository-app",
     dependencies:  ['React Native', 'Formik', 'Yup'],
     projectLiveSite: 'https://stormy-plains-60070.herokuapp.com',
@@ -42,12 +43,13 @@ const projects = [
   },
   {
     id: "PATIENATOR_APP",
-    descriptionId: "PATIENATOR_APP",
+    description: "Track down your patients",
+    title: "Patienator",
     githubLink: "https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack",
     dependencies: ['Typescript', 'Express', 'Cors'],
     projectLiveSite:'https://mighty-fjord-81735.herokuapp.com',
     image: patientator
-  }
+  },
 ];
 
 const handles = [
