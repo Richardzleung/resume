@@ -18,9 +18,7 @@ const AboutPage = () => (
     </P>
     <div className='timeline-container'>
       <p className='timeline-child' data-content='education'> 
-        <ul>
           University of California, Davis
-        </ul>
       </p>
       <p className='timeline-child' data-content='courses'>Shoober shooberino adorable doggo many pats, heckin good boys many pats pupper wrinkler, corgo maximum borkdrive. A frighten puggo wow very biscit.</p>
       <p className='timeline-child' data-content='filler'>Big ol h*ck adorable doggo vvv smol borking doggo with a long snoot for pats big ol, he made many woofs doing me a frighten puggo wow very biscit, ruff fat boi ruff long doggo. </p>

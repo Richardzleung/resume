@@ -7,13 +7,13 @@ import {
 
 import HomeBase from './components/Homebase';
 import NavBar from './components/NavBar';
-import Footer from './components/Footer'
+import Footer from './components/Footer/Footer.jsx'
 import logo from './logo.svg';
 import './css/App.css';
 import ContactPage from './components/ContactPage';
 import AboutPage from './components/AboutPage';
 import SkillsPage from './components/SkillsPage';
-import ProjectsPage from './components/ProjectsPage';
+import ProjectsPage from './views/ProjectsPage';
 
 const Home = () => (
   <header className="App-header">
