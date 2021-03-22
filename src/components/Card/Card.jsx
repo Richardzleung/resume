@@ -10,7 +10,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import WebAssetIcon from '@material-ui/icons/WebAsset';
 import IconButton from '@material-ui/core/IconButton';
 
-import { projects } from '../../shared/constants';
+import { projects } from '../../shared/constants.js';
 
 const useStyles = makeStyles(() => ({
   card: {

@@ -1,9 +1,5 @@
-import React from 'react'
-
-import GitHubIcon from '@material-ui/icons/GitHub';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import MailIcon from '@material-ui/icons/Mail';
+// import React from 'react'
+import { mdiGithub, mdiFacebook, mdiLinkedin, mdiEmail } from '@mdi/js'; 
 
 import native from '../static/images/native.png';
 import patientator from '../static/images/patientator.png'
@@ -54,28 +50,28 @@ const projects = [
 
 const handles = [
   {
-    name: "GitHub",
+    label: "GitHub",
     link: "https://github.com/Richardzleung",
     title: "Richardzleung",
-    icon: <GitHubIcon fontSize='large'/>
+    icon: mdiGithub
   },
   {
-    name: "LinkedIn",
+    label: "LinkedIn",
     link: "https://www.linkedin.com/in/richardzleung/",
     title: "Richardzleung",
-    icon: <LinkedInIcon fontSize='large'/>
+    icon: mdiLinkedin
   },
   {
-    name: "Email",
+    label: "Email",
     link: "mailto:richardzleung@gmail.com",
     title: "richardzleung@gmail.com",
-    icon: <MailIcon fontSize='large'/>
+    icon: mdiEmail
   },
   {
-    name: "Facebook",
+    label: "Facebook",
     link: "https://www.facebook.com/richardleung13",
     title: "RichardLeung13",
-    icon: <FacebookIcon fontSize='large'/>,
+    icon: mdiFacebook
   }
 ];
 
