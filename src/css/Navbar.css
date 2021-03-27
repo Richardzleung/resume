@@ -13,8 +13,27 @@ li {
   margin: 1em;
 }
 
+#button {
+  width: 100%;
+  font-size: 1.125rem;
+  cursor: pointer;
+  background: inherit;
+  border-radius: 1rem;
+  border: 3px;
+  padding: .5em 1.125em;
+  outline: 1em red;
+}
 
+#button:focus, #button:hover{
+  box-shadow: 
+    0 0 0 5px white,
+    0 0 0 10px blueviolet
+  ;
+}
 
+::-moz-focus-inner {
+  border: 0;
+}
 
 @media (min-width: 600px) {
   .nav_tab {

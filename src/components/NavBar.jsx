@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { 
-  Link as RouterLink,
+  Link,
   Switch,
   BrowserRouter,
-  Route
+  Route,
 } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar';
@@ -18,7 +19,7 @@ import HomeBase from './Homebase';
 import AboutPage from './AboutPage';
 import SkillsPage from './SkillsPage';
 import ProjectsPage from '../views/ProjectsPage';
-
+import Form from './Form';
 
 const Home = () => (
   <header className="App-header">
@@ -27,35 +28,60 @@ const Home = () => (
   </header>
 );
 
+const ContactButton = () => (
+  <Link to="/contact">
+   <button id='button'>Contact</button>
+  </Link>
+);
 
-// eslint-disable-next-line react/prop-types
+const MenuButton = ({ handleMenu }) => (
+  <IconButton 
+    edge="start"  
+    color="inherit" 
+    aria-label="menu" 
+    onClick={handleMenu}>
+    <MenuIcon />
+  </IconButton>
+);
+
 const MenuItem = ({ children, onClick }) => (
   <Item onClick={onClick}>
-    <RouterLink className='nav_tab' to={`/${children}`}>
+    <Link className='nav_tab' to={`/${children}`}>
       <span aria-hidden='true' data-content={children}/>
       {children}
-    </RouterLink>
+    </Link>
   </Item>
 );
 
-// Contact form is seperated from rest of navigation because it should always be displayed at bottom
-// TODO: will probably sync it with other navigation as i make a one page app 
-const ContactForm = () => (
-  <li>
-    <a className='nav_tab' href='#contact'><span data-content='Contact'/>Contact</a>
-  </li>
+const NavMenu = ({ anchorEl, handleClose, open }) => (
+  <Menu
+    id="menu-appbar"
+    anchorEl={anchorEl}
+    anchorOrigin={{
+      vertical: 'top',
+      horizontal: 'right',
+    }}
+    keepMounted
+    transformOrigin={{
+      vertical: 'top',
+      horizontal: 'right',
+    }}
+    open={open}
+    onClose={handleClose}
+  >
+    <nav>
+      <MenuItem onClick={handleClose}>Home</MenuItem>
+      <MenuItem onClick={handleClose}>About</MenuItem>
+      <MenuItem onClick={handleClose}>Skills</MenuItem>
+      <MenuItem onClick={handleClose}>Projects</MenuItem>
+    </nav>
+  </Menu>
 );
 
-
 const Navbar = () => {
-  const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
-
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -64,41 +90,22 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const NavMenuProps = {
+    open,
+    anchorEl,
+    handleClose
+  };
+
   return(
     <BrowserRouter>
-      <AppBar position="static">
+      <AppBar position="static" color='inherit'>
         <Toolbar>
           <div>
-            <IconButton 
-              edge="start"  
-              color="inherit" 
-              aria-label="menu" 
-              onClick={handleMenu}>
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={open}
-              onClose={handleClose}
-            >
-              <nav className='nav'>
-                <MenuItem onClick={handleClose}>Home</MenuItem>
-                <MenuItem onClick={handleClose}>About</MenuItem>
-                <MenuItem onClick={handleClose}>Skills</MenuItem>
-                <MenuItem onClick={handleClose}>Projects</MenuItem>
-              </nav>
-            </Menu>
+            <MenuButton handleMenu={handleMenu}/>
+            <NavMenu {...NavMenuProps}/>
           </div>
+         <ContactButton/>
         </Toolbar>
       </AppBar>
       
@@ -112,10 +119,14 @@ const Navbar = () => {
         <Route path='/projects'>
           <ProjectsPage />
         </Route>
+        <Route path='/contact'>
+          <Form/>
+        </Route>
         <Route path='/'>
           <Home />
         </Route>
       </Switch>
+
     </BrowserRouter>
   )
 };

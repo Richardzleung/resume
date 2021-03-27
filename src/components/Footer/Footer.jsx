@@ -7,7 +7,7 @@ import { handles } from '../../shared/constants';
 
 const useStyles = makeStyles(() => ({
   root: {
-    // backgroundColor: 'black',
+    backgroundColor: 'white',
     marginTop: '2rem',
     minHeight: '10rem',
     scrollBehavior: 'smooth'
