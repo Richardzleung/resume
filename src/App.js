@@ -12,8 +12,6 @@ import './css/App.css';
 import logo from './logo.svg';
 import HomeBase from './components/Homebase';
 import SkillsPage from './components/TechnicalSkills';
-import useOnScreen from 'hooks/useOnScreen';
-
 
 const Home = () => {
   const [showSkills, setShowSkills] = useState(true);
