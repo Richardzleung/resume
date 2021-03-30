@@ -5,37 +5,34 @@ import Tooltip from '@material-ui/core/Tooltip'
 import IconButton from '@material-ui/core/IconButton';
 import { handles } from '../../shared/constants';
 
+import { isSmallScreen } from '../../utils';
+
 const useStyles = makeStyles(() => ({
   root: {
     backgroundColor: 'white',
     marginTop: '2rem',
     minHeight: '10rem',
-    scrollBehavior: 'smooth'
+    position: 'absolute',
+    width: '100%',
+    bottom: 0
   },
   buttonBar: {
     paddingTop: '2.125rem',
     display: 'flex',
     justifyContent: 'space-evenly'
   },
-  facebook: {
-    fontSize: '2.1125em',
-    color: 'white',
-  },
-  github: {
-    fontSize: '1.94em',
-    color: 'white',
-  },
   icon: {
     width: '48px',
     height: '48px',
-    // viewBox: "0 0 24 24"
   }
 }));
+
+console.log(isSmallScreen());
 
 const Footer = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root} id='contact'>
+    <div className={classes.root} >
       <div className={classes.buttonBar}>
         {handles.map(({ label, link, title, icon }) => (
           <IconButton
@@ -45,11 +42,12 @@ const Footer = () => {
             onClick={() => window.open(link)}
             key={label}
           >
-            <Tooltip disableFocusListener disableTouchListener title={title}>
+            <Tooltip title={isSmallScreen() ? '' : title} disableFocusListener >
               <SvgIcon fontSize='large' className={classes.icon}>
                 <path d={icon} />
               </SvgIcon>
             </Tooltip>
+            
           </IconButton>
         ))}
       </div>

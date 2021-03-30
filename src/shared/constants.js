@@ -1,10 +1,9 @@
-// import React from 'react'
 import { mdiGithub, mdiFacebook, mdiLinkedin, mdiEmail } from '@mdi/js'; 
 
 import native from '../static/images/native.png';
 import patientator from '../static/images/patientator.png'
 
-const navItems = [
+const navLinks = [
   {
     to: "home",
     name: "Home"
@@ -75,5 +74,49 @@ const handles = [
   }
 ];
 
+const technicalSkills = [
+ {
+   label: 'Javascript',
+   link: 'https://github.com/Richardzleung/resume'
+ },
+ {
+   label: 'Typescript',
+   link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack'
+ },
+ {
+   label: 'CSS',
+   link: 'https://github.com/Richardzleung/resume'
+ },
+ {
+   label: 'HTML5',
+   link: 'https://github.com/Richardzleung/resume'
+ },
+ {
+   label: 'React',
+   link: 'https://github.com/Richardzleung/resume'
+ },
+ {
+  label: 'React Native',
+  link: 'https://github.com/Richardzleung/rate-repository-app'
+  },
+ {
+   label: 'Redux',
+   link: 'https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux'
+ },
+ {
+   label: 'Data structures & Algorithms',
+   link: 'https://www.codewars.com/users/Richardzleung'
+ }, 
+ {
+   label: 'Test Driven Development',
+   link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5'
+ },
+ {
+   label: 'MongoDB',
+   link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5'
+ }
+ 
+];
 
-export { navItems, projects, handles };
+
+export { navLinks, projects, handles, technicalSkills };
