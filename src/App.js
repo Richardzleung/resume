@@ -1,7 +1,6 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CSSTransition } from 'react-transition-group';
-import styled from 'styled-components';
 
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
@@ -14,7 +13,6 @@ import HomeBase from './components/Homebase';
 import SkillsPage from './components/TechnicalSkills';
 
 const Home = () => {
-  const [showSkills, setShowSkills] = useState(true);
   return (
     <div className="App-home">
       <img src={logo} className="App-logo" alt="logo" />

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
-import { 
-  Link,
-} from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+// import { 
+//   Link,
+// } from 'react-router-dom';
+
 
 import '../../css/NavBar.css';
 
 
-const ContactButton = () => (
-  <Link to="/contact">
-   <button id='button'>Contact</button>
-  </Link>
-);
+// const ContactButton = () => (
+//   <Link to="/contact">
+//    <button id='button'>Contact</button>
+//   </Link>
+// );
 
 const AltNav = () => {
   const [showHamburger, setShowHamburger] = useState(true);
