@@ -2,6 +2,13 @@
   --background: rgba(45, 56, 54, 0.85);
 }
 
+.skills-appear {
+  opacity: 0;
+}
+.skills-appear-active {
+  opacity: 1;
+  transition: opacity 2000ms ease;
+}
 
 .App {
   text-align: center;
@@ -18,7 +25,7 @@
   }
 }
 
-.App-header {
+.App-home {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,20 +50,3 @@ html {
 } 
 
 
-.skills-enter {
-  opacity: 0;
-  transform: scale(0.9);
-}
-.skills-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 300ms, transform 300ms;
-}
-/* .skills-exit {
-  opacity: 1;
-}
-.skills-exit-active {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 300ms, transform 300ms;
-} */

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 
 import { 
@@ -6,7 +5,7 @@ import {
 } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
-import '../css/NavBar.css';
+import '../../css/NavBar.css';
 
 
 const ContactButton = () => (

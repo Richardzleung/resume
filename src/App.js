@@ -1,8 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group';
+import styled from 'styled-components';
 
-import Navigation from './components/NavBar'
+import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import ContactForm from './views/ContactForm';
 
@@ -15,31 +16,21 @@ import useOnScreen from 'hooks/useOnScreen';
 
 
 const Home = () => {
-  const [showSkills, setShowSkills] = useState(false);
-  console.log({ showSkills })
-  // const skillsRef = useRef();
-
-  // const isVisible = useOnScreen(skillsRef);
-
+  const [showSkills, setShowSkills] = useState(true);
   return (
-    <header className="App-header">
+    <div className="App-home">
       <img src={logo} className="App-logo" alt="logo" />
       <HomeBase />
-      {/* {showSkills && <SkillsPage />} */}
-      <div style={{ height: '1000px' }}>
-      <button onClick={() => {
-      console.log({ showSkills })
-      return setShowSkills(true)}}>click</button>
-      </div>
+
       <CSSTransition 
-        in={showSkills}
-        timeout={300}
-        classNames='alert'
+        in
+        timeout={1000}
+        appear={true}
+        classNames='skills'
       >
-        {/* <SkillsPage/> */}
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam tempore dolores iste expedita minima impedit eos. Dolore quae itaque quasi omnis illum tempore dignissimos.</p>
+        <SkillsPage />
       </CSSTransition>
-    </header>
+    </div>
   );
 };
 
@@ -50,9 +41,9 @@ const App = () => {
         <Navigation />
         <Switch>
           <Route path='/contact'><ContactForm/></Route>
-          <Route path='/'><Home/></Route>
         </Switch>
       </Router>
+      <Home/>
       <div>
         <Footer/>
       </div>

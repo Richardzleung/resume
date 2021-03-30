@@ -14,30 +14,36 @@ const A = styled.a`
 
 // Modular function to reduce repeptive props
 // eslint-disable-next-line react/prop-types
-const SkillItem = ({ link, skill, ...props }) => (
-  <li {...props}>
-    <A 
-      href={link} 
-      target='blank' 
-      rel="noopener noreferrer"
-      title={link}
-    >
-      {skill}&emsp;
-    </A>
-  </li>
-);
+const SkillItem = ({ link, skill }) => {
+  return (
+    <li >
+      <A 
+        href={link} 
+        target='blank' 
+        rel="noopener noreferrer"
+        title={link}
+      >
+        {skill} &emsp;
+      </A>
+    </li>
+  );
+};
 
 // TODO fix urls
-const SkillsPage = () => (
+
+const SkillsPage = () => {
+
+  return (
   <div>
     <h2>Technical Skills</h2>
-    <List>
+    <List >
       {technicalSkills.map(({ label,link }) => (
         <SkillItem key={label} skill={label} link={link}/>
       ))}
     </List>
   </div>
-);
+  );
+};
 
 export default SkillsPage;
 
