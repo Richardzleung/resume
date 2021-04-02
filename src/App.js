@@ -6,18 +6,15 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import ContactForm from './views/ContactForm';
 
-import './css/App.css';
+import './App.css';
 
-import logo from './logo.svg';
-import HomeBase from './components/Homebase';
+import HomeBase from './components/LandingPage';
 import SkillsPage from './components/TechnicalSkills';
 
 const Home = () => {
   return (
-    <div className="App-home">
-      <img src={logo} className="App-logo" alt="logo" />
+    <div>
       <HomeBase />
-
       <CSSTransition 
         in
         timeout={1000}

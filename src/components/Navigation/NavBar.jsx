@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import { Burger, Nav } from './NavBarElements';
 // import { 
 //   Link,
 // } from 'react-router-dom';
-
-
-import '../../css/NavBar.css';
 
 
 // const ContactButton = () => (
@@ -14,34 +13,18 @@ import '../../css/NavBar.css';
 //   </Link>
 // );
 
-const AltNav = () => {
-  const [showHamburger, setShowHamburger] = useState(true);
-  const showMenu = !showHamburger; 
-
+const NavBar = () => {
   return (
    <header>
-      <h1 className='logo'>Richard Leung</h1>
-      <input type='checkbox' id='nav-toggle' className={showMenu ? 'nav-toggle' : 'hidden'}></input>
-      <nav>
+      <Nav>
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="/"><HomeRoundedIcon color='primary'/></a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="/Contact">Contact</a></li>
         </ul>
-      </nav>
-      
-        <button 
-          className={showHamburger ? "hamburger" : "hamburger is-active hamburger--elastic"}
-          onClick={() => setShowHamburger(!showHamburger)}  
-        >
-          <label htmlFor='nav-toggle' className='nav-toggle-label'>
-            <span className="hamburger-box ">
-                <span className="hamburger-inner " />
-            </span>
-          </label>
-        </button>
+      </Nav>
     </header>
 )};
 
-export default AltNav;
+export default NavBar;

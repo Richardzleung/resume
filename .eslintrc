@@ -18,11 +18,17 @@
     }
   },
   "plugins": [
-    "react"
+    "react",
+    "@emotion"
   ],
   "rules": {
     "object-curly-spacing": [2, "always"],
-    "no-unused-vars":"warn"
+    "no-unused-vars":"warn",
+    "@emotion/pkg-renaming": "error",
+    "@emotion/jsx-import": "error",
+    "@emotion/no-vanilla": "error",
+    "@emotion/import-from-emotion": "error",
+    "@emotion/styled-import": "error"
   },
   "settings": {
     "react" : {

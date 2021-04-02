@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import '../css/Timeline.css'
-
 const P = styled.p`
   margin-left: 2rem;
   width: 35rem;
