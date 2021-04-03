@@ -33,7 +33,7 @@ const App = () => {
       <Router>
         <Navigation />
         <Switch>
-          <Route path='/contact'><ContactForm/></Route>
+          <Route path='/contact' component={ContactForm}/>
         </Switch>
       </Router>
       <Home/>

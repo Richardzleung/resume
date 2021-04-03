@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import Form from '../components/Form/Form'
 
 const Div=styled.div`
-  outline: solid;
-  width: 500px;
-  margin: auto;
+  width: 100%;
+  margin: 5rem auto;
   background-color: white;
+  z-index: -1;
 `;
 
 const ContactPage = () => {

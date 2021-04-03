@@ -1,7 +1,9 @@
-import React from 'react';
-
+import React, { useState, useRef } from 'react';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-import { Burger, Nav } from './NavBarElements';
+
+import Menu from './Menu';
+import Burger from './Burger'
+import useOutsideClick from '../../hooks/useOutsideClick';
 // import { 
 //   Link,
 // } from 'react-router-dom';
@@ -14,17 +16,18 @@ import { Burger, Nav } from './NavBarElements';
 // );
 
 const NavBar = () => {
+  const [openMenu, setOpenMenu] = useState(null);
+  const clickRef = useRef();
+  
+  useOutsideClick(clickRef, () => setOpenMenu(false));
+
   return (
    <header>
-      <Nav>
-        <ul>
-          <li><a href="/"><HomeRoundedIcon color='primary'/></a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="/Contact">Contact</a></li>
-        </ul>
-      </Nav>
-    </header>
+    <div ref={clickRef}>
+      <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+      <Menu open={openMenu} />
+    </div>
+  </header>
 )};
 
 export default NavBar;

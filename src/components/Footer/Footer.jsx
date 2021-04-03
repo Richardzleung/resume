@@ -5,7 +5,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 import IconButton from '@material-ui/core/IconButton';
 import { handles } from '../../shared/constants';
 
-import { isSmallScreen } from '../../utils';
+import useWindowSize from '../../hooks/useWindowSize'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -27,10 +27,12 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-console.log(isSmallScreen());
-
 const Footer = () => {
   const classes = useStyles();
+  const { width } = useWindowSize();
+
+  const isSmallScreen = width < 768;
+
   return (
     <div className={classes.root} >
       <div className={classes.buttonBar}>
@@ -42,7 +44,7 @@ const Footer = () => {
             onClick={() => window.open(link)}
             key={label}
           >
-            <Tooltip title={isSmallScreen() ? '' : title} disableFocusListener >
+            <Tooltip title={isSmallScreen ? '' : title} disableFocusListener >
               <SvgIcon fontSize='large' className={classes.icon}>
                 <path d={icon} />
               </SvgIcon>

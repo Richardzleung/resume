@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 
 import './index.css';
 import App from './App';
-import * as theme from './styles/colors';
+import * as theme from './styles/theme';
 
 ReactDOM.render(
   <React.StrictMode>
