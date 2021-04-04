@@ -33,10 +33,14 @@ const App = () => {
       <Router>
         <Navigation />
         <Switch>
-          <Route path='/contact' component={ContactForm}/>
+          <Route path='/contact'> 
+            <ContactForm />
+          </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
         </Switch>
       </Router>
-      <Home/>
       <div>
         <Footer/>
       </div>

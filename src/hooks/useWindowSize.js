@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 const useWindowSize = () => {
   const isClient = typeof window === 'object'; //Object represents browser window
   const lastWidth = useRef();
-
   
   const getSize = () => {
     return {
@@ -14,9 +13,9 @@ const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState(getSize)
 
   useEffect(() => {
-    if (!isClient) { return false } //Exit if not user/browser
+    if (!isClient) return false; //Exit if not user/browser
 
-    function handleResize() {
+    const handleResize = () => {
       if (window.innerWidth !== lastWidth.current) {
         const width = getSize();
         lastWidth.current = width;

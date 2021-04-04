@@ -9,15 +9,9 @@ import useWindowSize from '../../hooks/useWindowSize'
 
 const useStyles = makeStyles(() => ({
   root: {
-    backgroundColor: 'white',
-    marginTop: '2rem',
-    minHeight: '10rem',
-    position: 'absolute',
     width: '100%',
-    bottom: 0
   },
   buttonBar: {
-    paddingTop: '2.125rem',
     display: 'flex',
     justifyContent: 'space-evenly'
   },

@@ -12,7 +12,7 @@ const MenuItem = ({ href, label, emoji }) => {
   const isActive = match?.isExact;
 
   return (
-    <a href={href} className={ isActive && 'active'}>
+    <a href={href} >
       {isSmallScreen && <span role='img'> {emoji} </span>}
       {label}
     </a>

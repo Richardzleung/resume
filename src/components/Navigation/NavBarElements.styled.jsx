@@ -68,7 +68,7 @@ const StyledMenu = styled.nav`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
-    height: auto;
+    height: initial;
     right: 0;
     padding: 0;
     transform: translateX(0);
@@ -82,7 +82,7 @@ const StyledMenu = styled.nav`
       -webkit-text-fill-color: transparent;
       color: royalblue;
       display: inline-block;
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 800;
       letter-spacing: .05rem;
       overflow: hidden;
@@ -93,8 +93,11 @@ const StyledMenu = styled.nav`
       background-position: 0 100%;
     }
     a.active {
-      background: none;
-      color: black;
+      background: black;
+      background-clip: text;
+      text-decoration: underline;
+      text-underline-offset: .35em;
+      text-decoration-thickness: 5px;
     }
   }
 `;
