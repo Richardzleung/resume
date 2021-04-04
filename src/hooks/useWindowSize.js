@@ -6,7 +6,7 @@ const useWindowSize = () => {
   
   const getSize = () => {
     return {
-     width: isClient ? window.innerWidth : undefined
+     viewPortWidth: isClient ? window.innerWidth : undefined
     }
   }
 

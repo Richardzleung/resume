@@ -33,7 +33,7 @@ const StyledBurger = styled.button`
     }
   }
   // * Not so small screen
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.largishScreen}) {
     display: none;
   }
 `;
@@ -64,7 +64,7 @@ const StyledMenu = styled.nav`
     transition: color 0.3s linear;
   }
   // * Not so Small Screen
-  @media (min-width: ${({ theme }) => theme.notSmallScreen}) {
+  @media (min-width: ${({ theme }) => theme.largishScreen}) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -82,11 +82,11 @@ const StyledMenu = styled.nav`
       -webkit-text-fill-color: transparent;
       color: royalblue;
       display: inline-block;
-      font-size: 1.6rem;
+      font-size: 1.6em;
       font-weight: 800;
       letter-spacing: .05rem;
       overflow: hidden;
-      padding: .5rem;
+      padding: .5em;
       transition: background-position 275ms ease;
     }
     a:hover {

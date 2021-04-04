@@ -1,3 +1,4 @@
+
 *, *::before, *::after {
   box-sizing: border-box;
   padding: 0;
@@ -9,12 +10,28 @@ html {
   scroll-behavior: smooth; 
 } 
 
+p {
+  max-width: 45ch;
+}
 
 .App {
   text-align: center;
 }
 
-/** animations for React-animation-group */
+.horizontal-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+
+/* Table of contents 
+  * 1. Animations for react-transition-group
+  * 2. Landing Page
+  * 3. Contact Form
+*/
+
+/** 1. animations for React-transition-group */
 .skills-appear {
   opacity: 0;
 }
@@ -23,7 +40,12 @@ html {
   transition: opacity 2000ms ease;
 }
 
-/** Contact Form & Page related stuff */
+/** 2. Landing Page */
+#landingPageContainer {
+  margin: 4em 1em;
+}
+
+/** 3. Contact Form & Page related stuff */
 #contactContainer {
   min-height: 80vh;
   padding: 5rem 1rem 1rem;

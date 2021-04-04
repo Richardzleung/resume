@@ -7,7 +7,7 @@ import useWindowSize from '../../hooks/useWindowSize';
 
 const MenuItem = ({ href, label, emoji }) => {
   const match = useRouteMatch(href);
-  const { width } = useWindowSize();
+  const { viewPortWidth: width } = useWindowSize();
   const isSmallScreen = width < 768;
   const isActive = match?.isExact;
 

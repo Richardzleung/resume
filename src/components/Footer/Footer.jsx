@@ -9,6 +9,7 @@ import useWindowSize from '../../hooks/useWindowSize'
 
 const useStyles = makeStyles(() => ({
   root: {
+    marginTop: '1em',
     width: '100%',
   },
   buttonBar: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles(() => ({
 
 const Footer = () => {
   const classes = useStyles();
-  const { width } = useWindowSize();
+  const { viewPortWidth: width } = useWindowSize();
 
   const isSmallScreen = width < 768;
 

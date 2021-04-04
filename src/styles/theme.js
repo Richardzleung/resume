@@ -22,4 +22,4 @@ export const darkMode = {
   mourn: '#B0B3B8',
 }
 
-export const notSmallScreen = '768px';
+export const largishScreen = '48em';

@@ -1,47 +1,50 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types'
 
 import { technicalSkills } from '../shared/constants'
 
-// Modular function to reduce repeptive props
-// eslint-disable-next-line react/prop-types
-const SkillItem = ({ link, skill }) => {
-  return (
-    <li >
-      <A 
-        href={link} 
-        target='blank' 
-        rel="noopener noreferrer"
-        title={link}
-      >
-        {skill} &emsp;
-      </A>
-    </li>
-  );
-};
-
 const SkillsPage = () => {
-
   return (
-  <div>
-    <h2>Technical Skills</h2>
-    <List >
-      {technicalSkills.map(({ label,link }) => (
-        <SkillItem key={label} skill={label} link={link}/>
-      ))}
-    </List>
-  </div>
+    <div style={{ height: '100%' }}>
+      <h2>Technical Skills</h2>
+      <ul className='horizontal-list'>
+        {technicalSkills.map(({ label,link }) => (
+          <StyledListItem key={label} link={link}>
+            {label}
+          </StyledListItem>
+        ))}
+      </ul>
+    </div>
   );
 };
 
 export default SkillsPage;
 
-const List = styled.ul`
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-`;
-const A = styled.a`
-  text-decoration: none;
+const ListItem = ({ link, children, className }) => {
+  return (
+    <li className={className}>
+      <a 
+        href={link} 
+        target='blank' 
+        rel="noopener noreferrer"
+        title={link}
+      >
+        {children} &emsp;
+      </a>
+    </li>
+  );
+};
+
+ListItem.propTypes = {
+  link: PropTypes.string,
+  children: PropTypes.string,
+  className: PropTypes.object
+};
+
+const StyledListItem = styled(ListItem)`
+  a {
+    text-decoration: none
+  }
 `;
 

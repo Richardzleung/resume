@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomeBase = () => {
   return (
-    <>
+    <div id='landingPageContainer'>
       <h1>
         Designer, Front-end Developer
       </h1>
@@ -13,7 +13,7 @@ const HomeBase = () => {
         Hello! My name is Richard and I&apos;m a full-stack web developer.
         Status of site: Work in Progress
       </p>
-    </>
+    </div>
   )
 }
 
