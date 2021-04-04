@@ -2,8 +2,19 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  overflow:hidden;
 }
 
+html { 
+  scroll-behavior: smooth; 
+} 
+
+
+.App {
+  text-align: center;
+}
+
+/** animations for React-animation-group */
 .skills-appear {
   opacity: 0;
 }
@@ -12,12 +23,31 @@
   transition: opacity 2000ms ease;
 }
 
-.App {
-  text-align: center;
+/** Contact Form & Page related stuff */
+#contactContainer {
+  min-height: 80vh;
+  padding: 5rem 1rem 1rem;
 }
 
-html { 
-  scroll-behavior: smooth; 
-} 
+#contactSubtext {
+  margin: 1em;
+}
 
+#contact-form {
+  margin: 0 15rem;
+  display: grid;
+  grid-template-areas: 
+    "text text"
+    "message message";
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+#contact-form > input {
+  grid-area: text;
+}
+
+#message-field {
+  grid-area: message;
+}
 
