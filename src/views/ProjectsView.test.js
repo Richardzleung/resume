@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ProjectsPage from './ProjectsPage'
+import ProjectsPage from './ProjectsView'
 
 describe('projects page', function() {
   test('renders', () => {

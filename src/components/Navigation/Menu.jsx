@@ -5,48 +5,86 @@ import { useRouteMatch } from 'react-router-dom';
 import { StyledMenu } from './NavBarElements.styled';
 import useWindowSize from '../../hooks/useWindowSize';
 
-const MenuItem = ({ href, label, emoji }) => {
-  const match = useRouteMatch(href);
+const Menu = ({ open, ...props }) => {
   const { viewPortWidth: width } = useWindowSize();
   const isSmallScreen = width < 768;
-  const isActive = match?.isExact;
+  // eslint-disable-next-line react/prop-types
+  const { 
+    scrollToProjectsView,
+    scrollToAboutView
+  } = props;
 
   return (
-    <a href={href} >
+    <StyledMenu open={open}>
+      <ScrollItem 
+        aria-label='about me' 
+        emoji='&#x1F64B;'
+        isSmallScreen={isSmallScreen}
+        onClick={scrollToAboutView}
+      >
+        About
+      </ScrollItem>
+      <ScrollItem 
+        aria-label='projects' 
+        emoji='&#128214;'
+        isSmallScreen={isSmallScreen}
+        onClick={scrollToProjectsView}
+      >
+        projects
+      </ScrollItem>
+      <MenuItem 
+        aria-label='my blog'
+        href='/'
+        emoji='&#x1F4BB;'
+        isSmallScreen={isSmallScreen}
+      >
+        blog
+      </MenuItem>
+      <MenuItem 
+        aria-label='contact me'
+        href='/contact'
+        emoji='&#x1f4e9;'
+        isSmallScreen={isSmallScreen}
+      >
+        contact
+      </MenuItem>
+    </StyledMenu>
+  );
+};
+
+Menu.propTypes = {
+  open: PropTypes.bool,
+  scrollToProjectsView: PropTypes.func,
+  scrollToAboutView: PropTypes.func
+};
+
+// * scrolls to element on click using a ref
+// eslint-disable-next-line react/prop-types
+const ScrollItem = ({ children, isSmallScreen, emoji, ...props }) => {
+  return (
+    <button {...props}>
       {isSmallScreen && <span role='img'> {emoji} </span>}
-      {label}
+      {children}
+    </button>
+  );
+};
+
+// * Seperate from scroll because I want to have contact form in a seperate view
+const MenuItem = ({ children, href, emoji, isSmallScreen }) => {
+  const match = useRouteMatch(href);
+  return (
+    <a href={href}>
+      {isSmallScreen && <span role='img'> {emoji} </span>}
+      {children}
     </a>
   )
 };
 
 MenuItem.propTypes = {
   href: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  emoji: PropTypes.string.isRequired
+  emoji: PropTypes.string.isRequired,
+  children: PropTypes.string,
+  isSmallScreen: PropTypes.bool
 };
-
-const Menu = props => (
-  <StyledMenu {...props}>
-    <MenuItem 
-      label='About' 
-      aria-label='about me' 
-      href='/'
-      emoji='&#128214;'
-    />
-    <MenuItem 
-      label='Blog'
-      aria-label='my blog'
-      // i need to have a blog first
-      href='/'
-      emoji='&#x1f4b8;'
-    />
-    <MenuItem 
-      label='contact'
-      aria-label='contact me'
-      href='/contact'
-      emoji='&#x1f4e9;'
-    />
-  </StyledMenu>
-);
 
 export default Menu;

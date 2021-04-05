@@ -8,7 +8,7 @@ const SkillsPage = () => {
   return (
     <div style={{ height: '100%' }}>
       <h2>Technical Skills</h2>
-      <ul className='horizontal-list'>
+      <ul className='row'>
         {technicalSkills.map(({ label,link }) => (
           <StyledListItem key={label} link={link}>
             {label}
@@ -39,7 +39,7 @@ const ListItem = ({ link, children, className }) => {
 ListItem.propTypes = {
   link: PropTypes.string,
   children: PropTypes.string,
-  className: PropTypes.object
+  className: PropTypes.string
 };
 
 const StyledListItem = styled(ListItem)`

@@ -45,23 +45,27 @@ const StyledMenu = styled.nav`
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  left: 0;
   padding: 2rem;
-  position: absolute;
-  text-align: left;
-  top: 0;
+  position: fixed;
+  /* left: 0; */
+  /* top: 0; */
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   z-index: 10;
-  a {
+  a, button {
+    cursor: pointer;
     font-size: 2rem;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
     color: ${({ theme }) => theme.indigo};
+    text-align: left;
     text-decoration: none;
     transition: color 0.3s linear;
+  }
+  button {
+    border: 0;
   }
   // * Not so Small Screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
@@ -73,7 +77,7 @@ const StyledMenu = styled.nav`
     padding: 0;
     transform: translateX(0);
 
-    a {
+    a, button {
       background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
       background-clip: text;
       background-size: 200% 100%;
@@ -89,10 +93,10 @@ const StyledMenu = styled.nav`
       padding: .5em;
       transition: background-position 275ms ease;
     }
-    a:hover {
+    a:hover, button:hover {
       background-position: 0 100%;
     }
-    a.active {
+    a.active, button.active {
       background: black;
       background-clip: text;
       text-decoration: underline;

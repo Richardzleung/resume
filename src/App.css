@@ -3,7 +3,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 html { 
@@ -18,17 +18,33 @@ p {
   text-align: center;
 }
 
-.horizontal-list {
+.row {
   display: flex;
   flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
   justify-content: center;
-  align-content: space-around;
+  align-items: center;
+}
+
+.vh-100 {
+  min-height: 100vh;
+}
+
+.center {
+  margin: auto;
+
 }
 
 /* Table of contents 
   * 1. Animations for react-transition-group
-  * 2. Landing Page
-  * 3. Contact Form
+  * 2. Contact Form
 */
 
 /** 1. animations for React-transition-group */
@@ -40,12 +56,7 @@ p {
   transition: opacity 2000ms ease;
 }
 
-/** 2. Landing Page */
-#landingPageContainer {
-  margin: 4em 1em;
-}
-
-/** 3. Contact Form & Page related stuff */
+/** 2. Contact Form & Page related stuff */
 #contactContainer {
   min-height: 80vh;
   padding: 5rem 1rem 1rem;

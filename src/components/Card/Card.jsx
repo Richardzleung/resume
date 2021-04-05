@@ -15,20 +15,12 @@ import { projects } from '../../shared/constants.js';
 const useStyles = makeStyles(() => ({
   card: {
     margin: '1em',
-    maxWidth: '40%'
+    // maxWidth: '40%'
   },
   image: {
-    width: '20vw',
-    height: '20vh',
+    // width: '20vw',
+    // height: '20vh',
   },
-  cardAction: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  list: {
-    display: 'flex',
-  }
 }));
 
 // eslint-disable-next-line react/prop-types
@@ -57,7 +49,7 @@ const MyCard = ({ projectID }) => {
             <RenderDependencyList dependencyList={dependencies}/>
           </CardContent>
         </CardActionArea>
-        <CardActions className={classes.cardAction}>
+        <CardActions className='row flex-center'>
           <IconButton edge='start' aria-label='source code' size='medium' onClick={() => window.open(gitHubProjectLink)}>
             <GitHubIcon titleAccess={gitHubProjectLink}  />
           </IconButton>
@@ -80,7 +72,7 @@ const RenderDependencyList = ({ dependencyList }) => {
   );
 
   return (
-    <ul className={classes.list}>
+    <ul className='row'>
       {listItems}
     </ul>
   )

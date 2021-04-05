@@ -24,9 +24,7 @@ const useStyles = makeStyles(() => ({
 
 const Footer = () => {
   const classes = useStyles();
-  const { viewPortWidth: width } = useWindowSize();
-
-  const isSmallScreen = width < 768;
+  const { isLargishScreen } = useWindowSize();
 
   return (
     <div className={classes.root} >
@@ -39,7 +37,7 @@ const Footer = () => {
             onClick={() => window.open(link)}
             key={label}
           >
-            <Tooltip title={isSmallScreen ? '' : title} disableFocusListener >
+            <Tooltip title={isLargishScreen ? title : ''} disableFocusListener >
               <SvgIcon fontSize='large' className={classes.icon}>
                 <path d={icon} />
               </SvgIcon>
