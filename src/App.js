@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CSSTransition } from 'react-transition-group';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
@@ -17,14 +18,14 @@ const Home = () => {
   return (
     <div>
       <HomeBase />
-      <CSSTransition 
+      {/* <CSSTransition 
         in
         timeout={1000}
         appear={true}
         classNames='skills'
-      >
+      > */}
         <Technologies />
-      </CSSTransition>
+      {/* </CSSTransition> */}
     </div>
   );
 };
@@ -32,8 +33,16 @@ const Home = () => {
 const App = () => {
   const projectViewRef = useRef();
   const aboutViewRef = useRef();
-  const scrollToProjectsView = () => projectViewRef.current.scrollIntoView(true, { inline:'start' });
-  const scrollToAboutView = () => aboutViewRef.current.scrollIntoView(true, { inline:'start' });
+  smoothscroll.polyfill();
+  
+  const scrollToProjectsView = () => projectViewRef.current.scrollIntoView({ 
+    inline: 'start', 
+    behavior: 'smooth' 
+  });
+  const scrollToAboutView = () => aboutViewRef.current.scrollIntoView({ 
+    inline:'start', 
+    behavior: 'smooth' 
+  });
 
   return (
     <div className="App">

@@ -51,8 +51,9 @@ const StyledMenu = styled.nav`
   /* top: 0; */
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  width: 100%;
   z-index: 10;
-  a, button {
+  a, .navbar-item {
     cursor: pointer;
     font-size: 2rem;
     text-transform: uppercase;
@@ -64,10 +65,7 @@ const StyledMenu = styled.nav`
     text-decoration: none;
     transition: color 0.3s linear;
   }
-  button {
-    border: 0;
-  }
-  // * Not so Small Screen
+  // * largish Screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
     flex-direction: row;
     flex-wrap: wrap;
@@ -77,7 +75,14 @@ const StyledMenu = styled.nav`
     padding: 0;
     transform: translateX(0);
 
-    a, button {
+    .logo {
+      flex: 1;
+      color: pink;
+      font-size: 2em;
+      font-weight: 900;
+    }
+
+    a, .navbar-item {
       background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
       background-clip: text;
       background-size: 200% 100%;
@@ -86,16 +91,17 @@ const StyledMenu = styled.nav`
       -webkit-text-fill-color: transparent;
       color: royalblue;
       display: inline-block;
-      font-size: 1.6em;
-      font-weight: 800;
+      font-size: 1.3em;
+      font-weight: 600;
       letter-spacing: .05rem;
       overflow: hidden;
       padding: .5em;
       transition: background-position 275ms ease;
     }
-    a:hover, button:hover {
+    a:hover, .navbar-item:hover {
       background-position: 0 100%;
     }
+  
     /* a.active, button.active {
       background: black;
       background-clip: text;

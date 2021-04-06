@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 // import { useRouteMatch } from 'react-router-dom';
 
 import { StyledMenu } from './NavBarElements.styled';
 import useWindowSize from '../../hooks/useWindowSize';
 
 const Menu = ({ open, ...props }) => {
-  const { viewPortWidth: width } = useWindowSize();
-  const isSmallScreen = width < 768;
-  // eslint-disable-next-line react/prop-types
+  const history = useHistory();
   const { 
     scrollToProjectsView,
     scrollToAboutView
@@ -16,10 +15,12 @@ const Menu = ({ open, ...props }) => {
 
   return (
     <StyledMenu open={open}>
+      <p className='logo' onClick={() => history.push('/')}>
+        Richard Leung
+      </p>
       <ScrollItem 
         aria-label='about me' 
         emoji='&#x1F64B;'
-        isSmallScreen={isSmallScreen}
         onClick={scrollToAboutView}
       >
         About
@@ -27,7 +28,6 @@ const Menu = ({ open, ...props }) => {
       <ScrollItem 
         aria-label='projects' 
         emoji='&#128214;'
-        isSmallScreen={isSmallScreen}
         onClick={scrollToProjectsView}
       >
         projects
@@ -36,7 +36,6 @@ const Menu = ({ open, ...props }) => {
         aria-label='my blog'
         href='/'
         emoji='&#x1F4BB;'
-        isSmallScreen={isSmallScreen}
       >
         blog
       </MenuItem>
@@ -44,7 +43,6 @@ const Menu = ({ open, ...props }) => {
         aria-label='contact me'
         href='/contact'
         emoji='&#x1f4e9;'
-        isSmallScreen={isSmallScreen}
       >
         contact
       </MenuItem>
@@ -60,21 +58,23 @@ Menu.propTypes = {
 
 // * scrolls to element on click using a ref
 // eslint-disable-next-line react/prop-types
-const ScrollItem = ({ children, isSmallScreen, emoji, ...props }) => {
+const ScrollItem = ({ children, emoji, ...props }) => {
+  const { isLargishScreen } = useWindowSize();
   return (
-    <button {...props}>
-      {isSmallScreen && <span role='img'> {emoji} </span>}
+    <div {...props} className='navbar-item'>
+      {!isLargishScreen && <span role='img'> {emoji} </span>}
       {children}
-    </button>
+    </div>
   );
 };
 
-// * Seperate from scroll because I want to have contact form in a seperate view
-const MenuItem = ({ children, href, emoji, isSmallScreen }) => {
+// * Seperate from scroll because I want to have contact form that is in a seperate view
+const MenuItem = ({ children, href, emoji }) => {
   // const match = useRouteMatch(href);
+  const { isLargishScreen } = useWindowSize();
   return (
     <a href={href}>
-      {isSmallScreen && <span role='img'> {emoji} </span>}
+      {!isLargishScreen && <span role='img'> {emoji} </span>}
       {children}
     </a>
   )
@@ -84,7 +84,6 @@ MenuItem.propTypes = {
   href: PropTypes.string.isRequired,
   emoji: PropTypes.string.isRequired,
   children: PropTypes.string,
-  isSmallScreen: PropTypes.bool
 };
 
 export default Menu;
