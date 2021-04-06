@@ -18,9 +18,9 @@ p {
   text-align: center;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
+.center {
+  margin: auto;
+
 }
 
 .column {
@@ -33,13 +33,13 @@ p {
   align-items: center;
 }
 
-.vh-100 {
-  min-height: 100vh;
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.center {
-  margin: auto;
-
+.vh-100 {
+  min-height: 100vh;
 }
 
 /* Table of contents 

@@ -96,13 +96,13 @@ const StyledMenu = styled.nav`
     a:hover, button:hover {
       background-position: 0 100%;
     }
-    a.active, button.active {
+    /* a.active, button.active {
       background: black;
       background-clip: text;
       text-decoration: underline;
       text-underline-offset: .35em;
       text-decoration-thickness: 5px;
-    }
+    } */
   }
 `;
 

@@ -10,7 +10,7 @@ import ProjectsView from './views/ProjectsView';
 import './App.css';
 
 import HomeBase from './components/LandingPage';
-import SkillsPage from './components/TechnicalSkills';
+import Technologies from './views/TechnicalSkills';
 import AboutView from './views/AboutView';
 
 const Home = () => {
@@ -23,7 +23,7 @@ const Home = () => {
         appear={true}
         classNames='skills'
       >
-        <SkillsPage />
+        <Technologies />
       </CSSTransition>
     </div>
   );

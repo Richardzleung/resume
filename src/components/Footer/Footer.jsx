@@ -5,11 +5,11 @@ import Tooltip from '@material-ui/core/Tooltip'
 import IconButton from '@material-ui/core/IconButton';
 import { handles } from '../../shared/constants';
 
-import useWindowSize from '../../hooks/useWindowSize'
+import useWindowSize from 'hooks/useWindowSize'
 
 const useStyles = makeStyles(() => ({
   root: {
-    marginTop: '1em',
+    margin: '2em',
     width: '100%',
   },
   buttonBar: {

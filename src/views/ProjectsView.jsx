@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import Grid from '@material-ui/core/Grid';
 
-import Card from '../components/Card/Card'
+import Card from 'components/Card'
 
 const ProjectsPage = forwardRef((props,ref) => (
   <div ref={ref} className='vh-100' {...props}>

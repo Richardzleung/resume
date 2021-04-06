@@ -1,5 +1,17 @@
+import React from 'react'
 import { mdiGithub, mdiFacebook, mdiLinkedin, mdiEmail } from '@mdi/js'; 
-
+import { 
+  SiPostgresql, 
+  SiJavascript,
+  SiTypescript,
+  SiHtml5,
+  SiCss3,
+  SiReact,
+  SiRedux,
+  SiJest,
+  SiCodewars,
+  SiMongodb
+} from "react-icons/si";
 import native from '../static/images/native.png';
 import patientator from '../static/images/patientator.png'
 
@@ -74,49 +86,80 @@ const handles = [
   }
 ];
 
-const technicalSkills = [
- {
-   label: 'Javascript',
-   link: 'https://github.com/Richardzleung/resume'
- },
- {
-   label: 'Typescript',
-   link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack'
- },
- {
-   label: 'CSS',
-   link: 'https://github.com/Richardzleung/resume'
- },
- {
-   label: 'HTML5',
-   link: 'https://github.com/Richardzleung/resume'
- },
- {
-   label: 'React',
-   link: 'https://github.com/Richardzleung/resume'
- },
- {
-  label: 'React Native',
-  link: 'https://github.com/Richardzleung/rate-repository-app'
+
+const frontEndSkills = [
+  {
+    label: 'Javascript',
+    link: 'https://github.com/Richardzleung/resume',
+    icon: <SiJavascript style={{ color: '#f0db4f', background: '#323330' }}/>
   },
- {
-   label: 'Redux',
-   link: 'https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux'
- },
- {
-   label: 'Data structures & Algorithms',
-   link: 'https://www.codewars.com/users/Richardzleung'
- }, 
- {
-   label: 'Test Driven Development',
-   link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5'
- },
- {
-   label: 'MongoDB',
-   link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5'
- }
- 
+  {
+    label: 'Typescript',
+    link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack',
+    icon: <SiTypescript style={{ color: '#007acc', background: '#ffffff' }}/>
+  },
+  {
+    label: 'CSS3',
+    link: 'https://github.com/Richardzleung/resume',
+    icon: <SiCss3 />
+  },
+  {
+    label: 'HTML5',
+    link: 'https://github.com/Richardzleung/resume',
+    icon: <SiHtml5 />
+
+  },
+  {
+    label: 'React',
+    link: 'https://github.com/Richardzleung/resume',
+    icon: <SiReact style={{ color: '#61DBFB', background: '#ffffff' }}/>
+  },
+  {
+    label: 'Redux',
+    link: 'https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux',
+    icon: <SiRedux style={{ color: '#764abc', background: '#ffffff' }}/>
+  },
+  {
+    label: 'Jest',
+    link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
+    icon: <SiJest style={{ color: '#944058', background: '#ffffff' }}/>
+  },
 ];
 
+const backEndSkills = [
+  {
+    label: 'Express',
+    link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5'
+  },
+  {
+    label: 'Data structures & Algorithms',
+    link: 'https://www.codewars.com/users/Richardzleung',
+    icon: <SiCodewars style={{ color: '#a42d1e', background: '#262729' }}/>
+  }, 
+  {
+    label: 'Test Driven Development',
+    link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5'
+  },
+];
 
-export { navLinks, projects, handles, technicalSkills };
+const databaseSkills = [
+  {
+    label: 'MongoDB',
+    link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
+    icon: <SiMongodb />
+  },
+  {
+    label: 'PostgreSQL',
+    icon: <SiPostgresql />
+  }
+];
+
+const mobileSkills = [
+  {
+    label: 'React Native',
+    link: 'https://github.com/Richardzleung/rate-repository-app',
+    icon: <SiReact />
+  },
+];
+
+export { navLinks, projects, handles, frontEndSkills, databaseSkills, backEndSkills, mobileSkills };

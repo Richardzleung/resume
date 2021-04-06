@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useRouteMatch } from 'react-router-dom';
+// import { useRouteMatch } from 'react-router-dom';
 
 import { StyledMenu } from './NavBarElements.styled';
 import useWindowSize from '../../hooks/useWindowSize';
@@ -71,7 +71,7 @@ const ScrollItem = ({ children, isSmallScreen, emoji, ...props }) => {
 
 // * Seperate from scroll because I want to have contact form in a seperate view
 const MenuItem = ({ children, href, emoji, isSmallScreen }) => {
-  const match = useRouteMatch(href);
+  // const match = useRouteMatch(href);
   return (
     <a href={href}>
       {isSmallScreen && <span role='img'> {emoji} </span>}
