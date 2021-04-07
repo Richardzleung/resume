@@ -74,6 +74,7 @@ const StyledMenu = styled.nav`
     right: 0;
     padding: 0;
     transform: translateX(0);
+    width: 100%;
 
     .logo {
       flex: 1;

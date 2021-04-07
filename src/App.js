@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { CSSTransition } from 'react-transition-group';
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import smoothscroll from 'smoothscroll-polyfill';
 
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import ContactForm from './views/ContactForm';
 import ProjectsView from './views/ProjectsView';
+import PageNotFound from 'views/PageNotFound';
 
 import './App.css';
 
@@ -18,17 +18,11 @@ const Home = () => {
   return (
     <div>
       <HomeBase />
-      {/* <CSSTransition 
-        in
-        timeout={1000}
-        appear={true}
-        classNames='skills'
-      > */}
-        <Technologies />
-      {/* </CSSTransition> */}
+      <Technologies />
     </div>
   );
 };
+
 
 const App = () => {
   const projectViewRef = useRef();
@@ -43,28 +37,37 @@ const App = () => {
     inline:'start', 
     behavior: 'smooth' 
   });
+  // eslint-disable-next-line react/prop-types
+  const RouteWithNavBar = ({ children,  ...rest }) => {
+    return (
+      <Route {...rest}>
+        <Navigation 
+          scrollToProjectsView={scrollToProjectsView}
+          scrollToAboutView={scrollToAboutView}/>
+        {children}
+      </Route>
+    );
+  };
 
   return (
     <div className="App">
       <Router>
-        <Navigation 
-          scrollToProjectsView={scrollToProjectsView}
-          scrollToAboutView={scrollToAboutView}
-        />
         <Switch>
-          <Route path='/contact'> 
-            <ContactForm />
+          <Route exact path='/404'>
+            <PageNotFound />
           </Route>
-          <Route path='/'>
+          <RouteWithNavBar path='/contact'>
+            <ContactForm />
+          </RouteWithNavBar> 
+          <RouteWithNavBar exact path='/' >
             <Home />
             <AboutView ref={aboutViewRef}/>
             <ProjectsView ref={projectViewRef}/>
-          </Route>
+            <Footer/>
+          </RouteWithNavBar>
+          <Redirect to='/404' />
         </Switch>
       </Router>
-      <div>
-        <Footer/>
-      </div>
     </div>
   )
 };
