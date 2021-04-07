@@ -7,16 +7,17 @@ import { backEndSkills, frontEndSkills, mobileSkills, databaseSkills } from 'sha
 const List = ({ className, array  }) => {
   const listItems = array.map(({ label,link = '', icon = '' }) => 
     <li key={label}>
-      {icon}
-      <a 
-        href={link} 
-        target='blank' 
-        rel="noopener noreferrer"
-        title={link}
-      >
-        {label} 
-      </a>
-      &emsp;
+      <div className='skill-item'>
+        {icon}
+        <a 
+          href={link} 
+          target='blank' 
+          rel="noopener noreferrer"
+          title={link}
+        >
+          {label} 
+        </a>
+      </div>
     </li>
   );
 
@@ -34,8 +35,21 @@ List.propTypes = {
 
 const StyledList = styled(List)`
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   list-style: none;
+  outline: none;
+  width: 100%;
+
+  .skill-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 1.20rem;
+    line-height: 1.5em;
+    margin-top: 15px;
+  }
 `;
 
 const FrontEndSkillsList = () => <StyledList array={frontEndSkills}/>

@@ -12,7 +12,7 @@ const StyledBurger = styled.button`
   z-index: 20;
 
   div {
-    background-color: ${({ open }) => open ? '#3A3B3C' : '#333'};
+    background-color: ${({ open, theme }) => open ? theme.shadow : theme.night};
     border-radius: 10px;
     height: 0.25rem;
     margin: 0.25rem;
@@ -40,18 +40,18 @@ const StyledBurger = styled.button`
 
 // * Small Screen
 const StyledMenu = styled.nav`
-  background: ${({ theme }) => theme.gray};
+  background: ${({ theme }) => theme.base};
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   padding: 2rem;
   position: fixed;
-  /* left: 0; */
-  /* top: 0; */
+  left: 0;
+  top: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
-  width: 100%;
+  width: 80%;
   z-index: 10;
   a, .navbar-item {
     cursor: pointer;

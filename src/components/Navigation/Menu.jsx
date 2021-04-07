@@ -15,9 +15,9 @@ const Menu = ({ open, ...props }) => {
 
   return (
     <StyledMenu open={open}>
-      <p className='logo' onClick={() => history.push('/')}>
+      {/* <p className='logo' onClick={() => history.push('/')}>
         Richard Leung
-      </p>
+      </p> */}
       <ScrollItem 
         aria-label='about me' 
         emoji='&#x1F64B;'

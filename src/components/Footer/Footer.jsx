@@ -1,7 +1,6 @@
 import React from 'react';
-import SvgIcon from '@material-ui/core/SvgIcon';
+
 import { makeStyles } from '@material-ui/core/styles';
-import Tooltip from '@material-ui/core/Tooltip'
 import IconButton from '@material-ui/core/IconButton';
 import { handles } from '../../shared/constants';
 
@@ -37,12 +36,10 @@ const Footer = () => {
             onClick={() => window.open(link)}
             key={label}
           >
-            <Tooltip title={isLargishScreen ? title : ''} disableFocusListener >
-              <SvgIcon fontSize='large' className={classes.icon}>
-                <path d={icon} />
-              </SvgIcon>
-            </Tooltip>
-            
+            <div className='tooltip'>
+              {icon}
+              <span className='tooltiptext'>{title}</span>
+            </div>
           </IconButton>
         ))}
       </div>

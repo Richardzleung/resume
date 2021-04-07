@@ -12,11 +12,16 @@ export const lightBlush = '#F5DED2'
 export const blush = '#F1B4B2'
 
 
+// * dark colors
+export const shadow = '#3A3B3C'
+export const night = '#242526';
+export const midnight = '#18191A';
+
 // * dark mode colors
 export const darkMode = {
-  midnight: '#18191A',
-  night: '#242526',
-  shadow: '#3A3B3C',
+  midnight,
+  night,
+  shadow, 
   day: '#E4E6EB',
   mourn: '#B0B3B8',
 }
