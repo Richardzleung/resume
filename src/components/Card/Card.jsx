@@ -6,8 +6,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import WebAssetIcon from '@material-ui/icons/WebAsset';
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+
 import IconButton from '@material-ui/core/IconButton';
 
 import { projects } from 'shared/constants.js';
@@ -51,10 +51,10 @@ const MyCard = ({ projectID }) => {
         </CardActionArea>
         <CardActions className='row flex-center'>
           <IconButton edge='start' aria-label='source code' size='medium' onClick={() => window.open(gitHubProjectLink)}>
-            <GitHubIcon titleAccess={gitHubProjectLink}  />
+            <FiGithub />
           </IconButton>
           <IconButton edge='start' aria-label='live site' size='medium' onClick={() => window.open(projectLiveSite)}>
-            <WebAssetIcon titleAccess={projectLiveSite}  />
+            <FiExternalLink />
           </IconButton>
         </CardActions>
       </Card>

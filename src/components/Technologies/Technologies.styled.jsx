@@ -48,7 +48,9 @@ const StyledList = styled(List)`
     flex-wrap: wrap;
     font-size: 1.20rem;
     line-height: 1.5em;
-    margin-top: 15px;
+    height: 5rem;
+    margin-top: 3em;
+    width:auto;
   }
 `;
 

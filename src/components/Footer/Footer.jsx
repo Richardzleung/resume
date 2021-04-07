@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
   root: {
     margin: '2em',
     width: '100%',
+    minHeight: '4em'
   },
   buttonBar: {
     display: 'flex',
@@ -36,9 +37,10 @@ const Footer = () => {
             onClick={() => window.open(link)}
             key={label}
           >
-            <div className='tooltip'>
-              {icon}
-              <span className='tooltiptext'>{title}</span>
+            <div className="tooltip">{icon}
+              <div className="tooltip--bottom">
+                <p>{title}</p>
+              </div>
             </div>
           </IconButton>
         ))}

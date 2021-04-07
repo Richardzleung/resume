@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
-import SendRoundedIcon from '@material-ui/icons/SendRounded';
+import { RiMailSendFill } from "react-icons/ri";
 import TextField from '@material-ui/core/TextField'
 
 import ContactService from '../../services/ContactService';
@@ -81,7 +81,7 @@ const Form = () => {
         style={{ margin: '1em' }}
         color="primary" 
         variant="contained" 
-        startIcon={<SendRoundedIcon />}
+        startIcon={<RiMailSendFill />}
         type="submit">
         Submit
       </Button>
