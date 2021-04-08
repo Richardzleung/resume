@@ -51,14 +51,14 @@ const StyledMenu = styled.nav`
   top: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
-  width: 80%;
+  width: auto;
   z-index: 10;
   a, .navbar-item {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     padding: 2rem 0;
-    font-weight: bold;
+    font-weight: 800;
     letter-spacing: 0.5rem;
     color: ${({ theme }) => theme.indigo};
     text-align: left;
