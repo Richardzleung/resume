@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomeBase = () => {
   return (
-    <div className='column flex-center vh-100'>
+    <div className='column flex-center vh-100' id='landingPageBackround'>
       <div className='center'>
         <h1>
           Designer, Front-end Developer

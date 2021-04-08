@@ -10,7 +10,7 @@ import PageNotFound from 'views/PageNotFound';
 
 import './App.css';
 
-import HomeBase from './components/LandingPage';
+import HomeBase from './views/LandingPage';
 import Technologies from './views/TechnicalSkills';
 import AboutView from './views/AboutView';
 
