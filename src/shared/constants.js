@@ -122,7 +122,7 @@ const frontEndSkills = [
     icon: <SiRedux style={{ color: '#764abc', background: '#ffffff' }} size='2rem'/>
   },
   {
-    label: 'React Testing Library',
+    label: 'Testing Library',
     icon: <img src={octupus} alt='octopus-icon' className='skill-icon'/>
   }
   
@@ -135,7 +135,7 @@ const backEndSkills = [
     icon: <img src={expressIcon} alt='express-icon' className='skill-icon'/>
   },
   {
-    label: 'Data structures & Algorithms',
+    label: 'Algorithms',
     link: 'https://www.codewars.com/users/Richardzleung',
     icon: <SiCodewars style={{ color: '#a42d1e' }} size='2rem'/>
   }, 

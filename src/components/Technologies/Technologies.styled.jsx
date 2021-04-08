@@ -6,8 +6,7 @@ import { backEndSkills, frontEndSkills, mobileSkills, databaseSkills } from 'sha
 
 const List = ({ className, array  }) => {
   const listItems = array.map(({ label,link = '', icon = '' }) => 
-    <li key={label}>
-      <div className='skill-item'>
+    <li key={label} className='skill-item'>
         {icon}
         <a 
           href={link} 
@@ -17,7 +16,6 @@ const List = ({ className, array  }) => {
         >
           {label} 
         </a>
-      </div>
     </li>
   );
 
@@ -39,18 +37,28 @@ const StyledList = styled(List)`
   justify-content: space-evenly;
   list-style: none;
   outline: none;
-  width: 100%;
-
+  width: 90%;
+  padding: 0 1em;
+  
   .skill-item {
     align-items: center;
     display: flex;
     flex-direction: column;
+    flex: 1 1 50%;
     flex-wrap: wrap;
+    height: 5rem;
     font-size: 1.20rem;
     line-height: 1.5em;
-    height: 5rem;
     margin-top: 3em;
+    padding: 0 .5em;
     width:auto;
+  }
+
+  // * largish screen
+  @media (min-width: ${({ theme }) => theme.largishScreen}) {
+    .skill-item {
+      flex: 0 1 auto;
+    }
   }
 `;
 
