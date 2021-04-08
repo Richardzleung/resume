@@ -75,7 +75,7 @@ const RenderDependencyList = ({ dependencyList }) => {
     <ul className='row'>
       {listItems}
     </ul>
-  )
-}
+  );
+};
 
 export default MyCard;
