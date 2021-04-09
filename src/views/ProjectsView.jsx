@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import Grid from '@material-ui/core/Grid';
-
+import Tilt from 'components/Tilt';
 import Card from 'components/Card'
 
 const ProjectsPage = forwardRef((props,ref) => (
@@ -19,8 +19,8 @@ const ProjectsPage = forwardRef((props,ref) => (
     >
     <Grid container spacing={2} >
       <Grid container item xl='auto' spacing={3}>
-        <Card projectID="RATE_REPOSITORIES_APP"/>
-        <Card projectID="PATIENATOR_APP"/>
+        <Tilt><Card projectID="RATE_REPOSITORIES_APP"/></Tilt>
+        <Tilt><Card projectID="PATIENATOR_APP"/></Tilt>
       </Grid>
     </Grid>
     </div>

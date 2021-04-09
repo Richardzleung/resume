@@ -9,7 +9,7 @@ import {
   SiJest,
   SiCodewars,
 } from "react-icons/si";
-import native from 'static/images/native.png';
+import native from 'static/images/rate-repository-thumbnail.svg';
 import patientator from 'static/images/patientator.png'
 import expressIcon from 'static/images/expressjs-icon.svg';
 import octupus from 'static/images/octopus-64x64.png';
