@@ -55,7 +55,7 @@ const StyledMenu = styled.nav`
   z-index: 10;
   a, .navbar-item {
     cursor: pointer;
-    font-size: 1.4rem;
+    font-size: 2rem;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: 800;

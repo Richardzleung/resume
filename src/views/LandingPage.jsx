@@ -1,21 +1,18 @@
-import React from 'react'
+import React from 'react';
+import HomePageHero from 'styles/landingPage.module.css';
 
 const HomeBase = () => {
   return (
-    <div className='column flex-center vh-100' id='landingPageBackround'>
+    <section>
+      <div className={`column flex-center vh-100 ${HomePageHero.background}`}/>
       <div className='center'>
-        <h1>
-          Designer, Front-end Developer
+        <h1 className={HomePageHero.titleContainer}>
+          <div className={HomePageHero.scribble}/>
+          <span className={HomePageHero.heroTitle}>Front-end Developer</span>
+          <span className={HomePageHero.heroSubTitle}>Hello! My name is Richard and I&apos;m a full-stack web developer.</span>
         </h1>
-        <h2>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, laboriosam!
-        </h2>
-        <p>
-          Hello! My name is Richard and I&apos;m a full-stack web developer.
-          Status of site: Work in Progress
-        </p>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -16,7 +16,7 @@ import AboutView from './views/AboutView';
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ position: 'relative', zIndex: 1 }}>
       <HomeBase />
       <Technologies />
     </div>
@@ -38,16 +38,14 @@ const App = () => {
     behavior: 'smooth' 
   });
   // eslint-disable-next-line react/prop-types
-  const RouteWithNavBar = ({ children,  ...rest }) => {
-    return (
-      <Route {...rest}>
-        <Navigation 
-          scrollToProjectsView={scrollToProjectsView}
-          scrollToAboutView={scrollToAboutView}/>
-        {children}
-      </Route>
-    );
-  };
+  const RouteWithNavBar = ({ children,  ...rest }) => (
+    <Route {...rest}>
+      <Navigation 
+        scrollToProjectsView={scrollToProjectsView}
+        scrollToAboutView={scrollToAboutView}/>
+      {children}
+    </Route>
+  );
 
   return (
     <div className="App">
@@ -61,8 +59,8 @@ const App = () => {
           </RouteWithNavBar> 
           <RouteWithNavBar exact path='/' >
             <Home />
-            <AboutView ref={aboutViewRef}/>
             <ProjectsView ref={projectViewRef}/>
+            <AboutView ref={aboutViewRef}/>
             <Footer/>
           </RouteWithNavBar>
           <Redirect to='/404' />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useWindowSize from 'hooks/useWindowSize';
+import Button from 'components/TechButton';
 
 import { 
   FrontEndSkillsList,
@@ -12,7 +13,7 @@ const SkillsPage = () => {
   const [skillToDisplay, setSkillToDisplay] = useState('front-end');
   const { isLargishScreen } = useWindowSize();
 
-  // * For mobile views
+  // * Mobile view-- display all skills
   if(!isLargishScreen) {
     return (
       <div className='vh-100 column flex-col-center-X'>
@@ -28,21 +29,25 @@ const SkillsPage = () => {
       </div>
     );
   }
-  // * For larger views
+  const isFrontEndDisplayActive = skillToDisplay === 'front-end';
+  const isBackEndDisplayActive = skillToDisplay === 'back-end';
+  const isDatbaseDisplayActive = skillToDisplay === 'database';
+  const isMobileDisplayActive = skillToDisplay === 'mobile';
+
+  // * For larger views--display skills via button
   return (
     <div className='vh-100 column flex-col-center-X'>
       <h1>Technologies</h1>
       <div className='hide-on-small-screen'>
-        <button onClick={() => setSkillToDisplay('front-end')}>Front-End</button>
-        <button onClick={() => setSkillToDisplay('back-end')}>Back-End</button>
-        <button onClick={() => setSkillToDisplay('database')}>Databases</button>
-        <button onClick={() => setSkillToDisplay('mobile')}>Mobile</button>
+        <Button className="learn-more" onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>
+        <Button className="learn-more" onClick={() => setSkillToDisplay('back-end')}>Back-End</Button>
+        <Button className="learn-more" onClick={() => setSkillToDisplay('database')}>Databases</Button>
+        <Button className="learn-more" onClick={() => setSkillToDisplay('mobile')}>Mobile</Button>
       </div>
-      
-      {skillToDisplay === 'front-end' && <FrontEndSkillsList />}
-      {skillToDisplay === 'back-end' && <BackEndSkillsList />}
-      {skillToDisplay === 'database'&& <DatabaseSkillsList />}
-      {skillToDisplay === 'mobile' && <MobileSkillsList />}
+      {isFrontEndDisplayActive && <FrontEndSkillsList />}
+      {isBackEndDisplayActive && <BackEndSkillsList />}
+      {isDatbaseDisplayActive && <DatabaseSkillsList />}
+      {isMobileDisplayActive && <MobileSkillsList />}
     </div>
   );
 };

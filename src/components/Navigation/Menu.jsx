@@ -19,18 +19,18 @@ const Menu = ({ open, ...props }) => {
         Richard Leung
       </p> */}
       <ScrollItem 
-        aria-label='about me' 
-        emoji='&#x1F64B;'
-        onClick={scrollToAboutView}
-      >
-        About
-      </ScrollItem>
-      <ScrollItem 
         aria-label='projects' 
         emoji='&#128214;'
         onClick={scrollToProjectsView}
       >
         projects
+      </ScrollItem>
+      <ScrollItem 
+        aria-label='about me' 
+        emoji='&#x1F64B;'
+        onClick={scrollToAboutView}
+      >
+        About
       </ScrollItem>
       <MenuItem 
         aria-label='my blog'

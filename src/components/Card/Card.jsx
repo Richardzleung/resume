@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -7,25 +6,13 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-
 import IconButton from '@material-ui/core/IconButton';
 
 import { projects } from 'shared/constants.js';
-
-const useStyles = makeStyles(() => ({
-  card: {
-    margin: '1em',
-    // maxWidth: '40%'
-  },
-  image: {
-    // width: '20vw',
-    // height: '20vh',
-  },
-}));
+import projectStyles from 'styles/projectsPage.module.css';
 
 // eslint-disable-next-line react/prop-types
-const MyCard = ({ projectID }) => {
-  const classes = useStyles();
+const MyCard = ({ projectID, ...props }) => {
   const { 
     image, 
     dependencies, 
@@ -36,9 +23,14 @@ const MyCard = ({ projectID }) => {
   } = projects.find(({ id }) => id === projectID);
 
   return (
-    <Card className={classes.card}>
+    <Card {...props}>
         <CardActionArea>
-          <CardMedia component="img" alt="Contemplative Reptile" image={image} title="project image" />
+          <CardMedia 
+            className={projectStyles.thumbnail}
+            component="img" 
+            alt={title}
+            image={image} 
+          />
           <CardContent >
             <Typography gutterBottom variant="h6" component="h2">
               {title}
@@ -63,10 +55,9 @@ const MyCard = ({ projectID }) => {
 
 // eslint-disable-next-line react/prop-types
 const RenderDependencyList = ({ dependencyList }) => {
-  const classes = useStyles();
   // eslint-disable-next-line react/prop-types
   const listItems = dependencyList.map(dependency => 
-    <li key={dependency} className={classes.list}>
+    <li key={dependency}>
       {dependency}
     </li>
   );
