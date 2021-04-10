@@ -6,14 +6,15 @@ import { backEndSkills, frontEndSkills, mobileSkills, databaseSkills } from 'sha
 
 const List = ({ className, array  }) => {
   const listItems = array.map(({ label,link = '', icon = '' }) => 
-    <li key={label} className='skill-item'>
-        {icon}
+    <li key={label}>
         <a 
           href={link} 
           target='blank' 
           rel="noopener noreferrer"
           title={link}
+          className='skill-item'
         >
+          {icon}
           {label} 
         </a>
     </li>

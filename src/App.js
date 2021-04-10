@@ -14,16 +14,6 @@ import HomeBase from './views/LandingPage';
 import Technologies from './views/TechnicalSkills';
 import AboutView from './views/AboutView';
 
-const Home = () => {
-  return (
-    <div style={{ position: 'relative', zIndex: 1 }}>
-      <HomeBase />
-      <Technologies />
-    </div>
-  );
-};
-
-
 const App = () => {
   const projectViewRef = useRef();
   const aboutViewRef = useRef();
@@ -58,8 +48,9 @@ const App = () => {
             <ContactForm />
           </RouteWithNavBar> 
           <RouteWithNavBar exact path='/' >
-            <Home />
+            <HomeBase />
             <ProjectsView ref={projectViewRef}/>
+            <Technologies />
             <AboutView ref={aboutViewRef}/>
             <Footer/>
           </RouteWithNavBar>
