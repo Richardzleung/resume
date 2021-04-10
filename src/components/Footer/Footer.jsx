@@ -2,11 +2,7 @@ import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import { handles } from '../../shared/constants';
 
-import useWindowSize from 'hooks/useWindowSize'
-
 const Footer = () => {
-  const { isLargishScreen } = useWindowSize();
-
   return (
     <div id='footer--container'>
       <div className='row space-evenly'>

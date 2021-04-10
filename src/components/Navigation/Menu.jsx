@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 // import { useRouteMatch } from 'react-router-dom';
 
 import { StyledMenu } from './NavBarElements.styled';
 import useWindowSize from '../../hooks/useWindowSize';
 
 const Menu = ({ open, ...props }) => {
-  const history = useHistory();
   const { 
     scrollToProjectsView,
     scrollToAboutView

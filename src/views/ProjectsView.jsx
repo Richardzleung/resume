@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import Tilt from 'components/Tilt';
+// import Tilt from 'components/Tilt';
 import Card from 'components/Card';
 import projectStyles from 'styles/projectsPage.module.css';
 
