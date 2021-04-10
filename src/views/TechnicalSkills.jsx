@@ -39,10 +39,10 @@ const SkillsPage = () => {
     <div className='vh-100 column flex-col-center-X'>
       <h1>Technologies</h1>
       <div className='hide-on-small-screen'>
-        <Button className="learn-more" onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>
-        <Button className="learn-more" onClick={() => setSkillToDisplay('back-end')}>Back-End</Button>
-        <Button className="learn-more" onClick={() => setSkillToDisplay('database')}>Databases</Button>
-        <Button className="learn-more" onClick={() => setSkillToDisplay('mobile')}>Mobile</Button>
+        <Button isSelected={isFrontEndDisplayActive} onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>
+        <Button isSelected={isBackEndDisplayActive} onClick={() => setSkillToDisplay('back-end')}>Back-End</Button>
+        <Button isSelected={isDatbaseDisplayActive} onClick={() => setSkillToDisplay('database')}>Databases</Button>
+        <Button isSelected={isMobileDisplayActive} onClick={() => setSkillToDisplay('mobile')}>Mobile</Button>
       </div>
       {isFrontEndDisplayActive && <FrontEndSkillsList />}
       {isBackEndDisplayActive && <BackEndSkillsList />}
