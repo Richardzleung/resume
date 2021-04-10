@@ -6,11 +6,11 @@ import Form from './Form'
 describe('form', function() {
   test('renders', () => {
     const { getByText } = render(<Form />)
-    expect(getByText('Name')).toBeInTheDocument()
+    expect(getByText('Submit')).toBeInTheDocument()
   })
   test('validation', async () => {
     const { getByText, container, getByLabelText } = render(<Form />)
-    const input = getByLabelText('Email');
+    const input = getByLabelText('Email *');
 
     fireEvent.change(input, { target: { value: 'foobar' } });
     fireEvent.click(getByText('Submit'));
