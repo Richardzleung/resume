@@ -5,9 +5,9 @@ import projectStyles from 'styles/projectsPage.module.css';
 
 const ProjectsPage = forwardRef((props,ref) => (
   <div ref={ref} className='vh-100' {...props}>
-    <h2>
+    <h3>
       Projects
-    </h2>
+    </h3>
     <div className={projectStyles.grid}>
       <Card projectID="RATE_REPOSITORIES_APP" className={projectStyles.card}/>
       <Card projectID="PATIENATOR_APP" className={projectStyles.card}/>
