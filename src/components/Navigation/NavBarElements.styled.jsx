@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 // * Small Screen
 const StyledBurger = styled.button`
+  background-color: inherit;
   border: none;
   cursor: pointer;
   height: 2rem;
@@ -12,7 +13,7 @@ const StyledBurger = styled.button`
   z-index: 20;
 
   div {
-    background-color: ${({ open, theme }) => open ? theme.shadow : theme.night};
+    background-color: ${({ theme }) => theme.night};
     border-radius: 10px;
     height: 0.25rem;
     margin: 0.25rem;
