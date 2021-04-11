@@ -42,6 +42,7 @@ const StyledBurger = styled.button`
 // * Small Screen
 const StyledMenu = styled.nav`
   background: ${({ theme }) => theme.base};
+  background-color: inherit;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -85,13 +86,13 @@ const StyledMenu = styled.nav`
     }
 
     a, .navbar-item {
-      background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+      background: linear-gradient(to right, midnightblue, midnightblue 50%, white 50%);
       background-clip: text;
       background-size: 200% 100%;
       background-position: 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      color: royalblue;
+      /* color: royalblue; */
       display: inline-block;
       font-size: 1.3em;
       font-weight: 600;
@@ -103,14 +104,6 @@ const StyledMenu = styled.nav`
     a:hover, .navbar-item:hover {
       background-position: 0 100%;
     }
-  
-    /* a.active, button.active {
-      background: black;
-      background-clip: text;
-      text-decoration: underline;
-      text-underline-offset: .35em;
-      text-decoration-thickness: 5px;
-    } */
   }
 `;
 

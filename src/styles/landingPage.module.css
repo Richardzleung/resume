@@ -12,7 +12,7 @@
   grid-template-columns: 1.5fr 1fr;
   text-align: left;
   position: relative;
-  bottom: 800px;
+  bottom: 1000px;
 }
 
 .titleContainer {
@@ -37,13 +37,9 @@
   letter-spacing: 1vw;
 }
 
-
-
 .img {
   display: none;
 }
-
-
 
 .scribble {
   content: url(../static/images/3.svg);
@@ -60,8 +56,10 @@
   }
   .img {
     display: initial;
+    position: relative;
+    top: 50%;
     height: auto;
-    min-width: 40%;
+    width: 40%;
   }
 }
 

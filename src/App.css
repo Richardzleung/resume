@@ -3,7 +3,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  --bg-primary-color: #116ABD;
+  --bg-primary-color: #6666FF ;
+  --bg-secondary-color: #116ABD 
 }
 
 html { 
@@ -12,6 +13,10 @@ html {
 
 p {
   max-width: 45ch;
+}
+
+body {
+  background-color: white;
 }
 
 .App {

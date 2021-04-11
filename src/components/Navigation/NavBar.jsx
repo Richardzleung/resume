@@ -24,7 +24,7 @@ const NavBar = ({ scrollToAboutView, scrollToProjectsView }) => {
   const handleAboutClick = () => {
     scrollToAboutView();
     setOpenMenu(null);
-  }
+  };
   
   return (
    <header>
