@@ -66,25 +66,25 @@ const handles = [
     label: "GitHub",
     link: "https://github.com/Richardzleung",
     title: "Richardzleung",
-    icon: <FiGithub />
+    icon: <FiGithub size='32px'/>
   },
   {
     label: "LinkedIn",
     link: "https://www.linkedin.com/in/richardzleung/",
     title: "Richardzleung",
-    icon: <FiLinkedin />
+    icon: <FiLinkedin size='32px'/>
   },
   {
     label: "Email",
     link: "mailto:richardzleung@gmail.com",
     title: "richardzleung@gmail.com",
-    icon: <FiMail />
+    icon: <FiMail size='32px'/>
   },
   {
     label: "Facebook",
     link: "https://www.facebook.com/richardleung13",
     title: "RichardLeung13",
-    icon: <FiFacebook />
+    icon: <FiFacebook size='32px'/>
   }
 ];
 
@@ -93,12 +93,12 @@ const frontEndSkills = [
   {
     label: 'Javascript',
     link: 'https://github.com/Richardzleung/resume',
-    icon: <SiJavascript style={{ color: '#f0db4f', background: '#323330' }} size='2rem'/>
+    icon: <SiJavascript style={{ color: '#f0db4f', background: '#323330' }} size='32px'/>
   },
   {
     label: 'Typescript',
     link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack',
-    icon: <SiTypescript style={{ color: '#007acc', background: '#ffffff' }} size='2rem'/>
+    icon: <SiTypescript style={{ color: '#007acc', background: '#ffffff' }} size='32px'/>
   },
   {
     label: 'CSS3',
@@ -114,12 +114,12 @@ const frontEndSkills = [
   {
     label: 'React',
     link: 'https://github.com/Richardzleung/resume',
-    icon: <SiReact style={{ color: '#61DBFB', background: '#ffffff' }} size='2rem'/>
+    icon: <SiReact style={{ color: '#61DBFB', background: '#ffffff' }} size='32px'/>
   },
   {
     label: 'Redux',
     link: 'https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux',
-    icon: <SiRedux style={{ color: '#764abc', background: '#ffffff' }} size='2rem'/>
+    icon: <SiRedux style={{ color: '#764abc', background: '#ffffff' }} size='32px'/>
   },
   {
     label: 'Testing Library',
@@ -137,12 +137,12 @@ const backEndSkills = [
   {
     label: 'Algorithms',
     link: 'https://www.codewars.com/users/Richardzleung',
-    icon: <SiCodewars style={{ color: '#a42d1e' }} size='2rem'/>
+    icon: <SiCodewars style={{ color: '#a42d1e' }} size='32px'/>
   }, 
   {
     label: 'Jest',
     link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
-    icon: <SiJest style={{ color: '#944058', background: '#ffffff' }} size='2rem'/>
+    icon: <SiJest style={{ color: '#944058', background: '#ffffff' }} size='32px'/>
   },
 ];
 
@@ -154,7 +154,7 @@ const databaseSkills = [
   },
   {
     label: 'PostgreSQL',
-    icon: <SiPostgresql size='2rem' style={{ color: '#336791' }}/>
+    icon: <SiPostgresql size='32px' style={{ color: '#336791' }}/>
   }
 ];
 
@@ -162,7 +162,7 @@ const mobileSkills = [
   {
     label: 'React Native',
     link: 'https://github.com/Richardzleung/rate-repository-app',
-    icon: <SiReact size='2rem'/>
+    icon: <SiReact size='32px'/>
   },
 ];
 

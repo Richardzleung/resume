@@ -101,12 +101,6 @@ p {
   grid-area: message;
 }
 
-/** Footer */
-
-#footer--container {
-  margin: 1rem auto 4rem;
-  width: 90%;
-}
 
 /** Tooltip*/
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import { handles } from '../../shared/constants';
+import './styles.css'
 
 const Footer = () => {
   return (
