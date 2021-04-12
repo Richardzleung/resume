@@ -7,7 +7,7 @@ import useWindowSize from 'hooks/useWindowSize';
 const ScrollItem = ({ children, emoji, ...props }) => {
   const { isLargishScreen } = useWindowSize();
   return (
-    <div {...props} className='navbar-item'>
+    <div {...props} className='navbar-item' tabIndex='0'>
       {!isLargishScreen && <span role='img'> {emoji} </span>}
       {children}
     </div>

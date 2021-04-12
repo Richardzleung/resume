@@ -52,7 +52,7 @@
 
 @media screen and (min-width: 48em) {
   .background{
-    clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 77%);
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 77%);
   }
   .img {
     display: initial;
