@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components';
 
 const InputContainer = styled.div`
@@ -6,5 +7,9 @@ const InputContainer = styled.div`
     margin: 1em;
   }
 `;
+// TODO style this shit
+const Notification = () => (
+  <p>Form Submitted</p>
+);
 
-export { InputContainer };
+export { InputContainer, Notification };

@@ -27,7 +27,7 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "start:ui": "react-scripts start",
     "start:dev": "set NODE_ENV=development && nodemon server.js",
     "build": "react-scripts build",

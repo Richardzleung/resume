@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
@@ -6,7 +6,7 @@ import { RiMailSendFill } from "react-icons/ri";
 import TextField from '@material-ui/core/TextField'
 
 import ContactService from '../../services/ContactService';
-import { InputContainer } from './FormElements.styled';
+import { InputContainer, Notification } from './FormElements.styled';
 
 const validationSchema = yup.object({
   name: yup
@@ -22,6 +22,7 @@ const validationSchema = yup.object({
 });
 
 const Form = () => {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -29,7 +30,13 @@ const Form = () => {
       message: '',
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => ContactService(values)
+    onSubmit: (values) => {
+      setIsFormSubmitted(true)
+      ContactService(values)
+      setTimeout(() => {
+        setIsFormSubmitted(false)
+      }, 5000)
+    }
   });
 
   const nameFieldProps = {
@@ -67,26 +74,28 @@ const Form = () => {
   }
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <div id='contact-form'>
-        <InputContainer>
-          <InputField {...nameFieldProps} />
-        </InputContainer>
-        <InputContainer>
-          <InputField {...emailFieldProps} />
-        </InputContainer>
-        <InputField {...messageFieldProps} />
-      </div>
-      <Button 
-        style={{ margin: '1em' }}
-        color="primary" 
-        variant="contained" 
-        startIcon={<RiMailSendFill />}
-        type="submit">
-        Submit
-      </Button>
-    </form>
-    
+    <>
+      <form onSubmit={formik.handleSubmit}>
+        <div id='contact-form'>
+          <InputContainer>
+            <InputField {...nameFieldProps} />
+          </InputContainer>
+          <InputContainer>
+            <InputField {...emailFieldProps} />
+          </InputContainer>
+          <InputField {...messageFieldProps} />
+        </div>
+        <Button 
+          style={{ margin: '1em' }}
+          color="primary" 
+          variant="contained" 
+          startIcon={<RiMailSendFill />}
+          type="submit">
+          Submit
+        </Button>
+      </form>
+      {isFormSubmitted && <Notification />}
+    </>
 )};
 
 const InputField= props => (
