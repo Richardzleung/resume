@@ -1,24 +1,37 @@
-import React, { useRef } from 'react';
+import React, { useRef, Suspense, useState, useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import smoothscroll from 'smoothscroll-polyfill';
 
+import HomeBase from './views/LandingPage';
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
-import ContactForm from './views/ContactForm';
 import ProjectsView from './views/ProjectsView';
-import PageNotFound from 'views/PageNotFound';
-
+import Loading from 'components/Loading';
+import AboutView from 'views/AboutView';
+import Technologies from 'views/TechnicalSkills';
 import './App.css';
 
-import HomeBase from './views/LandingPage';
-import Technologies from './views/TechnicalSkills';
-import AboutView from './views/AboutView';
+const ContactForm = React.lazy(() => import('./views/ContactForm'));
+const PageNotFound = React.lazy(() => import('./views/PageNotFound'));
 
 const App = () => {
   const projectViewRef = useRef();
   const aboutViewRef = useRef();
-  smoothscroll.polyfill();
+  const [isLoading, setLoading] = useState(true);
+
+  const fakeRequest = () => new Promise(resolve => setTimeout(() => resolve(), 1500));
   
+  useLayoutEffect(() => {
+    fakeRequest().then(() => {
+      setLoading(!isLoading);
+    })
+  }, []);
+
+  if (isLoading) {
+    return <Loading/>;
+  }
+
+  smoothscroll.polyfill();  
   const scrollToProjectsView = () => projectViewRef.current.scrollIntoView({ 
     inline: 'start', 
     behavior: 'smooth' 
@@ -39,24 +52,28 @@ const App = () => {
 
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path='/404'>
-            <PageNotFound />
-          </Route>
-          <RouteWithNavBar path='/contact'>
-            <ContactForm />
-          </RouteWithNavBar> 
-          <RouteWithNavBar exact path='/' >
-            <HomeBase />
-            <ProjectsView ref={projectViewRef}/>
-            <Technologies />
-            <AboutView ref={aboutViewRef}/>
-            <Footer/>
-          </RouteWithNavBar>
-          <Redirect to='/404' />
-        </Switch>
-      </Router>
+        <Router>
+          <Switch>
+            <Route exact path='/404'>
+              <Suspense fallback={<Loading />}>
+                <PageNotFound />
+              </Suspense>
+            </Route>
+            <RouteWithNavBar path='/contact'>
+              <Suspense fallback={<Loading />}>
+                <ContactForm />
+              </Suspense>
+            </RouteWithNavBar> 
+            <RouteWithNavBar exact path='/' >
+              <HomeBase scrollToProjectsView={scrollToProjectsView}/>
+              <ProjectsView ref={projectViewRef}/>
+              <Technologies />
+              <AboutView ref={aboutViewRef}/>
+              <Footer/>
+            </RouteWithNavBar>
+            <Redirect to='/404' />
+          </Switch>
+        </Router>
     </div>
   )
 };

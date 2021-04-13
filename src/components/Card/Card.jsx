@@ -14,12 +14,14 @@ import projectStyles from 'styles/projectsPage.module.css';
 // eslint-disable-next-line react/prop-types
 const MyCard = ({ projectID, ...props }) => {
   const { 
-    image, 
+    image = '', 
     dependencies, 
     projectLiveSite,
     gitHubProjectLink,
     title,
-    description
+    description,
+    srcset='',
+    src =''
   } = projects.find(({ id }) => id === projectID);
 
   return (
@@ -30,6 +32,10 @@ const MyCard = ({ projectID, ...props }) => {
             component="img" 
             alt={title}
             image={image} 
+            loading='lazy'
+            sizes='(max-width: 1080px) 100vw, 1080px'
+            srcSet={srcset}
+            src={src}
           />
           <CardContent >
             <Typography gutterBottom variant="h6" component="h2">

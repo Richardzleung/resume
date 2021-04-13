@@ -42,21 +42,22 @@ const StyledBurger = styled.button`
 // * Small Screen
 const StyledMenu = styled.nav`
   background: ${({ theme }) => theme.base};
-  background-color: inherit;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  padding: 2rem;
-  position: fixed;
+  padding: 0 2rem 2rem;
+  position: absolute;
   left: 0;
   top: 0;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   width: auto;
   z-index: 10;
   a, .navbar-item {
+    border: none;
     cursor: pointer;
+    font: inherit;
     font-size: 2rem;
     text-transform: uppercase;
     padding: 2rem 0;
@@ -69,6 +70,7 @@ const StyledMenu = styled.nav`
   }
   // * largish Screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
+    background-color: inherit;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -96,7 +98,7 @@ const StyledMenu = styled.nav`
       display: inline-block;
       font-size: 1.3em;
       font-weight: 600;
-      letter-spacing: .05rem;
+      letter-spacing: .05em;
       overflow: hidden;
       padding: .5em;
       transition: background-position 275ms ease;

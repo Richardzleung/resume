@@ -36,7 +36,7 @@ const SkillsPage = () => {
 
   // * For larger views--display skills via button
   return (
-    <div className='vh-100 column flex-col-center-X'>
+    <div className='vh-50 column flex-col-center-X' id='technology--container'>
       <h1>Technologies</h1>
       <div className='hide-on-small-screen'>
         <Button isSelected={isFrontEndDisplayActive} onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>

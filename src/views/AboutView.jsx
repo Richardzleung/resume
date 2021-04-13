@@ -2,7 +2,7 @@ import React from 'react';
 import webdeveloper from 'static/images/web-developer.svg';
 
 const AboutPage = React.forwardRef((props, ref) => (
-  <div className='vh-100 column flex-center' ref={ref}>
+  <div className='vh-50 column flex-center' ref={ref}>
     <h3>I am Richard Leung</h3>
     <img src={webdeveloper} alt='web developer image' id='web-developer--image'/>
     <p>

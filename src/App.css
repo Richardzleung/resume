@@ -3,8 +3,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  --bg-primary-color: #6666FF ;
-  --bg-secondary-color: #116ABD 
+  --bg-primary-color: #6666FF;
+  --bg-secondary-color: #116ABD;
+  --bg-tertiary-color: #FFFADA;
 }
 
 html { 
@@ -16,7 +17,7 @@ p {
 }
 
 body {
-  background-color: white;
+  background-color: #FBFCF8;
 }
 
 .App {
@@ -57,6 +58,10 @@ body {
 
 .space-evenly {
   justify-content: space-evenly;
+}
+
+.vh-50 {
+  min-height: 50vh;
 }
 
 .vh-100 {
@@ -144,6 +149,13 @@ body {
   width: 250px;
 }
 
+
+#technology--container {
+  background-color: var(--bg-tertiary-color);
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);;
+  height: auto;
+  padding-top: 5rem;
+}
 
 /* Larger screens */
 @media screen and (min-width: 48em) {

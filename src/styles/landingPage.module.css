@@ -9,24 +9,25 @@
 
 .layout {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1.5fr .75fr;
+  place-items: center;
   text-align: left;
-  position: relative;
-  bottom: 1000px;
+  top: 20%;
+  left: 0;
+  position: absolute;
 }
 
 .titleContainer {
   padding-left: 2rem;
+  position: relative;
 }
 
 .heroTitle {
+  animation: fadeIn 700ms ease-out;
   color: #3a3a3a;
-  display: block;
   font-size: min(10vw, 60px);
   font-weight: 650;
-  height: auto;
   letter-spacing: 2vw;
-  padding-top: 40%;
   z-index: 2;
 }
 
@@ -49,6 +50,22 @@
   z-index: -1;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  85% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 @media screen and (min-width: 48em) {
   .background{
@@ -56,10 +73,17 @@
   }
   .img {
     display: initial;
-    position: relative;
-    top: 50%;
-    height: auto;
-    width: 40%;
+    height: 120%;
+    object-fit: cover;
+    width: 50%;
+  }
+  .layout {
+    left: 10%;
+    top: 12.5%;
+    overflow: hidden;
+  }
+  .titleContainer {
+    padding: 2rem;
   }
 }
 

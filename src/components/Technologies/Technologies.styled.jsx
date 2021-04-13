@@ -4,8 +4,9 @@ import styled from 'styled-components';
 
 import { backEndSkills, frontEndSkills, mobileSkills, databaseSkills } from 'shared/constants';
 
-const List = ({ className, array  }) => {
-  const listItems = array.map(({ label,link = '', icon = '' }) => 
+const List = ({ className, array  }) => (
+  <ul className={className}>
+    {array.map(({ label,link = '', icon = '' }) => 
     <li key={label}>
         <a 
           href={link} 
@@ -18,14 +19,9 @@ const List = ({ className, array  }) => {
           {label} 
         </a>
     </li>
-  );
-
-  return (
-    <ul className={className}>
-      {listItems}
-    </ul>
-  );
-};
+    )}
+  </ul>
+);
 
 List.propTypes = {
   array: PropTypes.array,
@@ -33,32 +29,38 @@ List.propTypes = {
 }
 
 const StyledList = styled(List)`
+  background-color: inherit;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   list-style: none;
   outline: none;
-  width: 90%;
   padding: 0 1em;
-  
-  .skill-item {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  width: 90%;
+
+  li {
     flex: 1 1 50%;
-    flex-wrap: wrap;
-    height: 5rem;
-    font-size: 1.20rem;
-    line-height: 1.5em;
-    margin-top: 3em;
-    padding: 0 .5em;
-    width:auto;
+
+    a {
+      display: grid;
+      height: 5rem;
+      font-size: 1.20rem;
+      line-height: 1.5em;
+      margin-top: 2em;
+      padding: 0 .5em;
+      place-items: center;
+      text-decoration: none;
+      width:auto;
+    }
   }
+  
+  
 
   // * largish screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
-    .skill-item {
+    li {
       flex: 0 1 auto;
+    
     }
   }
 `;
