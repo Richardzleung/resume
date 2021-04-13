@@ -19,7 +19,7 @@ const App = () => {
   const aboutViewRef = useRef();
   const [isLoading, setLoading] = useState(true);
 
-  const fakeRequest = () => new Promise(resolve => setTimeout(() => resolve(), 1500));
+  const fakeRequest = () => new Promise(resolve => setTimeout(() => resolve(), 1250));
   
   useLayoutEffect(() => {
     fakeRequest().then(() => {
@@ -55,12 +55,12 @@ const App = () => {
         <Router>
           <Switch>
             <Route exact path='/404'>
-              <Suspense fallback={<Loading />}>
+              <Suspense fallback=''>
                 <PageNotFound />
               </Suspense>
             </Route>
             <RouteWithNavBar path='/contact'>
-              <Suspense fallback={<Loading />}>
+              <Suspense fallback=''>
                 <ContactForm />
               </Suspense>
             </RouteWithNavBar> 

@@ -8,6 +8,8 @@
   --bg-tertiary-color: #FFFADA;
 }
 
+/** GENERAL STYLES */
+
 html { 
   scroll-behavior: smooth; 
 } 
@@ -20,40 +22,32 @@ body {
   background-color: #FBFCF8;
 }
 
-.App {
-  text-align: center;
-}
 
-.center {
-  margin: auto;
+
+/** UTILITIES */
+.column, .row {
+  display: flex;
 }
 
 .column {
-  display: flex;
   flex-direction: column;
+}
+
+.row {
+  flex-wrap: wrap;
 }
 
 .column > h2 {
   margin-top: 2.5em;
 }
 
-.flex-col-center-X {
-  align-items: center;
-}
-
-.skill-icon {
-  width: 2rem;
-  height: 2rem;
-}
-
+.flex-col-center-X,
 .flex-center-XY {
-  justify-content: center;
   align-items: center;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
+.flex-center-XY{
+  justify-content: center;
 }
 
 .space-evenly {
@@ -76,44 +70,56 @@ body {
   position: relative;
 }
 
+/** STORE PAGES */
 /* Table of contents 
-  * 1. Contact Form
-  * 2. Tooltip
-  * 3. Tilt
+  * 1. App
+  * 2. ContactForm
+  * 3. Footer
+  * 4. Technology Skills
+  * 5. Tooltip
 */
 
-
-/** 2. Contact Form & Page related stuff */
-#contactContainer {
-  min-height: 80vh;
-  padding: 5rem 1rem 1rem;
+/** 1. App */
+.App {
+  text-align: center;
 }
 
-#contactSubtext {
-  margin: 1em;
-}
-
-#contact-form {
-  margin: 0 15rem;
+/** 2. Contact Form */
+#contact--container {
   display: grid;
-  grid-template-areas: 
-    "text text"
-    "message message";
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(64,1.5625%);
 }
 
-#contact-form > input {
-  grid-area: text;
+.contact--message,
+.contact--name,
+.contact--email {
+  grid-column-start: 5;
+  grid-column-end: 61;
 }
 
-#message-field {
-  grid-area: message;
+/** 3. FOOTER */
+#footer--container {
+  background-color: var(--bg-secondary-color);
+  clip-path: polygon(50% 30%, 100% 0, 100% 100%, 0 100%, 0 0);;
+  min-height: 15rem;
+  padding-top: 6rem;
+  overflow: hidden;
+  width: 100%;
 }
 
+/** 4. Technology Skills */
+#technology--container {
+  background-color: var(--bg-tertiary-color);
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);;
+  height: auto;
+  padding-top: 5rem;
+}
+.skill-icon {
+  width: 2rem;
+  height: 2rem;
+}
 
-/** Tooltip*/
-
+/** 5. Tooltip*/
 .tooltip {
   display:inline-block;
   position:relative;
@@ -143,35 +149,41 @@ body {
   display: none;
 }
 
+/*! random image find something to do with this */
 #web-developer--image {
   float: left;
   shape-outside: circle(50%);
   width: 250px;
 }
 
-
-#technology--container {
-  background-color: var(--bg-tertiary-color);
-  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);;
-  height: auto;
-  padding-top: 5rem;
-}
-
-/* Larger screens */
+/** Larger than tablet screens */
 @media screen and (min-width: 48em) {
   /** Tooltip */
   .tooltip:hover .tooltip--bottom {
     display:block;
   }
+
   /** Technologies */
   .hide-on-small-screen {
     visibility: visible;
   }
-  /** Technology button*/
+
+  /** Technology view buttons */
   .tech-btn {
     width: 5rem;
   }
+
   #landingPageBackround {
     clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 77%);
+  }
+
+  /** Contact Form*/
+  .contact--name {
+    grid-column-start: 12;
+    grid-column-end: 32;
+  }
+  .contact--email {
+    grid-column-start: 34;
+    grid-column-end: 54;
   }
 }

@@ -4,9 +4,10 @@ import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import { RiMailSendFill } from "react-icons/ri";
 import TextField from '@material-ui/core/TextField'
+import useWindowSize from 'hooks/useWindowSize';
 
 import ContactService from '../../services/ContactService';
-import { InputContainer, Notification } from './FormElements.styled';
+import { Notification } from './FormElements.styled';
 
 const validationSchema = yup.object({
   name: yup
@@ -76,14 +77,16 @@ const Form = () => {
   return (
     <>
       <form onSubmit={formik.handleSubmit}>
-        <div id='contact-form'>
-          <InputContainer>
+        <div className='vh-100' id='contact--container'>
+          <div className='contact--name'>
             <InputField {...nameFieldProps} />
-          </InputContainer>
-          <InputContainer>
+          </div>
+          <div className='contact--email'>
             <InputField {...emailFieldProps} />
-          </InputContainer>
-          <InputField {...messageFieldProps} />
+          </div>
+          <div className='contact--message'>
+            <InputField {...messageFieldProps} />
+          </div>
         </div>
         <Button 
           style={{ margin: '1em' }}
@@ -102,7 +105,7 @@ const InputField= props => (
   <TextField 
     fullWidth
     InputLabelProps={{
-      shrink: false,
+      shrink: true,
     }}
     margin="normal"
     variant="outlined"
