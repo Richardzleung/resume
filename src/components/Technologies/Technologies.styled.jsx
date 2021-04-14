@@ -6,7 +6,7 @@ import { backEndSkills, frontEndSkills, mobileSkills, databaseSkills } from 'sha
 
 const List = ({ className, array  }) => (
   <ul className={className}>
-    {array.map(({ label,link = '', icon = '', testing='' }) => 
+    {array.map(({ label,link = '', icon = '' }) => 
       <li key={label}>
           <a 
             href={link} 
@@ -17,8 +17,6 @@ const List = ({ className, array  }) => (
           >
             {icon}
             {label}
-            {console.log(icon)} 
-            {console.log({ testing })}
           </a>
       </li>
     )}

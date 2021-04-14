@@ -53,8 +53,8 @@ const StyledMenu = styled.nav`
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   width: auto;
   z-index: 10;
+
   a, .navbar-item {
-    border: none;
     cursor: pointer;
     font: inherit;
     font-size: 2rem;
@@ -67,6 +67,7 @@ const StyledMenu = styled.nav`
     text-decoration: none;
     transition: color 0.3s linear;
   }
+
   // * largish Screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
     background-color: inherit;
@@ -86,6 +87,11 @@ const StyledMenu = styled.nav`
       font-weight: 900;
     }
 
+    button {
+      border: 0;
+      background-color: inherit;
+    }
+
     a, .navbar-item {
       background: linear-gradient(to right, midnightblue, midnightblue 50%, white 50%);
       background-clip: text;
@@ -93,9 +99,8 @@ const StyledMenu = styled.nav`
       background-position: 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      /* color: royalblue; */
       display: inline-block;
-      font-size: 1.3em;
+      font-size: 1.3rem;
       font-weight: 600;
       letter-spacing: .05em;
       overflow: hidden;
