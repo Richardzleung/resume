@@ -1,9 +1,10 @@
 # Welcome! This is my resume
 
-https://rleung-resume.herokuapp.com/
+## live site: https://richzleung.com
 
 ## Features
 * Hosted on Heroku using CI/CD via GitHub Actions
+* https://rleung-resume.herokuapp.com/
 
 ## Languages
 * Javascript (ES6)
