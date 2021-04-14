@@ -1,6 +1,6 @@
 # Welcome! This is my resume
 
-##live site: https://richzleung.com
+## live site: https://richzleung.com
 
 ## Features
 * Hosted on Heroku using CI/CD via GitHub Actions
