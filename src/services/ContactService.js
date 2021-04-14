@@ -1,4 +1,4 @@
-const url = 'https://rleung-resume.herokuapp.com/contact'
+const url = '/contact'
 
 const ContactService = async (data) => {
   console.log('here',{ data });
