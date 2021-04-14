@@ -21,12 +21,10 @@ const loaderAnim = keyframes`
 const Loading = styled.div`
   width: 3em;
   height: 3em;
-  display: grid;
-  place-items: center;
   animation: ${loaderAnim} 1.25s infinite ease-in-out;
+  margin: auto;
   position: relative;
-  top: 50vh;
-  left: 50vw;
+  top: 40vh;
   outline: 1px solid transparent;
   &::before {
     content: '';

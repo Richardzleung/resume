@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledBurger } from './NavBarElements.styled';
+import { StyledBurger } from './NavBarElements.styled.js';
 
 const Burger = props => (
   <StyledBurger {...props}>

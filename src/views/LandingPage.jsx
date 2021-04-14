@@ -2,22 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import HomePageHero from 'styles/landingPage.module.css';
 import heroImage from 'static/images/hero.svg';
-
-import 'styles/scrollDownButton.css';
+import scribble from 'static/images/3.svg';
 
 const HomeBase = ({ scrollToProjectsView }) => {
   return (
-    <section className='relative'>
-      <div className={`column flex-center vh-100 ${HomePageHero.background}`}/>
-      <div className={HomePageHero.scribble}/>
-      <div className={HomePageHero.layout}>
-        <h1 className={HomePageHero.titleContainer}>
-          <span className={HomePageHero.heroTitle}>Front-end Developer</span>
-          <span className={HomePageHero.heroSubTitle}>Hello! My name is Richard and I&apos;m a full-stack web developer.</span>
-        </h1>
-        <img src={heroImage} alt='hero-image' className={HomePageHero.img} aria-label='scribble-image'/>
-      </div>
-      <button className='scroll-down' onClick={scrollToProjectsView}/>
+    <section className='vh-100 grid--col' >
+      <div className={HomePageHero.background}/>
+      <img src={scribble} className={HomePageHero.scribble} alt='scribble-img'/>
+      <h1 className={HomePageHero.titleContainer}>
+        <span className={HomePageHero.heroTitle}>Front-end Developer</span>
+        <span className={HomePageHero.heroSubTitle}>Hello! My name is Richard and I&apos;m a full-stack web developer.</span>
+      </h1>
+      <img src={heroImage} alt='hero-image' className={HomePageHero.img}/>
+      <button className='scroll-down' aria-label='scroll-down-btn' onClick={scrollToProjectsView}/>
     </section>
   );
 };

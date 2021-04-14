@@ -4,10 +4,9 @@ import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import { RiMailSendFill } from "react-icons/ri";
 import TextField from '@material-ui/core/TextField'
-import useWindowSize from 'hooks/useWindowSize';
 
 import ContactService from '../../services/ContactService';
-import { Notification } from './FormElements.styled';
+import { Notification } from './FormElements.styled.js';
 
 const validationSchema = yup.object({
   name: yup

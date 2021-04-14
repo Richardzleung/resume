@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 // import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-import { StyledMenu } from './NavBarElements.styled';
+import { StyledMenu } from './NavBarElements.styled.js';
 import { ScrollItem, MenuItem } from './MenuElements';
 import Burger from './Burger'
 import useOutsideClick from 'hooks/useOutsideClick';

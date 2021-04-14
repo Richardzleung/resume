@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// * Small Screen
 const StyledBurger = styled.button`
   background-color: inherit;
   border: none;

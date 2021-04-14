@@ -68,25 +68,25 @@ const handles = [
     label: "GitHub",
     link: "https://github.com/Richardzleung",
     title: "Richardzleung",
-    icon: <FiGithub size='32px'/>
+    icon: <FiGithub size='32px' title='Github logo' style={{ color: 'whitesmoke' }}/>
   },
   {
     label: "LinkedIn",
     link: "https://www.linkedin.com/in/richardzleung/",
     title: "Richardzleung",
-    icon: <FiLinkedin size='32px'/>
+    icon: <FiLinkedin size='32px' title='Linkedin logo' style={{ color: 'whitesmoke' }}/>
   },
   {
     label: "Email",
     link: "mailto:richardzleung@gmail.com",
     title: "richardzleung@gmail.com",
-    icon: <FiMail size='32px'/>
+    icon: <FiMail size='32px' title='Email logo' style={{ color: 'whitesmoke' }}/>
   },
   {
     label: "Facebook",
     link: "https://www.facebook.com/richardleung13",
     title: "RichardLeung13",
-    icon: <FiFacebook size='32px'/>
+    icon: <FiFacebook size='32px' title='Facebook logo' style={{ color: 'whitesmoke' }}/>
   }
 ];
 
@@ -95,33 +95,34 @@ const frontEndSkills = [
   {
     label: 'Javascript',
     link: 'https://github.com/Richardzleung/resume',
-    icon: <SiJavascript style={{ color: '#f0db4f' }} size='32px'/>
+    icon: <SiJavascript style={{ color: '#f0db4f' }} size='32px' title='Javascript logo'/>,
+    testing: SiJavascript.src
   },
   {
     label: 'Typescript',
     link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack',
-    icon: <SiTypescript style={{ color: '#007acc' }} size='32px'/>
+    icon: <SiTypescript style={{ color: '#007acc' }} size='32px' title='Typescipt logo'/>
   },
   {
     label: 'CSS3',
     link: 'https://github.com/Richardzleung/resume',
-    icon: <img src={css} alt='css' className='skill-icon'/>
+    icon: <img src={css} alt='CSS' className='skill-icon'/>
   },
   {
     label: 'HTML5',
-    link: 'https://github.com/Richardzleung/resume',
-    icon: <img src={html} alt='html5-icon' className='skill-icon'/>
+    logo: 'https://github.com/Richardzleung/resume',
+    icon: <img src={html} alt='HTML5 logo' className='skill-icon'/>
 
   },
   {
     label: 'React',
     link: 'https://github.com/Richardzleung/resume',
-    icon: <SiReact style={{ color: '#61DBFB' }} size='32px'/>
+    icon: <SiReact style={{ color: '#61DBFB' }} size='32px' title='React logo'/>
   },
   {
     label: 'Redux',
     link: 'https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux',
-    icon: <SiRedux style={{ color: '#764abc' }} size='32px'/>
+    icon: <SiRedux style={{ color: '#764abc' }} size='32px' title='Redux logo'/>
   },
   {
     label: 'Testing Library',
@@ -140,12 +141,12 @@ const backEndSkills = [
   {
     label: 'Algorithms',
     link: 'https://www.codewars.com/users/Richardzleung',
-    icon: <SiCodewars style={{ color: '#a42d1e' }} size='32px'/>
+    icon: <SiCodewars style={{ color: '#a42d1e' }} size='32px' title='Code Wars logo'/>
   }, 
   {
     label: 'Jest',
     link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
-    icon: <SiJest style={{ color: '#944058' }} size='32px'/>
+    icon: <SiJest style={{ color: '#944058' }} size='32px' title='Jest logo'/>
   },
 ];
 
@@ -157,7 +158,7 @@ const databaseSkills = [
   },
   {
     label: 'PostgreSQL',
-    icon: <SiPostgresql size='32px' style={{ color: '#336791' }}/>
+    icon: <SiPostgresql size='32px' style={{ color: '#336791' }} title='Postgresql logo'/>
   }
 ];
 
@@ -165,7 +166,7 @@ const mobileSkills = [
   {
     label: 'React Native',
     link: 'https://github.com/Richardzleung/rate-repository-app',
-    icon: <SiReact size='32px'/>
+    icon: <SiReact size='32px' title='React Native logo'/>
   },
 ];
 

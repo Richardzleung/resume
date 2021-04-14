@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -59,20 +60,18 @@ const MyCard = ({ projectID, ...props }) => {
   )
 }
 
-// eslint-disable-next-line react/prop-types
-const RenderDependencyList = ({ dependencyList }) => {
-  // eslint-disable-next-line react/prop-types
-  const listItems = dependencyList.map(dependency => 
-    <li key={dependency}>
-      {dependency}
-    </li>
-  );
+const RenderDependencyList = ({ dependencyList }) => (
+  <ul className='row'>
+    {dependencyList.map(dependency => 
+      <li key={dependency} className='dependency--item'>
+        {dependency}
+      </li>
+      )}
+  </ul>
+);
 
-  return (
-    <ul className='row'>
-      {listItems}
-    </ul>
-  );
+RenderDependencyList.propTypes = {
+  dependencyList: PropTypes.array.isRequired
 };
 
 export default MyCard;

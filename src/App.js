@@ -1,4 +1,4 @@
-import React, { useRef, Suspense, useState, useLayoutEffect } from 'react';
+import React, { useRef, Suspense, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import smoothscroll from 'smoothscroll-polyfill';
 
@@ -21,7 +21,7 @@ const App = () => {
 
   const fakeRequest = () => new Promise(resolve => setTimeout(() => resolve(), 1250));
   
-  useLayoutEffect(() => {
+  useEffect(() => {
     fakeRequest().then(() => {
       setLoading(!isLoading);
     })

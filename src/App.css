@@ -25,6 +25,18 @@ body {
 
 
 /** UTILITIES */
+.grid--col,
+.grid--row {
+  display: grid;
+}
+
+.grid--col {
+  grid-template-columns: repeat(64,1.5625%);
+}
+.grid--row {
+  grid-template-rows: repeat(64,1.5625%);
+}
+
 .column, .row {
   display: flex;
 }
@@ -147,6 +159,45 @@ body {
 
 .tooltip:hover .tooltip--bottom {
   display: none;
+}
+
+/** 6. Scroll Down btn */
+.scroll-down {
+  animation: bounce 1s infinite alternate cubic-bezier(.22,.61,.36,1);
+  border: 2px solid rgb(7, 7, 7);
+  border-radius: 100vh;
+  cursor: pointer;
+  height: 32px;
+  grid-column-start: 1;
+  grid-column-end: 64;
+  justify-self: center;
+  width: 32px;
+}
+
+.scroll-down:before {
+  border: 2px solid rgb(3, 3, 3);
+  border-width: 0 0 2px 2px;
+  content: "";
+  height: 12px;
+  left: calc(50% - 6px);
+  position: absolute;
+  top: calc(50% - 8px);
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+/** 7. Card*/
+.dependency--item {
+  margin: .25rem 1rem;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
 }
 
 /*! random image find something to do with this */

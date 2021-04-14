@@ -6,19 +6,21 @@ import { backEndSkills, frontEndSkills, mobileSkills, databaseSkills } from 'sha
 
 const List = ({ className, array  }) => (
   <ul className={className}>
-    {array.map(({ label,link = '', icon = '' }) => 
-    <li key={label}>
-        <a 
-          href={link} 
-          target='blank' 
-          rel="noopener noreferrer"
-          title={link}
-          className='skill-item'
-        >
-          {icon}
-          {label} 
-        </a>
-    </li>
+    {array.map(({ label,link = '', icon = '', testing='' }) => 
+      <li key={label}>
+          <a 
+            href={link} 
+            target='blank' 
+            rel="noopener noreferrer"
+            title={link}
+            className='skill-item'
+          >
+            {icon}
+            {label}
+            {console.log(icon)} 
+            {console.log({ testing })}
+          </a>
+      </li>
     )}
   </ul>
 );
@@ -40,7 +42,6 @@ const StyledList = styled(List)`
 
   li {
     flex: 1 1 50%;
-
     a {
       display: grid;
       height: 5rem;
@@ -53,24 +54,17 @@ const StyledList = styled(List)`
       width:auto;
     }
   }
-  
-  
-
   // * largish screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
     li {
       flex: 0 1 auto;
-    
     }
   }
 `;
 
 const FrontEndSkillsList = () => <StyledList array={frontEndSkills}/>
-
 const BackEndSkillsList = () => <StyledList array={backEndSkills}/>
-
 const MobileSkillsList =  () => <StyledList array={mobileSkills}/>
-
 const DatabaseSkillsList = () => <StyledList array={databaseSkills}/>
 
 export { 
