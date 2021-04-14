@@ -1,5 +1,6 @@
 # Welcome! This is my resume
 
+this ones faster-> https://richzleung.com
 https://rleung-resume.herokuapp.com/
 
 ## Features
