@@ -50,7 +50,7 @@ const NavBar = ({ scrollToAboutView, scrollToProjectsView }) => {
         </ScrollItem>
         <MenuItem 
           aria-label='my blog'
-          href='/'
+          href='https://richardzleung.wordpress.com'
           emoji='&#x1F4BB;'
         >
           blog

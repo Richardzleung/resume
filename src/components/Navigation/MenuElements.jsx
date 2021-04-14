@@ -22,11 +22,11 @@ ScrollItem.propTypes = {
 };
 
 // * Seperate from scroll because I want to have contact form that is in a seperate view
-const MenuItem = ({ children, href, emoji }) => {
+const MenuItem = ({ children, href, emoji, ...props }) => {
   // const match = useRouteMatch(href);
   const { isLargishScreen } = useWindowSize();
   return (
-    <a href={href}>
+    <a href={href} {...props}>
       {!isLargishScreen && <span role='img'> {emoji} </span>}
       {children}
     </a>
