@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { handles } from '../../shared/constants';
 import Button from './FooterElements';
