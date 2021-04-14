@@ -46,7 +46,7 @@ const StyledMenu = styled.nav`
   height: 100vh;
   justify-content: center;
   padding: 0 2rem 2rem;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   transition: transform 0.3s ease-out;
@@ -54,7 +54,12 @@ const StyledMenu = styled.nav`
   width: auto;
   z-index: 10;
 
-  a, .navbar-item {
+  button {
+    border: 0;
+    background-color: inherit;
+  }
+
+  a, button, .navbar-item {
     cursor: pointer;
     font: inherit;
     font-size: 2rem;
@@ -67,6 +72,7 @@ const StyledMenu = styled.nav`
     text-decoration: none;
     transition: color 0.3s linear;
   }
+  
 
   // * largish Screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
@@ -86,12 +92,6 @@ const StyledMenu = styled.nav`
       font-size: 2em;
       font-weight: 900;
     }
-
-    button {
-      border: 0;
-      background-color: inherit;
-    }
-
     a, .navbar-item {
       background: linear-gradient(to right, midnightblue, midnightblue 50%, white 50%);
       background-clip: text;
@@ -109,6 +109,9 @@ const StyledMenu = styled.nav`
     }
     a:hover, .navbar-item:hover {
       background-position: 0 100%;
+    }
+    button {
+      padding: 0;
     }
   }
 `;
