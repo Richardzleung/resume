@@ -1,4 +1,4 @@
-const url = '/contact'
+const url = 'https://richzleung.com/contact'
 
 const ContactService = async (data) => {
   console.log('here',{ data });
