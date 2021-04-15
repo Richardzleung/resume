@@ -1,4 +1,4 @@
-POST http://localhost:8080/contact
+POST https://richzleung.com/contact
 Content-Type: application/json
 
 {
