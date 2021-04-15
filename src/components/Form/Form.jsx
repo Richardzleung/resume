@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import { RiMailSendFill } from "react-icons/ri";
 import TextField from '@material-ui/core/TextField'
+import { CSSTransition } from 'react-transition-group';
 
 import ContactService from '../../services/ContactService';
 import { Notification } from './FormElements.styled.js';
@@ -75,28 +76,35 @@ const Form = () => {
 
   return (
     <>
-      <form onSubmit={formik.handleSubmit}>
-        <div className='vh-100' id='contact--container'>
-          <div className='contact--name'>
-            <InputField {...nameFieldProps} />
-          </div>
-          <div className='contact--email'>
-            <InputField {...emailFieldProps} />
-          </div>
-          <div className='contact--message'>
-            <InputField {...messageFieldProps} />
-          </div>
+      <form onSubmit={formik.handleSubmit} className='contact-form--container'>
+        <h4 className='contact--subheader'>Send me a message!</h4>
+        <div className='contact--name'>
+          <InputField {...nameFieldProps} />
         </div>
-        <Button 
-          style={{ margin: '1em' }}
-          color="primary" 
-          variant="contained" 
-          startIcon={<RiMailSendFill />}
-          type="submit">
-          Submit
-        </Button>
+        <div className='contact--email'>
+          <InputField {...emailFieldProps} />
+        </div>
+        <div className='contact--message'>
+          <InputField {...messageFieldProps} />
+        </div>
+        <div className='row flex-center-XY contact--button'>
+          <Button 
+            style={{ margin: '1em' }}
+            color="primary" 
+            variant="contained" 
+            startIcon={<RiMailSendFill />}
+            type="submit">
+            Submit
+          </Button>
+        </div>
       </form>
-      {isFormSubmitted && <Notification />}
+      <CSSTransition
+        in={isFormSubmitted}
+        timeout={400}
+        classNames='techTransitions'
+      >
+        <>{isFormSubmitted && <Notification />}</>
+      </CSSTransition>
     </>
 )};
 

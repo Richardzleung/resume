@@ -3,9 +3,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  --bg-primary-color: #6666FF;
-  --bg-secondary-color: #116ABD;
-  --bg-tertiary-color: #FFFADA;
+  --bg-primary-color: hsl(240, 100%, 70%);
+  --bg-secondary-color: hsl(209, 83%, 40%);
+  --bg-tertiary-color: hsl(52, 100%, 93%);
+  --scroll-down-color: hsl(0, 0%, 0%);
 }
 
 /** GENERAL STYLES */
@@ -15,11 +16,11 @@ html {
 } 
 
 p {
-  max-width: 45ch;
+  width: clamp(45ch, 50%, 75ch);
 }
 
 body {
-  background-color: #FBFCF8;
+  background-color: hsl(75, 40%, 98%);
 }
 
 
@@ -97,9 +98,29 @@ body {
 }
 
 /** 2. Contact Form */
-#contact--container {
+.contact-view--container{
+  background-color: hsla(240, 100%, 70%, 0.651);
+  clip-path: polygon(0px 0px, 100% 0px, 100% 55%, 0 51.12%);
+  padding: 10em 0 40em;
+}
+.contact-form--container {
   display: grid;
   grid-template-columns: repeat(64,1.5625%);
+  /* grid-template-rows: .25fr 1fr; */
+}
+.contact--subheader {
+  grid-column-start: 12;
+  grid-column-end: 54;
+  font-size: 1rem;
+  font-weight: 550;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: .125rem 0;
+}
+.contact--button {
+  grid-column-start: 12;
+  grid-column-end: 54;
 }
 
 .contact--message,
@@ -112,7 +133,7 @@ body {
 /** 3. FOOTER */
 #footer--container {
   background-color: var(--bg-secondary-color);
-  clip-path: polygon(50% 30%, 100% 0, 100% 100%, 0 100%, 0 0);;
+  clip-path: polygon(50% 30%, 100% 0, 100% 100%, 0 100%, 0 0);
   min-height: 15rem;
   padding-top: 6rem;
   overflow: hidden;
@@ -121,8 +142,8 @@ body {
 
 /** 4. Technology Skills */
 #technology--container {
-  background-color: var(--bg-tertiary-color);
-  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);;
+  /* background-color: var(--bg-tertiary-color); */
+  /* clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); */
   height: auto;
   padding-top: 5rem;
 }
@@ -135,7 +156,7 @@ body {
 .tooltip {
   display:inline-block;
   position:relative;
-  border-bottom:1px dotted #666;
+  border-bottom:1px dotted hsl(0, 0%, 40%);
   text-align:left;
 }
 
@@ -145,8 +166,8 @@ body {
   left:50%;
   transform:translate(-50%, 0);
   padding: .5em .75em;
-  color:#FFFFFF;
-  background-color:#888888;
+  color:hsl(0, 0%, 100%);
+  background-color:hsl(0, 0%, 53%);
   font-weight: 650;
   font-size:.8rem;
   border-radius:8px;
@@ -163,8 +184,8 @@ body {
 
 /** 6. Scroll Down btn */
 .scroll-down {
-  animation: bounce 1s infinite alternate cubic-bezier(.22,.61,.36,1);
-  border: 2px solid rgb(7, 7, 7);
+  animation: scroll-bounce 1s infinite alternate cubic-bezier(.22,.61,.36,1);
+  border: 2px solid var(--scroll-down-color);
   border-radius: 100vh;
   cursor: pointer;
   height: 32px;
@@ -175,7 +196,7 @@ body {
 }
 
 .scroll-down:before {
-  border: 2px solid rgb(3, 3, 3);
+  border: 2px solid var(--scroll-down-color);
   border-width: 0 0 2px 2px;
   content: "";
   height: 12px;
@@ -186,12 +207,7 @@ body {
   width: 12px;
 }
 
-/** 7. Card*/
-.dependency--item {
-  margin: .25rem 1rem;
-}
-
-@keyframes bounce {
+@keyframes scroll-bounce {
   from {
     transform: translateY(0);
   }
@@ -199,6 +215,27 @@ body {
     transform: translateY(-20px);
   }
 }
+
+/** 7. Card*/
+.dependency--item {
+  margin: .25rem 1rem;
+}
+
+
+@keyframes tech-bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%)
+  }
+  80% {
+    transform: translateY(7.5%)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
 
 /*! random image find something to do with this */
 #web-developer--image {
@@ -223,18 +260,29 @@ body {
   .tech-btn {
     width: 5rem;
   }
-
+  .techTransitions-enter{
+    opacity: 0;
+  }
+  .techTransitions-enter-active{
+    animation: tech-bounce 500ms ease-in-out;
+  }
   #landingPageBackround {
     clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 77%);
   }
-
+  
   /** Contact Form*/
   .contact--name {
     grid-column-start: 12;
     grid-column-end: 32;
   }
+  
   .contact--email {
     grid-column-start: 34;
     grid-column-end: 54;
+  }
+  .contact--message {
+    grid-column-start: 12;
+    grid-column-end: 54;
+    margin-bottom: 1rem;
   }
 }

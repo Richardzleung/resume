@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+
 import useWindowSize from 'hooks/useWindowSize';
 import Button from 'components/TechButton';
-
 import { 
   FrontEndSkillsList,
   BackEndSkillsList, 
@@ -38,16 +38,16 @@ const SkillsPage = () => {
   return (
     <div className='vh-50 column flex-col-center-X' id='technology--container'>
       <h1>Technologies</h1>
-      <div className='hide-on-small-screen'>
+      <div className='hide-on-small-screen' role='tablist'>
         <Button isSelected={isFrontEndDisplayActive} onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>
         <Button isSelected={isBackEndDisplayActive} onClick={() => setSkillToDisplay('back-end')}>Back-End</Button>
         <Button isSelected={isDatbaseDisplayActive} onClick={() => setSkillToDisplay('database')}>Databases</Button>
         <Button isSelected={isMobileDisplayActive} onClick={() => setSkillToDisplay('mobile')}>Mobile</Button>
       </div>
-      {isFrontEndDisplayActive && <FrontEndSkillsList />}
-      {isBackEndDisplayActive && <BackEndSkillsList />}
-      {isDatbaseDisplayActive && <DatabaseSkillsList />}
-      {isMobileDisplayActive && <MobileSkillsList />}
+      <FrontEndSkillsList on={isFrontEndDisplayActive}/>
+      <BackEndSkillsList on={isBackEndDisplayActive}/>
+      <DatabaseSkillsList on={isDatbaseDisplayActive}/>
+      <MobileSkillsList on={isMobileDisplayActive}/>
     </div>
   );
 };

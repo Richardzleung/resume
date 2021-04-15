@@ -51,6 +51,7 @@ const StyledMenu = styled.nav`
   top: 0;
   transition: transform 0.3s ease-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  scroll-padding: 1rem 0 0 0;
   width: auto;
   z-index: 10;
 
