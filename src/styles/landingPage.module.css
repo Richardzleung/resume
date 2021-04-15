@@ -18,7 +18,7 @@
 .heroTitle {
   animation: fadeIn 700ms ease-out;
   color: black;
-  font-size: min(10vw, 60px);
+  font-size: min(10vw, 75px);
   font-weight: 650;
   letter-spacing: 2vw;
 }
@@ -67,7 +67,7 @@
     grid-column-start: 3;
     grid-column-end: 35;
     position: relative;
-    padding: 5rem 5rem 0 0;
+    padding: 15rem 0 9rem 0;
   }
   .img {
     display: initial;
@@ -77,6 +77,9 @@
     grid-column-start: 35;
     grid-column-end: 64;
     position: relative;
+  }
+  .heroTitle {
+    /* padding-left: 4rem; */
   }
 }
 

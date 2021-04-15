@@ -16,7 +16,8 @@ html {
 } 
 
 p {
-  width: clamp(45ch, 50%, 75ch);
+  text-align: left;
+  width: clamp(45ch, 50%, 55ch);
 }
 
 body {
@@ -59,7 +60,7 @@ body {
   align-items: center;
 }
 
-.flex-center-XY{
+.flex-center-XY {
   justify-content: center;
 }
 
@@ -141,8 +142,8 @@ body {
 }
 
 /** 4. Technology Skills */
-#technology--container {
-  /* background-color: var(--bg-tertiary-color); */
+.technology--container {
+  /* background-color: ; */
   /* clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); */
   height: auto;
   padding-top: 5rem;
@@ -186,6 +187,7 @@ body {
 .scroll-down {
   animation: scroll-bounce 1s infinite alternate cubic-bezier(.22,.61,.36,1);
   border: 2px solid var(--scroll-down-color);
+  background-color: inherit;
   border-radius: 100vh;
   cursor: pointer;
   height: 32px;
@@ -216,16 +218,27 @@ body {
   }
 }
 
-/** 7. Card*/
+/** 7. Projecy & Card*/
+.project--container {
+  background-color: hsl(0, 0%, 93%);
+  padding: 0 5rem 5rem;
+}
+.project--header {
+  padding-top: 2rem;
+}
 .dependency--item {
   margin: .25rem 1rem;
 }
 
+/** 8. About */
+.about--header {
+  margin-top: 1rem;
+}
 
 @keyframes tech-bounce {
   0% {
     opacity: 0;
-    transform: translateY(-100%)
+    transform: translateY(-45%)
   }
   80% {
     transform: translateY(7.5%)
@@ -239,9 +252,8 @@ body {
 
 /*! random image find something to do with this */
 #web-developer--image {
-  float: left;
-  shape-outside: circle(50%);
-  width: 250px;
+  width: 14em;
+  margin:1rem;
 }
 
 /** Larger than tablet screens */
@@ -284,5 +296,10 @@ body {
     grid-column-start: 12;
     grid-column-end: 54;
     margin-bottom: 1rem;
+  }
+
+  /** About view*/
+  .about--text-content {
+    margin-left: 2rem;
   }
 }

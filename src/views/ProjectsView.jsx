@@ -4,8 +4,8 @@ import Card from 'components/Card';
 import projectStyles from 'styles/projectsPage.module.css';
 
 const ProjectsPage = forwardRef((props,ref) => (
-  <div ref={ref} className='vh-100' {...props}>
-    <h3>
+  <div ref={ref} className='vh-100 project--container' {...props}>
+    <h3 className='project--header'>
       Projects
     </h3>
     <div className={projectStyles.grid}>

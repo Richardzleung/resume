@@ -17,15 +17,15 @@ const SkillsPage = () => {
   if(!isLargishScreen) {
     return (
       <div className='vh-100 column flex-col-center-X'>
-        <h1>Technologies</h1>
-        <h2>Front-End</h2>
-        <FrontEndSkillsList />
-        <h2>Back-End</h2>
-        <BackEndSkillsList />
-        <h2>Databases</h2>
-        <DatabaseSkillsList />
-        <h2>Mobile</h2>
-        <MobileSkillsList />
+        <h2>Technologies</h2>
+        <h3>Front-End</h3>
+        <FrontEndSkillsList on={true}/>
+        <h3>Back-End</h3>
+        <BackEndSkillsList on={true}/>
+        <h3>Databases</h3>
+        <DatabaseSkillsList on={true}/>
+        <h3>Mobile</h3>
+        <MobileSkillsList on={true}/>
       </div>
     );
   }
@@ -36,7 +36,7 @@ const SkillsPage = () => {
 
   // * For larger views--display skills via button
   return (
-    <div className='vh-50 column flex-col-center-X' id='technology--container'>
+    <div className='vh-50 column flex-col-center-X technology--container'>
       <h1>Technologies</h1>
       <div className='hide-on-small-screen' role='tablist'>
         <Button isSelected={isFrontEndDisplayActive} onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>
