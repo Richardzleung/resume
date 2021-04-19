@@ -8,6 +8,7 @@ import {
   SiRedux,
   SiJest,
   SiCodewars,
+  SiSass
 } from "react-icons/si";
 import native from 'static/images/rate-repository-thumbnail.svg';
 import smallPatientator from 'static/images/patientator/patientator_cibnxs_c_scale,w_190.png';
@@ -109,11 +110,13 @@ const frontEndSkills = [
     icon: <img src={css} alt='CSS' className='skill-icon'/>,
   },
   {
+    label: 'SASS',
+    icon: <SiSass size='32px' style={{ color: '#cc6699' }} title='SASS logo'/>
+  },
+  {
     label: 'HTML5',
     logo: 'https://github.com/Richardzleung/resume',
     icon: <img src={html} alt='HTML5 logo' className='skill-icon'/>,
-    
-
   },
   {
     label: 'React',
