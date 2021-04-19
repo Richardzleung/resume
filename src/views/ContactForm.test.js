@@ -8,6 +8,6 @@ describe('contact form', function() {
 
     await screen.findByRole('heading', { level: 3 })
 
-    expect(screen.getByRole('heading')).toHaveTextContent('Contact')
+    expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Have a question or want to work together?')
   })
 });
