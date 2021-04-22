@@ -38,7 +38,7 @@ const StyledBurger = styled.button`
   }
 `;
 
-// * Small Screen
+// * Small Screen default
 const StyledMenu = styled.nav`
   background: ${({ theme }) => theme.base};
   display: flex;
@@ -77,13 +77,13 @@ const StyledMenu = styled.nav`
 
   // * largish Screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
-    background-color: inherit;
+    background-color: hsl(240, 100%, 70%);
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
     height: initial;
     right: 0;
-    padding: 0;
+    padding: .25rem;
     transform: translateX(0);
     width: 100%;
 
