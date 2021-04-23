@@ -1,4 +1,4 @@
-const url = 'https://richzleung.com/contact'
+const url = 'https://richleung-8qe3k.ondigitalocean.app'
 
 const ContactService = async (data) => {
   await fetch(url, {
