@@ -8,7 +8,10 @@ const ContactService = async (data) => {
     },
     body: JSON.stringify(data)
   })
-  .then(response => response.json())
+  .then(response => {
+    console.log({ response })
+     return response.json()
+  })
   .then(data => {
     console.log('Success:', data);
   })

@@ -2,22 +2,22 @@ const express = require('express');
 const favicon = require('express-favicon');
 const path = require('path');
 const nodemailer = require('nodemailer'); 
+
 require('dotenv').config()
 
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-
-app.use(express.json())
 app.use(favicon(__dirname + '/build/favicon.ico'));
 app.use(express.static('build'));
+app.use(express.json())
 
 app.get('/ping', (req, res) => {
  return res.send('pong');
 });
 
 app.post('/contact', (req, res) => {
-  const body = JSON.parse(res.body)
+  const body = res.body
   if(!body) {
     return res.status(400).send('Error sending email')
   }
@@ -42,7 +42,7 @@ app.post('/contact', (req, res) => {
       console.log('Email sent: ' + info.response);
     }
   });
-  return res.status(200); 
+  return res.status(200).send('Email Sent!'); 
 });
 
 app.get('/*', function (req, res) {
