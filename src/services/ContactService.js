@@ -1,10 +1,11 @@
-const url = 'https://richleung-8qe3k.ondigitalocean.app'
+const url = 'https://richleung-8qe3k.ondigitalocean.app/contact'
 
 const ContactService = async (data) => {
   await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://richzleung.com/contact'
     },
     body: JSON.stringify(data)
   })
