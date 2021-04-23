@@ -18,6 +18,7 @@ app.get('/ping', (req, res) => {
 
 app.post('/contact', (req, res) => {
   const { name, email, message } = req.body;
+  console.log( { name, email, message });
   const transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
