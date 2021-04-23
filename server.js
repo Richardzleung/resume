@@ -17,8 +17,11 @@ app.get('/ping', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
-  const { name, email, message } = req.body;
-  console.log( { name, email, message });
+  const body = JSON.parse(res.body)
+  if(!body) {
+    return res.status(400).send('Error sending email')
+  }
+  console.log({ body })
   const transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
@@ -29,8 +32,8 @@ app.post('/contact', (req, res) => {
   const mailOptions = {
     from: process.env.EMAIL_USERNAME,
     to: process.env.RECEIVING_EMAIL,
-    subject: `Message from ${name} at ${email}!`,
-    text: message
+    subject: `Message from ${body.name} at ${body.email}!`,
+    text: body.message
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
