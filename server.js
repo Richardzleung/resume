@@ -16,7 +16,7 @@ app.get('/ping', (req, res) => {
  return res.send('pong');
 });
 
-app.post('/contact', (req, res) => {
+app.post('/', (req, res) => {
   const body = req.body
   if(!body) {
     return res.status(400).send('Error sending email')
