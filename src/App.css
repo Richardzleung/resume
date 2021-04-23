@@ -185,7 +185,7 @@ body {
 
 /** 6. Scroll Down btn */
 .scroll-down {
-  animation: scroll-bounce 1s infinite alternate cubic-bezier(.22,.61,.36,1);
+  animation: 1000ms scroll-down-bounce 1000ms infinite alternate cubic-bezier(.22,.61,.36,1);
   border: 2px solid var(--scroll-down-color);
   background-color: inherit;
   border-radius: 100vh;
@@ -193,6 +193,7 @@ body {
   height: 32px;
   grid-column-start: 1;
   grid-column-end: 64;
+  position: relative;
   justify-self: center;
   width: 32px;
 }
@@ -209,13 +210,17 @@ body {
   width: 12px;
 }
 
-@keyframes scroll-bounce {
+@keyframes scroll-down-bounce {
   from {
     transform: translateY(0);
   }
   to {
     transform: translateY(-20px);
   }
+}
+
+@keyframes scroll-down-appear {
+
 }
 
 /** 7. Projecy & Card*/

@@ -27,43 +27,38 @@ const NavBar = ({ scrollToAboutView, scrollToProjectsView }) => {
   };
   
   return (
-   <header>
-    <div ref={clickRef}>
-      <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
-      <StyledMenu open={openMenu}>
-      {/* <p className='logo' onClick={() => history.push('/')}>
-        Richard Leung
-      </p> */}
-        <ScrollItem 
-          aria-label='projects' 
-          emoji='&#128214;'
-          onClick={handleProjectClick}
-        >
-          projects
-        </ScrollItem>
-        <ScrollItem 
-          aria-label='about me' 
-          emoji='&#x1F64B;'
-          onClick={handleAboutClick}
-        >
-          About
-        </ScrollItem>
-        <MenuItem 
-          aria-label='my blog'
-          href='https://richardzleung.wordpress.com'
-          emoji='&#x1F4BB;'
-        >
-          blog
-        </MenuItem>
-        <MenuItem 
-          aria-label='contact me'
-          href='/contact'
-          emoji='&#x1f4e9;'
-        >
-          contact
-        </MenuItem>
-    </StyledMenu>
-    </div>
+   <header ref={clickRef} className='header'>
+    <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+    <StyledMenu open={openMenu}>
+      <ScrollItem 
+        aria-label='projects' 
+        emoji='&#128214;'
+        onClick={handleProjectClick}
+      >
+        projects
+      </ScrollItem>
+      <ScrollItem 
+        aria-label='about me' 
+        emoji='&#x1F64B;'
+        onClick={handleAboutClick}
+      >
+        About
+      </ScrollItem>
+      <MenuItem 
+        aria-label='my blog'
+        href='https://richardzleung.wordpress.com'
+        emoji='&#x1F4BB;'
+      >
+        blog
+      </MenuItem>
+      <MenuItem 
+        aria-label='contact me'
+        href='/contact'
+        emoji='&#x1f4e9;'
+      >
+        contact
+      </MenuItem>
+  </StyledMenu>
   </header>
 )};
 
