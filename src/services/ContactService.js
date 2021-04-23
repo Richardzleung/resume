@@ -1,7 +1,6 @@
 const url = 'https://richzleung.com/contact'
 
 const ContactService = async (data) => {
-  console.log('here',{ data });
   await fetch(url, {
     method: 'POST',
     mode: 'cors',
