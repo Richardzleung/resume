@@ -1,7 +1,7 @@
 name: Health Check
 on:
   schedule:
-    - cron: '30 14 * * *'
+    - cron: '30 14 * * 1'
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -9,4 +9,4 @@ jobs:
       - name: Check the deployed service URL
         uses: jtalk/url-health-check-action@v1.4
         with:
-          url: https://rleung-resume.herokuapp.com
+          url: https://richzleung.com
