@@ -42,7 +42,7 @@ app.post('/', (req, res) => {
       console.log('Email sent: ' + info.response);
     }
   });
-  return res.status(200).send('Email Sent!'); 
+  return res.status(200).send({ status: 'Email Sent!' }); 
 });
 
 app.get('/*', function (req, res) {

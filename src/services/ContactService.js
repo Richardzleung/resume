@@ -10,7 +10,6 @@ const ContactService = async (data) => {
     body: JSON.stringify(data)
   })
   .then(response => {
-    console.log({ response })
      return response.json()
   })
   .then(data => {
