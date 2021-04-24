@@ -69,25 +69,25 @@ const handles = [
     label: "GitHub",
     link: "https://github.com/Richardzleung",
     title: "Richardzleung",
-    icon: <FiGithub size='32px' title='Github logo' style={{ color: 'whitesmoke' }}/>
+    icon: <FiGithub size='32px' title='Github logo' />
   },
   {
     label: "LinkedIn",
     link: "https://www.linkedin.com/in/richardzleung/",
     title: "Richardzleung",
-    icon: <FiLinkedin size='32px' title='Linkedin logo' style={{ color: 'whitesmoke' }}/>
+    icon: <FiLinkedin size='32px' title='Linkedin logo' />
   },
   {
     label: "Email",
     link: "mailto:richardzleung@gmail.com",
     title: "richardzleung@gmail.com",
-    icon: <FiMail size='32px' title='Email logo' style={{ color: 'whitesmoke' }}/>
+    icon: <FiMail size='32px' title='Email logo' />
   },
   {
     label: "Facebook",
     link: "https://www.facebook.com/richardleung13",
     title: "RichardLeung13",
-    icon: <FiFacebook size='32px' title='Facebook logo' style={{ color: 'whitesmoke' }}/>
+    icon: <FiFacebook size='32px' title='Facebook logo'/>
   }
 ];
 
@@ -97,42 +97,49 @@ const frontEndSkills = [
     label: 'Javascript',
     link: 'https://github.com/Richardzleung/resume',
     icon: <SiJavascript style={{ color: '#f0db4f' }} size='32px' title='Javascript logo'/>,
+    style: { animationDelay: '0ms' }
   },
   {
     label: 'Typescript',
     link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack',
     icon: <SiTypescript style={{ color: '#007acc' }} size='32px' title='Typescipt logo'/>,
-    
+    style: { animationDelay: '100ms' }
   },
   {
     label: 'CSS3',
     link: 'https://github.com/Richardzleung/resume',
     icon: <img src={css} alt='CSS' className='skill-icon'/>,
+    style: { animationDelay: '200ms' }
   },
   {
-    label: 'SASS',
-    icon: <SiSass size='32px' style={{ color: '#cc6699' }} title='SASS logo'/>
+    label: 'Sass',
+    icon: <SiSass size='32px' style={{ color: '#cc6699' }} title='SASS logo'/>,
+    style: { animationDelay: '300ms' }
   },
   {
     label: 'HTML5',
     logo: 'https://github.com/Richardzleung/resume',
     icon: <img src={html} alt='HTML5 logo' className='skill-icon'/>,
+    style: { animationDelay: '400ms' }
   },
   {
     label: 'React',
     link: 'https://github.com/Richardzleung/resume',
     icon: <SiReact style={{ color: '#61DBFB' }} size='32px' title='React logo'/>,
+    style: { animationDelay: '500ms' }
   },
   {
     label: 'Redux',
     link: 'https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux',
     icon: <SiRedux style={{ color: '#764abc' }} size='32px' title='Redux logo'/>,
+    style: { animationDelay: '600ms' }
     
   },
   {
     label: 'Testing Library',
     link: 'https://github.com/Richardzleung/resume',
     icon: <img src={octupus} alt='octopus-icon' className='skill-icon'/>,
+    style: { animationDelay: '700ms' }
   }
   
 ];
@@ -142,16 +149,19 @@ const backEndSkills = [
     label: 'Express',
     link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
     icon: <img src={expressIcon} alt='express-icon' className='skill-icon'/>,
+    style: { animationDelay: '0ms' }
   },
   {
     label: 'Algorithms',
     link: 'https://www.codewars.com/users/Richardzleung',
     icon: <SiCodewars style={{ color: '#a42d1e' }} size='32px' title='Code Wars logo'/>,
+    style: { animationDelay: '200ms' }
   }, 
   {
     label: 'Jest',
     link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
     icon: <SiJest style={{ color: '#944058' }} size='32px' title='Jest logo'/>,
+    style: { animationDelay: '400ms' }
   },
 ];
 
@@ -160,10 +170,12 @@ const databaseSkills = [
     label: 'MongoDB',
     link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
     icon: <img src={mongoDB} alt='mongoDB-icon' className='skill-icon'/>,
+    style: { animationDelay: '0ms' }
   },
   {
     label: 'PostgreSQL',
     icon: <SiPostgresql size='32px' style={{ color: '#336791' }} title='Postgresql logo'/>,
+    style: { animationDelay: '250ms' }
   }
 ];
 
@@ -172,6 +184,7 @@ const mobileSkills = [
     label: 'React Native',
     link: 'https://github.com/Richardzleung/rate-repository-app',
     icon: <SiReact size='32px' title='React Native logo'/>,
+    style: { animationDelay: '0ms' }
   },
 ];
 

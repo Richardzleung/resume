@@ -43,7 +43,7 @@ const StyledMenu = styled.nav`
   background: ${({ theme }) => theme.base};
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   padding: 0 2rem 2rem;
   position: fixed;
@@ -81,7 +81,7 @@ const StyledMenu = styled.nav`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
-    height: initial;
+    min-height: initial;
     right: 0;
     padding: .25rem;
     transform: translateX(0);
