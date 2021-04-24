@@ -19,13 +19,13 @@ const SkillsPage = () => {
       <div className='vh-100 column flex-col-center-X'>
         <h2>Technologies</h2>
         <h3>Front-End</h3>
-        <FrontEndSkillsList on={true}/>
+        <FrontEndSkillsList/>
         <h3>Back-End</h3>
-        <BackEndSkillsList on={true}/>
+        <BackEndSkillsList/>
         <h3>Databases</h3>
-        <DatabaseSkillsList on={true}/>
+        <DatabaseSkillsList/>
         <h3>Mobile</h3>
-        <MobileSkillsList on={true}/>
+        <MobileSkillsList/>
       </div>
     );
   }
@@ -39,15 +39,15 @@ const SkillsPage = () => {
     <div className='vh-50 column flex-col-center-X technology--container'>
       <h1>Technologies</h1>
       <div className='hide-on-small-screen' role='tablist'>
-        <Button isSelected={isFrontEndDisplayActive} onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>
-        <Button isSelected={isBackEndDisplayActive} onClick={() => setSkillToDisplay('back-end')}>Back-End</Button>
-        <Button isSelected={isDatbaseDisplayActive} onClick={() => setSkillToDisplay('database')}>Databases</Button>
-        <Button isSelected={isMobileDisplayActive} onClick={() => setSkillToDisplay('mobile')}>Mobile</Button>
+        <Button onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>
+        <Button onClick={() => setSkillToDisplay('back-end')}>Back-End</Button>
+        <Button onClick={() => setSkillToDisplay('database')}>Databases</Button>
+        <Button onClick={() => setSkillToDisplay('mobile')}>Mobile</Button>
       </div>
-      <FrontEndSkillsList on={isFrontEndDisplayActive}/>
-      <BackEndSkillsList on={isBackEndDisplayActive}/>
-      <DatabaseSkillsList on={isDatbaseDisplayActive}/>
-      <MobileSkillsList on={isMobileDisplayActive}/>
+      {isFrontEndDisplayActive && <FrontEndSkillsList />}
+      {isBackEndDisplayActive && <BackEndSkillsList />}
+      {isDatbaseDisplayActive && <DatabaseSkillsList />}
+      {isMobileDisplayActive && <MobileSkillsList />}
     </div>
   );
 };
