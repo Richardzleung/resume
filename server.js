@@ -19,7 +19,7 @@ app.get('/ping', (req, res) => {
 app.post('/', (req, res) => {
   const body = req.body
   if(!body) {
-    return res.status(400).send('Error sending email')
+    return res.status(400).send({ error: 'Error sending email' })
   }
   console.log({ body })
   const transporter = nodemailer.createTransport({

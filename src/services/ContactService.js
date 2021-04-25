@@ -5,7 +5,7 @@ const ContactService = async (data) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': 'https://richzleung.com/contact'
+      'Access-Control-Allow-Origin': 'https://richzleung.com'
     },
     body: JSON.stringify(data)
   })
