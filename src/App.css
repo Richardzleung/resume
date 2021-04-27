@@ -66,9 +66,10 @@
 */
 
 /** 1. App */
-.App {
-  text-align: center;
-}
+/* .App {
+  display: flex;
+  flex-direction: column;
+} */
 
 /** 2. Contact Form */
 .contact-view--container{
