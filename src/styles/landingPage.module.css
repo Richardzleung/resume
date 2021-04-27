@@ -32,17 +32,16 @@
   grid-column-start: 3;
   grid-column-end: 61;
 }
+.name,
+.message,
+.about {
+  display:block;
+}
 
 .titleContainer {
   position: relative;
   top: 27.5%;
   z-index: 50;
-}
-
-.name,
-.message,
-.about {
-  display:block;
 }
 
 .name {
@@ -67,6 +66,18 @@
   letter-spacing: .1ch;
   line-height: 1.25rem;
   padding-bottom: 1rem;
+}
+
+.blog {
+  text-decoration: none;
+}
+.blog:visited {
+  color: crimson;
+}
+.blog:focus {
+  box-shadow: 
+    0 0 0 5px whitesmoke
+    0 0 0 10px cornflowerblue;
 }
 
 @keyframes fadeIn--left {
@@ -110,5 +121,6 @@
   .about {
     position: relative;
     bottom: 25vh;
+    z-index: 100;
   }
 }
