@@ -77,7 +77,8 @@ const StyledMenu = styled.nav`
 
   // * largish Screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
-    background-color: hsl(240, 100%, 70%);
+    /* background-color: hsl(240, 100%, 70%); */
+    background-color: initial;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
