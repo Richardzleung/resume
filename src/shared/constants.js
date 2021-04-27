@@ -95,19 +95,16 @@ const handles = [
 const frontEndSkills = [
   {
     label: 'Javascript',
-    link: 'https://github.com/Richardzleung/resume',
     icon: <SiJavascript style={{ color: '#f0db4f' }} size='32px' title='Javascript logo'/>,
     style: { animationDelay: '0ms' }
   },
   {
     label: 'Typescript',
-    link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack',
     icon: <SiTypescript style={{ color: '#007acc' }} size='32px' title='Typescipt logo'/>,
     style: { animationDelay: '100ms' }
   },
   {
     label: 'CSS3',
-    link: 'https://github.com/Richardzleung/resume',
     icon: <img src={css} alt='CSS' className='skill-icon'/>,
     style: { animationDelay: '200ms' }
   },
@@ -124,20 +121,17 @@ const frontEndSkills = [
   },
   {
     label: 'React',
-    link: 'https://github.com/Richardzleung/resume',
     icon: <SiReact style={{ color: '#61DBFB' }} size='32px' title='React logo'/>,
     style: { animationDelay: '500ms' }
   },
   {
     label: 'Redux',
-    link: 'https://github.com/Richardzleung/Fullstack-Open/blob/master/part6/anecdotes-redux',
     icon: <SiRedux style={{ color: '#764abc' }} size='32px' title='Redux logo'/>,
     style: { animationDelay: '600ms' }
     
   },
   {
     label: 'Testing Library',
-    link: 'https://github.com/Richardzleung/resume',
     icon: <img src={octupus} alt='octopus-icon' className='skill-icon'/>,
     style: { animationDelay: '700ms' }
   }
@@ -147,19 +141,16 @@ const frontEndSkills = [
 const backEndSkills = [
   {
     label: 'Express',
-    link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
     icon: <img src={expressIcon} alt='express-icon' className='skill-icon'/>,
     style: { animationDelay: '0ms' }
   },
   {
     label: 'Algorithms',
-    link: 'https://www.codewars.com/users/Richardzleung',
     icon: <SiCodewars style={{ color: '#a42d1e' }} size='32px' title='Code Wars logo'/>,
     style: { animationDelay: '200ms' }
   }, 
   {
     label: 'Jest',
-    link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
     icon: <SiJest style={{ color: '#944058' }} size='32px' title='Jest logo'/>,
     style: { animationDelay: '400ms' }
   },
@@ -168,7 +159,6 @@ const backEndSkills = [
 const databaseSkills = [
   {
     label: 'MongoDB',
-    link: 'https://github.com/Richardzleung/Fullstack-Open/tree/master/part5',
     icon: <img src={mongoDB} alt='mongoDB-icon' className='skill-icon'/>,
     style: { animationDelay: '0ms' }
   },
@@ -182,7 +172,6 @@ const databaseSkills = [
 const mobileSkills = [
   {
     label: 'React Native',
-    link: 'https://github.com/Richardzleung/rate-repository-app',
     icon: <SiReact size='32px' title='React Native logo'/>,
     style: { animationDelay: '0ms' }
   },
