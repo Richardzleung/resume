@@ -7,7 +7,6 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import ProjectsView from './views/ProjectsView';
 import Loading from 'components/Loading';
-import AboutView from 'views/AboutView';
 import Technologies from 'views/TechnicalSkills';
 import './App.css';
 
@@ -16,7 +15,6 @@ const PageNotFound = React.lazy(() => import('./views/PageNotFound'));
 
 const App = () => {
   const projectViewRef = useRef();
-  const aboutViewRef = useRef();
   const [isLoading, setLoading] = useState(true);
 
   const fakeRequest = () => new Promise(resolve => setTimeout(() => resolve(), 1250));
@@ -36,41 +34,28 @@ const App = () => {
     inline: 'start', 
     behavior: 'smooth' 
   });
-  const scrollToAboutView = () => aboutViewRef.current.scrollIntoView({ 
-    inline:'start', 
-    behavior: 'smooth' 
-  });
-  // eslint-disable-next-line react/prop-types
-  const RouteWithNavBar = ({ children,  ...rest }) => (
-    <Route {...rest}>
-      <Navigation 
-        scrollToProjectsView={scrollToProjectsView}
-        scrollToAboutView={scrollToAboutView}/>
-      {children}
-    </Route>
-  );
 
   return (
     <div className="App">
         <Router>
+          <Navigation scrollToProjectsView={scrollToProjectsView}/>
           <Switch>
+            <Route path='/contact'>
+              <Suspense fallback=''>
+                <ContactForm />
+              </Suspense>
+            </Route> 
+            <Route exact path='/' >
+              <HomeBase scrollToProjectsView={scrollToProjectsView}/>
+              <ProjectsView ref={projectViewRef}/>
+              <Technologies />
+              <Footer/>
+            </Route>
             <Route exact path='/404'>
               <Suspense fallback=''>
                 <PageNotFound />
               </Suspense>
             </Route>
-            <RouteWithNavBar path='/contact'>
-              <Suspense fallback=''>
-                <ContactForm />
-              </Suspense>
-            </RouteWithNavBar> 
-            <RouteWithNavBar exact path='/' >
-              <HomeBase scrollToProjectsView={scrollToProjectsView}/>
-              <ProjectsView ref={projectViewRef}/>
-              <Technologies />
-              <AboutView ref={aboutViewRef}/>
-              <Footer/>
-            </RouteWithNavBar>
             <Redirect to='/404' />
           </Switch>
         </Router>
