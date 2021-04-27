@@ -7,19 +7,11 @@ import { backEndSkills, frontEndSkills, mobileSkills, databaseSkills } from 'sha
 // * renders the list
 const List = ({ className, array, ...props }) => (
   <ul className={className} {...props} >
-    {array.map(({ label,link ='add link', icon, style }, i) => (
+    {array.map(({ label, icon, style }, i) => (
     // i know this index is technically bad for keys but i ain't modifying the array so its ok
       <li key={i} style={style}>
         {icon}
-        <a
-          href={link} 
-          target='blank' 
-          rel="noopener noreferrer"
-          title={link}
-          className='skill-item'
-        >
-          {label}
-        </a>
+        {label}
       </li>
     ))}
   </ul>
@@ -49,7 +41,7 @@ const StyledList = styled(List)`
   justify-content: space-evenly;
   list-style: none;
   outline: none;
-  padding: 0 1em;
+  padding: 1rem 1rem 2rem;
   width: 90%;
 
   li {
@@ -59,19 +51,14 @@ const StyledList = styled(List)`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top:3rem;
-    a {
-      padding: 0 .5em;
-      place-items: center;
-      text-decoration: none;
-      width:auto;
-    }
+    padding: 1rem 0;
   }
   // * largish screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
     li {
       flex: 0 1 auto;
       animation: ${appear} 1000ms backwards ease-out;
+      padding-bottom:3rem;
     }
   }
 `;
