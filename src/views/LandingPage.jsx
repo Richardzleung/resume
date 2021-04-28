@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import theme from 'styles/landingPage.module.css';
-import background from 'static/images/landingBackground.svg';
 import scribble from 'static/images/3.svg';
 import scribble2 from 'static/images/82.svg'
 
-// TODO get this animation working
 const HomeBase = ({ scrollToProjectsView }) => (
   <>
     <section className={`vh-100 grid--col ${theme.background}`} >

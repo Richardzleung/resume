@@ -5,7 +5,7 @@ import Button from './FooterElements';
 
 const Footer = () => {
   return (
-    <div id='footer--container'>
+    <div className='footer--container'>
       <div className='row space-evenly'>
         {handles.map(({ label, link, title, icon }) => (
           <Button

@@ -7,8 +7,6 @@ p {
   width: clamp(45ch, 50%, 55ch);
 }
 
-
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

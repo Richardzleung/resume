@@ -76,8 +76,7 @@ const Form = () => {
 
   return (
     <>
-      <form onSubmit={formik.handleSubmit} className='contact-form--container'>
-        <h4 className='contact--subheader'>Send me a message!</h4>
+      <form onSubmit={formik.handleSubmit} className='grid--col'>
         <div className='contact--name'>
           <InputField {...nameFieldProps} />
         </div>

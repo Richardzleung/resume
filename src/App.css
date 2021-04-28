@@ -1,299 +1,280 @@
+@keyframes tech-bounce {
+	0% {
+		opacity: 0;
+		transform: translateY(-45%)
+}
+	80% {
+		transform: translateY(7.5%)
+}
+	100% {
+		opacity: 1;
+		transform: translateY(0)
+  }
+}
+@keyframes scroll-down-bounce {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-20px);
+	}
+}
+@keyframes scroll-down--appear {
+	from {
+		opacity: 0;
+		transform: translateY(50%);
+	}
+	to {
+		opacity: 1;
+		transform:translateY(0);
+	}
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 /** UTILITIES */
-.grid--col,
-.grid--row {
-  display: grid;
+.grid--col,.grid--row {
+	display: grid;
 }
-
 .grid--col {
-  grid-template-columns: repeat(64,1.5625%);
+	grid-template-columns: repeat(64,1.5625%);
 }
 .grid--row {
-  grid-template-rows: repeat(64,1.5625%);
+	grid-template-rows: repeat(64,1.5625%);
 }
 
 .column, .row {
-  display: flex;
+	display: flex;
 }
-
 .column {
-  flex-direction: column;
+	flex-direction: column;
 }
-
 .row {
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 }
-
 .column > h2 {
-  margin-top: 2.5em;
+	margin-top: 2.5em;
 }
 
-.flex-col-center-X,
-.flex-center-XY {
-  align-items: center;
+.flex-col-center-X,.flex-center-XY {
+	align-items: center;
 }
-
 .flex-center-XY {
-  justify-content: center;
+	justify-content: center;
 }
 
 .space-evenly {
-  justify-content: space-evenly;
+	justify-content: space-evenly;
 }
 
 .vh-50 {
-  min-height: 50vh;
+	min-height: 50vh;
 }
-
 .vh-100 {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 .hide-on-small-screen {
-  visibility: hidden;
+	visibility: hidden;
 }
 
-.relative {
-  position: relative;
+.relative,.tooltip,.scroll-down,.scroll-down--container {
+	position: relative;
 }
 
-/** STORE PAGES */
-/* Table of contents 
-  * 1. App
-  * 2. ContactForm
-  * 3. Footer
-  * 4. Technology Skills
-  * 5. Tooltip
+/** Table of contents
+1. App
+2. ContactForm
+3. Footer
+4. Technology Skills
+5. Tooltip
 */
 
 /** 1. App */
-/* .App {
-  display: flex;
-  flex-direction: column;
+	/* display: flex;
+	flex-direction: column;
 } */
 
 /** 2. Contact Form */
 .contact-view--container{
-  background-color: hsla(240, 100%, 70%, 0.651);
-  clip-path: polygon(0px 0px, 100% 0px, 100% 55%, 0 51.12%);
-  padding: 10em 0 40em;
+  animation: gradient 60s ease-in infinite;
+  background: 
+    linear-gradient(217deg, #88443F 0%, #81817F 20.71%,#6666FF 50%, #3CB89C 75%, #C79E42 100%);
+  background-size: 200% 200%;
+  height: 100vh;
+	/* clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); */
+  padding-top: 4rem;
+  text-align: center;
+	width: 100vw;
 }
-.contact-form--container {
-  display: grid;
-  grid-template-columns: repeat(64,1.5625%);
-  /* grid-template-rows: .25fr 1fr; */
-}
-.contact--subheader {
-  grid-column-start: 12;
-  grid-column-end: 54;
-  font-size: 1rem;
-  font-weight: 550;
-  text-align: left;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: .125rem 0;
+.contact--header {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: .25ch;
+  line-height: 2rem;
+  padding: 1rem 1rem 2rem;
+  text-shadow: 1px 1px #ff073a
 }
 .contact--button {
-  grid-column-start: 12;
-  grid-column-end: 54;
+	grid-column-start: 12;
+	grid-column-end: 54;
 }
-
-.contact--message,
-.contact--name,
-.contact--email {
-  grid-column-start: 5;
-  grid-column-end: 61;
+.contact--message,.contact--name,.contact--email {
+	grid-column-start: 5;
+	grid-column-end: 61;
 }
-
 /** 3. FOOTER */
-#footer--container {
-  background-color: var(--bg-secondary-color);
-  clip-path: polygon(50% 30%, 100% 0, 100% 100%, 0 100%, 0 0);
-  min-height: 15rem;
-  padding-top: 6rem;
-  overflow: hidden;
-  width: 100%;
+.footer--container {
+	background-color: var(--bg-primary-color);
+	clip-path: polygon(50% 30%, 100% 0, 100% 100%, 0 100%, 0 0);
+	min-height: 15rem;
+	padding-top: 6rem;
+	overflow: hidden;
+	width: 100%;
 }
-
 /** 4. Technology Skills */
 .technology--container {
-  /* background-color: ; */
-  /* clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); */
-  height: auto;
-  padding-top: 5rem;
+	/* background-color: ;
+	*/
+	/* clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+	*/
+	height: auto;
+	padding-top: 5rem;
 }
 .skill-icon {
-  width: 2rem;
-  height: 2rem;
+	width: 2rem;
+	height: 2rem;
 }
-
 /** 5. Tooltip*/
 .tooltip {
-  display:inline-block;
-  position:relative;
-  border-bottom:1px dotted hsl(0, 0%, 40%);
-  text-align:left;
+	display:inline-block;
+	border-bottom:1px dotted hsl(0, 0%, 40%);
+	text-align:left;
 }
-
 .tooltip .tooltip--bottom {
-  width: fit-content; 
-  top:40px;
-  left:50%;
-  transform:translate(-50%, 0);
-  padding: .5em .75em;
-  color:hsl(0, 0%, 100%);
-  background-color:hsl(0, 0%, 53%);
-  font-weight: 650;
-  font-size:.8rem;
-  border-radius:8px;
-  position:absolute;
-  letter-spacing: .05em;
-  z-index:999;
-  box-shadow:0 0 1em #1f1f1f;
-  display:none;
+	width: fit-content;
+	top:40px;
+	left:50%;
+	transform:translate(-50%, 0);
+	padding: .5em .75em;
+	color:hsl(0, 0%, 100%);
+	background-color:hsl(0, 0%, 53%);
+	font-weight: 650;
+	font-size:.8rem;
+	border-radius:8px;
+	position:absolute;
+	letter-spacing: .05em;
+	z-index:999;
+	box-shadow:0 0 1em #1f1f1f;
+	display:none;
 }
-
 .tooltip:hover .tooltip--bottom {
-  display: none;
+	display: none;
 }
-
 /** 6. Scroll Down btn */
-.scroll-down {
-  animation: 1000ms scroll-down-bounce 1750ms infinite alternate cubic-bezier(.22,.61,.36,1);
-  border: 2px solid var(--scroll-down-color);
-  background-color: inherit;
-  border-radius: 100vh;
-  cursor: pointer;
-  height: 32px;
-  grid-column-start: 1;
-  grid-column-end: 64;
-  position: relative;
-  bottom: 8vh;
-  justify-self: center;
-  width: 32px;
-}
-
-.scroll-down:before {
-  border: 2px solid var(--scroll-down-color);
-  border-width: 0 0 2px 2px;
-  content: "";
-  height: 12px;
-  left: calc(50% - 6px);
-  position: absolute;
-  top: calc(50% - 8px);
-  transform: rotate(-45deg);
-  width: 12px;
-}
-
 .scroll-down--container {
-  animation: 750ms scroll-down--appear 1000ms ease-in;
-  animation-fill-mode: backwards;
+	animation: 750ms scroll-down--appear 1000ms ease-in;
+	animation-fill-mode: backwards;
+	grid-column-start: 32;
+	grid-column-end: 34;
+	place-self: center;
 }
-
-@keyframes scroll-down-bounce {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-20px);
-  }
+.scroll-down {
+	animation: 1000ms scroll-down-bounce 1750ms infinite alternate cubic-bezier(.22,.61,.36,1);
+	border: 2px solid var(--scroll-down-color);
+	background-color: inherit;
+	border-radius: 100vh;
+	cursor: pointer;
+	height: 32px;
+	grid-column-start: 1;
+	grid-column-end: 64;
+	bottom: 8vh;
+	justify-self: center;
+	width: 32px;
 }
-
-@keyframes scroll-down--appear {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform:translateY(0);
-  }
+.scroll-down:before {
+	border: 2px solid var(--scroll-down-color);
+	border-width: 0 0 2px 2px;
+	content: "";
+	height: 12px;
+	left: calc(50% - 6px);
+	position: absolute;
+	top: calc(50% - 8px);
+	transform: rotate(-45deg);
+	width: 12px;
 }
 
 /** 7. Projecy & Card*/
 .project--container {
-  padding: 0 5rem 5rem;
+	padding: 0 5rem 5rem;
 }
 .project--header {
-  padding-top: 2rem;
+	padding-top: 2rem;
 }
 .dependency--item {
-  margin: .25rem 1rem;
+	margin: .25rem 1rem;
 }
-
 /** 8. About */
 .about--header {
-  margin-top: 1rem;
+	margin-top: 1rem;
 }
 
-@keyframes tech-bounce {
-  0% {
-    opacity: 0;
-    transform: translateY(-45%)
-  }
-  80% {
-    transform: translateY(7.5%)
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0)
-  }
-}
-
-
-/*! random image find something to do with this */
-#web-developer--image {
-  width: 14em;
-  margin:1rem;
-}
 
 /** Larger than tablet screens */
 @media screen and (min-width: 48em) {
-  /** Tooltip */
-  .tooltip:hover .tooltip--bottom {
-    display:block;
+	/** Tooltip */
+	.tooltip:hover .tooltip--bottom {
+		display:block;
+	}
+	/** Technologies */
+	.hide-on-small-screen {
+		visibility: visible;
+	}
+	/** Technology view buttons */
+	.tech-btn {
+		width: 5rem;
+	}
+	.techTransitions-enter{
+		opacity: 0;
+	}
+	.techTransitions-enter-active{
+		animation: tech-bounce 500ms ease-in-out;
+	}
+	/** Contact Form*/
+  .contact-view--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-
-  /** Technologies */
-  .hide-on-small-screen {
-    visibility: visible;
-  }
-
-  /** Technology view buttons */
-  .tech-btn {
-    width: 5rem;
-  }
-  .techTransitions-enter{
-    opacity: 0;
-  }
-  .techTransitions-enter-active{
-    animation: tech-bounce 500ms ease-in-out;
-  }
-  #landingPageBackround {
-    clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 77%);
-  }
-  
-  /** Contact Form*/
-  .contact--name {
-    grid-column-start: 12;
-    grid-column-end: 32;
-  }
-  
-  .contact--email {
-    grid-column-start: 34;
-    grid-column-end: 54;
-  }
-  .contact--message {
-    grid-column-start: 12;
-    grid-column-end: 54;
-    margin-bottom: 1rem;
-  }
-
-  /** About view*/
-  .about--text-content {
-    margin-left: 2rem;
-    line-height: 1.75rem
-  }
-  .scroll-down {
-    bottom: 10vh;
-  }
+	.contact--name {
+		grid-column-start: 12;
+		grid-column-end: 32;
+	}
+	.contact--email {
+		grid-column-start: 34;
+		grid-column-end: 54;
+	}
+	.contact--message {
+		grid-column-start: 12;
+		grid-column-end: 54;
+		margin-bottom: 1rem;
+	}
+ 
+	/** About view*/
+	.about--text-content {
+		margin-left: 2rem;
+		line-height: 1.75rem
+}
+	.scroll-down {
+		bottom: 10vh;
+	}
 }
