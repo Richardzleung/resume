@@ -86,7 +86,9 @@
 	visibility: hidden;
 }
 
-.relative,.tooltip,.scroll-down,.scroll-down--container {
+.relative,
+.tooltip,.scroll-down, 
+.scroll-down--container  {
 	position: relative;
 }
 
@@ -186,13 +188,15 @@
 	animation-fill-mode: backwards;
 	grid-column-start: 32;
 	grid-column-end: 34;
-	place-self: center;
+	place-self: end center;
+  top: 2rem;
 }
 .scroll-down {
 	animation: 1000ms scroll-down-bounce 1750ms infinite alternate cubic-bezier(.22,.61,.36,1);
 	border: 2px solid var(--scroll-down-color);
 	background-color: inherit;
 	border-radius: 100vh;
+  box-shadow:  0 2px 3px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
 	cursor: pointer;
 	height: 32px;
 	grid-column-start: 1;
@@ -200,6 +204,7 @@
 	bottom: 8vh;
 	justify-self: center;
 	width: 32px;
+  z-index: 1;
 }
 .scroll-down:before {
 	border: 2px solid var(--scroll-down-color);
