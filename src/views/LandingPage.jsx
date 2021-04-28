@@ -11,7 +11,9 @@ const HomeBase = ({ scrollToProjectsView }) => (
       <img src={scribble2} className={theme.scribble2} alt='scribble 2'/>
       <h1 className={theme.titleContainer}>
         <span className={theme.name}>Richard Leung</span>
-        <span className={theme.message}>Front-End Engineer in San Francisco.</span>
+        <span className={theme.message}>
+          Front-End Engineer in San Francisco.
+        </span>
       </h1>
       <div className='scroll-down--container'>
         <button className='scroll-down' aria-label='scroll down' onClick={scrollToProjectsView}/>

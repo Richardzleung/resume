@@ -3,9 +3,11 @@
 .scribble2  {
   position: absolute;
 }
+
 /* images & background */
 .background {
   background-image: url(../static/images/landingBackground.svg);
+  /* background from svgbackrounds */
   background-size: cover;
 }
 
@@ -41,16 +43,17 @@
 .name {
   animation: fadeIn--left 700ms ease-out 150ms;
   animation-fill-mode: both;
-  font-size: 5rem;
-  font-weight: 650;
+  color: #FFFF00;
+  font-size: 6.5rem;
+  font-weight: 700;
 }
 
 .message {
   animation: fadeIn--right 700ms ease-out 900ms;
   animation-fill-mode: both;
   display: block;
-  font-size: min(5vw, 40px);
-  font-weight: 450;
+  font-size: 3.25rem;
+  font-weight: 375;
   letter-spacing: .25vw;
 }
 
