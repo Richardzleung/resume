@@ -15,12 +15,12 @@ import projectStyles from 'styles/projectsPage.module.css';
 // eslint-disable-next-line react/prop-types
 const MyCard = ({ projectID, ...props }) => {
   const { 
-    image = '', 
-    dependencies, 
-    projectLiveSite,
-    gitHubProjectLink,
-    title,
-    description,
+    image = 'image missing', 
+    dependencies = 'dependency missing', 
+    projectLiveSite = 'link missing',
+    gitHubProjectLink = 'link missing',
+    title = 'title missing',
+    description = 'description missing',
     srcset='',
     src =''
   } = projects.find(({ id }) => id === projectID);
