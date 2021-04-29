@@ -5,7 +5,7 @@ import Button from './FooterElements';
 
 const Footer = () => {
   return (
-    <div className='footer--container'>
+    <section className='footer--container'>
       <div className='row space-evenly'>
         {handles.map(({ label, link, title, icon }) => (
           <Button
@@ -19,7 +19,7 @@ const Footer = () => {
           </Button>
         ))}
       </div>
-    </div>
+    </section>
 )};
 
 export default Footer;

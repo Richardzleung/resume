@@ -4,7 +4,7 @@ import Card from 'components/Card';
 import projectStyles from 'styles/projectsPage.module.css';
 
 const ProjectsPage = forwardRef((props,ref) => (
-  <div ref={ref} className='vh-100 project--container' {...props}>
+  <section ref={ref} className='vh-100 project--container' {...props}>
     <h3 className='project--header'>
       Projects
     </h3>
@@ -12,7 +12,7 @@ const ProjectsPage = forwardRef((props,ref) => (
       <Card projectID="RATE_REPOSITORIES_APP" className={projectStyles.card}/>
       <Card projectID="PATIENATOR_APP" className={projectStyles.card}/>
     </div>
-  </div>
+  </section>
 ));
 
 ProjectsPage.displayName = 'ProjectsPage'

@@ -16,7 +16,7 @@ const SkillsPage = () => {
   // * Mobile view-- display all skills
   if(!isLargishScreen) {
     return (
-      <div className='vh-100 column flex-col-center-X'>
+      <section className='vh-100 column flex-col-center-X'>
         <h2>Technologies</h2>
         <h3>Front-End</h3>
         <FrontEndSkillsList/>
@@ -26,7 +26,7 @@ const SkillsPage = () => {
         <DatabaseSkillsList/>
         <h3>Mobile</h3>
         <MobileSkillsList/>
-      </div>
+      </section>
     );
   }
   const isFrontEndDisplayActive = skillToDisplay === 'front-end';
@@ -36,19 +36,19 @@ const SkillsPage = () => {
 
   // * For larger views--display skills via button
   return (
-    <div className='vh-50 column flex-col-center-X technology--container'>
+    <section className='vh-50 column flex-col-center-X technology--container'>
       <h1>Technologies</h1>
-      <div className='hide-on-small-screen' role='tablist'>
+      <section className='hide-on-small-screen' role='tablist'>
         <Button onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>
         <Button onClick={() => setSkillToDisplay('back-end')}>Back-End</Button>
         <Button onClick={() => setSkillToDisplay('database')}>Databases</Button>
         <Button onClick={() => setSkillToDisplay('mobile')}>Mobile</Button>
-      </div>
+      </section>
       {isFrontEndDisplayActive && <FrontEndSkillsList />}
       {isBackEndDisplayActive && <BackEndSkillsList />}
       {isDatbaseDisplayActive && <DatabaseSkillsList />}
       {isMobileDisplayActive && <MobileSkillsList />}
-    </div>
+    </section>
   );
 };
 
