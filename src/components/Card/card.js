@@ -9,7 +9,16 @@ const Container = styled.div`
     0 1px 2px rgba(0,0,0,0.30);  
   max-width: 45ch;
   padding: 10rem 0;
-  overflow: hidden;
+  /* overflow: hidden; */
+  transition: transform 600ms ease;
+
+  &:hover {
+    transform: scale(1.02);
+
+    .card--title::after {
+      transform: scaleX(0);
+    }
+  }
 `;
 
 const Content = styled.div`
@@ -18,6 +27,7 @@ const Content = styled.div`
     hsl(0 0% 0% / 0)
   );
   padding: 1.5em;
+  transform: translateY(75%);
 `;
 
 const Title = styled.div`
@@ -28,10 +38,13 @@ const Title = styled.div`
     background: red;
     content:'';
     height: 4px;
-    left: 0;
+    left: calc(1.5em * -1);
     bottom: 0;
     position: absolute;
-    width: 100%;
+    transform: scaleX(0);
+    transition: transform 600ms ease;
+    transform-origin: left;
+    width: calc(100% + 2em);
   }
 `;
 

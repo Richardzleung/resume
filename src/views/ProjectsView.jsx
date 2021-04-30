@@ -13,40 +13,43 @@ const ProjectsPage = forwardRef((props,ref) => (
       Projects
     </h3>
     <div className={projectStyles.grid}>
-      {/* <Card projectID="RATE_REPOSITORIES_APP" className={projectStyles.card}/> */}
       <VanillaCard image={nativeProject}>
-        <VanillaCard.Title>
-          Patientator
-        </VanillaCard.Title>
         <VanillaCard.Content>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis assumenda explicabo dolores fugit nemo, natus est at ducimus illum facere esse perspiciatis sint illo. Eligendi.
+          <VanillaCard.Title className='card--title'>
+            Patientator
+          </VanillaCard.Title>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis assumenda explicabo dolores fugit nemo, natus est at ducimus illum facere esse perspiciatis sint illo. Eligendi.
+          <VanillaCard.Button>
+            Learn More
+          </VanillaCard.Button>
         </VanillaCard.Content>
-        <VanillaCard.Button>
-          Learn More
-        </VanillaCard.Button>
       </VanillaCard>
+
       <VanillaCard image={rateApp}>
-        <VanillaCard.Title>
-          Rate Repository App
-        </VanillaCard.Title>
         <VanillaCard.Content>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe accusamus quasi explicabo alias, dicta doloribus?
+          <VanillaCard.Title>
+            Rate Repository App
+          </VanillaCard.Title>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis assumenda explicabo dolores fugit nemo, natus est at ducimus illum facere esse perspiciatis sint illo. Eligendi.
+          <VanillaCard.Button>
+            Learn More
+          </VanillaCard.Button>
         </VanillaCard.Content>
-        <VanillaCard.Button>
-          Learn More
-        </VanillaCard.Button>
       </VanillaCard>
+
+
       <VanillaCard image={spotifyClone}>
-        <VanillaCard.Title>
-          Spotify Redesign
-        </VanillaCard.Title>
         <VanillaCard.Content>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe accusamus quasi explicabo alias, dicta doloribus?
+          <VanillaCard.Title>
+            Spotify Redesign
+          </VanillaCard.Title>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis assumenda explicabo dolores fugit nemo, natus est at ducimus illum facere esse perspiciatis sint illo. Eligendi.
+          <VanillaCard.Button>
+            Learn More
+          </VanillaCard.Button>
         </VanillaCard.Content>
-        <VanillaCard.Button>
-          Learn More
-        </VanillaCard.Button>
       </VanillaCard>
+
     </div>
   </div>
 ));
