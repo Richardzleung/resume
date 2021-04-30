@@ -11,7 +11,7 @@ import {
   SiSass
 } from "react-icons/si";
 import native from 'static/images/rate-repository-thumbnail.svg';
-import smallPatientator from 'static/images/patientator/patientator_cibnxs_c_scale,w_190.png';
+import smallPatientator from 'static/images/patientator/patientator_small.png';
 import largePatientator from 'static/images/patientator/patientator_cibnxs_c_scale,w_1080.png';
 import expressIcon from 'static/images/expressjs-icon.svg';
 import octupus from 'static/images/octopus-64x64.png';
