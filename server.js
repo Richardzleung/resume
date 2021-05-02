@@ -2,6 +2,8 @@ const express = require('express');
 const favicon = require('express-favicon');
 const path = require('path');
 const nodemailer = require('nodemailer'); 
+const Blog = require('./models/blog');
+import { errorHandler } from './utils/middleware';
 
 require('dotenv').config()
 
@@ -10,12 +12,28 @@ const app = express();
 
 app.use(favicon(__dirname + '/build/favicon.ico'));
 app.use(express.static('build'));
-app.use(express.json())
+app.use(express.json());
 
+app.get('/api/posts', (_, response) => {
+  Blog.find({}).then(posts => {
+    response.json(posts)
+  })
+});
+app.get('/api/posts/:id', (request, response, next) => {
+  Blog.findById(request.params.id)
+    .then(post => {
+      if (post) response.json(post);
+      else response.status(404).end();
+    })
+    .catch (error => next(error))
+});
+
+// * health
 app.get('/ping', (req, res) => {
  return res.send('pong');
 });
 
+// * emailer
 app.post('/', (req, res) => {
   const body = req.body
   if(!body) {
@@ -45,8 +63,10 @@ app.post('/', (req, res) => {
   return res.status(200).send({ status: 'Email Sent!' }); 
 });
 
-app.get('/*', function (req, res) {
+app.get('/*', function (_, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
+
+app.use(errorHandler);
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
