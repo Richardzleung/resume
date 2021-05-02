@@ -1,4 +1,4 @@
-const url = 'https://richzleung.com/contact'
+const url = '/api/email'
 
 const ContactService = async (data) => {
   await fetch(url, {

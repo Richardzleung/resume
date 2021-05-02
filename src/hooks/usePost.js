@@ -1,10 +1,10 @@
 import { useQuery } from 'react-query';
 
-const usePost = () => {
+const usePost = postId => {
   return useQuery(
-    'posts', 
+    ['posts', postId],
     async () => {
-      await fetch('/api/posts')
+      await fetch(`/api/posts/${postId}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');

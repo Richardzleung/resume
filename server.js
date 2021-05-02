@@ -34,7 +34,7 @@ app.get('/ping', (req, res) => {
 });
 
 // * emailer
-app.post('/', (req, res) => {
+app.post('/api/email', (req, res) => {
   const body = req.body
   if(!body) {
     return res.status(400).send({ error: 'Error sending email' })
