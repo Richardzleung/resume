@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import usePosts from 'hooks/usePosts';
+import Posts from 'components/BlogPost';
 
 const BlogSection = styled.section`
   display: grid;
@@ -10,13 +11,13 @@ const BlogSection = styled.section`
   };
 `;
 
-// * JSX
+
 const Blog = () => {
   const posts = usePosts();
 
   return (
     <BlogSection>
-hi
+      <Posts />
     </BlogSection>
   )
 };

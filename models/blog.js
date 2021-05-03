@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 const url = process.env.DB_URL;
 
@@ -24,4 +25,4 @@ blogSchema.set('toJSON', {
   }
 });
 
-module.exports = mongoose.model('Blog', blogSchema);
+module.exports = mongoose.model('Posts', blogSchema);

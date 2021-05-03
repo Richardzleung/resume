@@ -3,7 +3,7 @@ const favicon = require('express-favicon');
 const path = require('path');
 const nodemailer = require('nodemailer'); 
 const Blog = require('./models/blog');
-import { errorHandler } from './utils/middleware';
+const { errorHandler } = require('./utils/middleware');
 
 require('dotenv').config()
 
@@ -16,6 +16,7 @@ app.use(express.json());
 
 app.get('/api/posts', (_, response) => {
   Blog.find({}).then(posts => {
+    console.log({ posts })
     response.json(posts)
   })
 });

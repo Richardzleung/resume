@@ -9,6 +9,4 @@ const errorHandler = (error, request, response, next) => {
 };
 
 
-export {
-  errorHandler
-};
+exports.errorHandler = errorHandler

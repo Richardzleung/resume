@@ -13,7 +13,8 @@ import './App.css';
 
 const ContactForm = React.lazy(() => import('./views/ContactForm'));
 const PageNotFound = React.lazy(() => import('./views/PageNotFound'));
-const Blogs = React.lazy(() => import('./components/Blog'));
+const Blog = React.lazy(() => import('./views/BlogsView'));
+const BlogPost = React.lazy(() => import('./components/BlogPost'));
 
 const App = () => {
   const projectViewRef = useRef();
@@ -47,9 +48,14 @@ const App = () => {
                 <ContactForm />
               </Suspense>
             </Route> 
+            <Route path='/blog/:id'>
+              <Suspense fallback=''>
+                <BlogPost/>
+              </Suspense>
+            </Route>
             <Route path='/blog'>
               <Suspense fallback=''>
-                <Blogs/>
+                <Blog/>
               </Suspense>
             </Route>
             <Route exact path='/' >
