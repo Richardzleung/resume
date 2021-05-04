@@ -1,22 +1,27 @@
 const express = require('express');
 const favicon = require('express-favicon');
 const path = require('path');
+const cors = require('cors');
 const nodemailer = require('nodemailer'); 
 const Blog = require('./models/blog');
 const { errorHandler } = require('./utils/middleware');
 
 require('dotenv').config()
 
-const PORT = process.env.PORT || 8080;
+
 const app = express();
 
 app.use(favicon(__dirname + '/build/favicon.ico'));
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(cors({ origin: 'http://localhost:3000' }))
+}
+
 app.use(express.static('build'));
 app.use(express.json());
 
 app.get('/api/posts', (_, response) => {
   Blog.find({}).then(posts => {
-    console.log({ posts })
     response.json(posts)
   })
 });
@@ -30,7 +35,7 @@ app.get('/api/posts/:id', (request, response, next) => {
 });
 
 // * health
-app.get('/ping', (req, res) => {
+app.get('/ping', (_, res) => {
  return res.send('pong');
 });
 
@@ -70,4 +75,5 @@ app.get('/*', function (_, res) {
 
 app.use(errorHandler);
 
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, console.log(`Server running on port ${PORT}`));

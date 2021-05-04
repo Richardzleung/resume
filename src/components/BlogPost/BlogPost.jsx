@@ -1,18 +1,25 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
 import usePost from 'hooks/usePost';
 
 const Blog = () => {
   const { id } = useParams();
-  const post = usePost(id);
+  const postQuery = usePost(id);
 
   return (
-    <section>
-      <ReactMarkdown>
-       # Hello, *world*!
-      </ReactMarkdown>
-    </section>
+    <>
+      {postQuery.isLoading ? (
+        <span>Loading...</span>
+      ) : postQuery.isError ? (
+        postQuery.error.message
+      ): (
+        <div>
+          <h2>{postQuery.data.title}</h2>
+          <p>{postQuery.data.body}</p>
+        </div>
+      )
+    }
+    </>
   )
 };
 
