@@ -1,4 +1,4 @@
-import React, { useRef, Suspense, useState, useEffect } from 'react';
+import React, { useRef, Suspense } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import smoothscroll from 'smoothscroll-polyfill';
 
@@ -15,20 +15,6 @@ const PageNotFound = React.lazy(() => import('./views/PageNotFound'));
 
 const App = () => {
   const projectViewRef = useRef();
-  const [isLoading, setLoading] = useState(true);
-
-  const fakeRequest = () => new Promise(resolve => setTimeout(() => resolve(), 1250));
-  
-  useEffect(() => {
-    fakeRequest().then(() => {
-      setLoading(!isLoading);
-    })
-  }, []);
-
-  if (isLoading) {
-    return <Loading/>;
-  }
-
   smoothscroll.polyfill();  
   const scrollToProjectsView = () => projectViewRef.current.scrollIntoView({ 
     inline: 'start', 
@@ -41,7 +27,7 @@ const App = () => {
           <Navigation scrollToProjectsView={scrollToProjectsView}/>
           <Switch>
             <Route path='/contact'>
-              <Suspense fallback=''>
+              <Suspense fallback={<Loading/>}>
                 <ContactForm />
               </Suspense>
             </Route> 
@@ -52,7 +38,7 @@ const App = () => {
               <Footer/>
             </Route>
             <Route exact path='/404'>
-              <Suspense fallback=''>
+              <Suspense fallback={<Loading/>}>
                 <PageNotFound />
               </Suspense>
             </Route>

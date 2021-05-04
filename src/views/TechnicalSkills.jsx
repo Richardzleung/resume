@@ -39,10 +39,10 @@ const SkillsPage = () => {
     <section className='vh-50 column flex-col-center-X technology--container'>
       <h1>Technologies</h1>
       <section className='hide-on-small-screen' role='tablist'>
-        <Button onClick={() => setSkillToDisplay('front-end')}>Front-End</Button>
-        <Button onClick={() => setSkillToDisplay('back-end')}>Back-End</Button>
-        <Button onClick={() => setSkillToDisplay('database')}>Databases</Button>
-        <Button onClick={() => setSkillToDisplay('mobile')}>Mobile</Button>
+        <Button onClick={() => setSkillToDisplay('front-end')} role='tab'>Front-End</Button>
+        <Button onClick={() => setSkillToDisplay('back-end')} role='tab'>Back-End</Button>
+        <Button onClick={() => setSkillToDisplay('database')} role='tab'>Databases</Button>
+        <Button onClick={() => setSkillToDisplay('mobile')} role='tab'> Mobile</Button>
       </section>
       {isFrontEndDisplayActive && <FrontEndSkillsList />}
       {isBackEndDisplayActive && <BackEndSkillsList />}
