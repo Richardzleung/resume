@@ -20,10 +20,9 @@ Card.Title = ({ children, ...rest }) => (
   </Title>
 );
 
-
-Card.Button =({ children, ...rest }) => (
-  <Button {...rest}>
-    {children}
+Card.Button = props => (
+  <Button {...props}>
+    Learn More
   </Button>
 );
 
