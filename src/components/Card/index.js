@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Content, Title, Button } from './card';
+import { Container, Content, Title, Button, Body } from './card';
 
 const Card = ({ children, ...rest }) => (
   <Container {...rest}>
@@ -9,16 +9,22 @@ const Card = ({ children, ...rest }) => (
 );
 
 Card.Content = ({ children, ...rest }) => (
-  <Content {...rest}>
+  <Content {...rest} className='card-content'>
     {children}
   </Content>
 );
 
 Card.Title = ({ children, ...rest }) => (
-  <Title {...rest}>
+  <Title {...rest} className='card-title'>
     {children}
   </Title>
 );
+
+Card.Body = ({ children, ... rest }) => (
+  <Body {...rest}>
+    {children}
+  </Body>
+)
 
 Card.Button = props => (
   <Button {...props}>
@@ -29,5 +35,6 @@ Card.Button = props => (
 Card.Content.displayName = 'Content';
 Card.Title.displayName = 'Title';
 Card.Button.displayName = 'Button';
+Card.Body.displayName = 'Body';
 
 export default Card;

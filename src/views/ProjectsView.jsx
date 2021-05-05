@@ -6,17 +6,19 @@ import rateApp from '../static/images/rate-repository-thumbnail.svg';
 import spotifyClone from '../static/images/spotify-clone.png';
 
 const ProjectsPage = forwardRef((props,ref) => (
-  <div ref={ref} className='vh-100 project--container' {...props}>
-    <h3 className='project--header'>
+  <section ref={ref} className='vh-100 project--container' {...props}>
+    <h2 className='project--header'>
       Projects
-    </h3>
+    </h2>
     <div className={projectStyles.grid}>
       <VanillaCard image={nativeProject}>
         <VanillaCard.Content>
           <VanillaCard.Title>
             Patientator
           </VanillaCard.Title> 
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis assumenda explicabo dolores fugit nemo, natus est at ducimus illum facere esse perspiciatis sint illo. Eligendi.
+          <VanillaCard.Body>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe accusamus quasi explicabo alias, dicta doloribus?
+          </VanillaCard.Body> 
           <VanillaCard.Button/>
         </VanillaCard.Content>
       </VanillaCard>
@@ -26,7 +28,9 @@ const ProjectsPage = forwardRef((props,ref) => (
           <VanillaCard.Title>
             Rate Repository App
           </VanillaCard.Title>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe accusamus quasi explicabo alias, dicta doloribus?
+          <VanillaCard.Body>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe accusamus quasi explicabo alias, dicta doloribus?
+          </VanillaCard.Body>
           <VanillaCard.Button/>
         </VanillaCard.Content>
       </VanillaCard>
@@ -36,13 +40,15 @@ const ProjectsPage = forwardRef((props,ref) => (
           <VanillaCard.Title>
             Spotify Redesign
           </VanillaCard.Title>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe accusamus quasi explicabo alias, dicta doloribus?
+          <VanillaCard.Body>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe accusamus quasi explicabo alias, dicta doloribus?
+          </VanillaCard.Body>
           <VanillaCard.Button/>
         </VanillaCard.Content>
       </VanillaCard>
 
     </div>
-  </div>
+  </section>
 ));
 
 ProjectsPage.displayName = 'ProjectsPage'
