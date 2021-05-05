@@ -17,7 +17,7 @@ const NavBar = ({ scrollToProjectsView }) => {
   
   return (
    <header ref={clickRef} className='header'>
-    <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+    <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} aria-label='hamburger'/>
     <StyledMenu open={openMenu}>
       <ScrollItem 
         aria-label='projects' 

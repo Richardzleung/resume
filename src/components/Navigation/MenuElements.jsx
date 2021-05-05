@@ -27,7 +27,7 @@ const MenuItem = ({ children, href, emoji, ...props }) => {
   const { isLargishScreen } = useWindowSize();
   return (
     <a href={href} {...props}>
-      {!isLargishScreen && <span role='img'> {emoji} </span>}
+      {!isLargishScreen && <span role='img' aria-label={`${children} ${emoji}`}> {emoji} </span>}
       {children}
     </a>
   )

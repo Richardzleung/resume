@@ -4,10 +4,10 @@ import Form from 'components/Form'
 
 const ContactPage = () => {
   return (
-    <div className='contact-view--container'>
+    <section className='contact-view--container'>
       <h3 className='contact--header'>Have a question or want to work together?</h3>
       <Form />
-    </div>
+    </section>
   );
 };
 

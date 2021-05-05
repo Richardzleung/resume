@@ -36,15 +36,17 @@
 }
 
 .titleContainer {
+  padding-right: 1rem;
   position: relative;
-  top: 47.5%;
+  top: 50%;
+  transform: translateY(-25%);
 }
 
 .name {
   animation: fadeIn--left 700ms ease-out 150ms;
   animation-fill-mode: both;
   color: #FFFF00;
-  font-size: 6.5rem;
+  font-size: calc(4.75rem + 4vmin);
   font-weight: 700;
 }
 
@@ -52,7 +54,7 @@
   animation: fadeIn--right 700ms ease-out 900ms;
   animation-fill-mode: both;
   display: block;
-  font-size: 3.25rem;
+  font-size: calc(2.5rem + 1vmin);
   font-weight: 375;
   letter-spacing: .25vw;
 }
@@ -114,6 +116,10 @@
   .about {
     grid-column-start: 10;
     grid-column-end: 50;
+  }
+  .titleContainer {
+    place-self: center;
+    transform: translateY(-50%);
   }
   .about {
     position: relative;
