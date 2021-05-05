@@ -3,8 +3,7 @@
 ## live site: https://richzleung.com
 
 ## Features
-* Hosted on Heroku using CI/CD via GitHub Actions
-* https://rleung-resume.herokuapp.com/
+* CI/CD via GitHub Actions
 
 ## Languages
 * Javascript (ES6)
