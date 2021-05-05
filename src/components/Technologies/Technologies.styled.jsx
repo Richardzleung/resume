@@ -26,7 +26,7 @@ List.propTypes = {
 const appear = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-35%);
+    transform: translateY(-50%);
   }
   to {
     opacity: 1;
@@ -45,7 +45,7 @@ const StyledList = styled(List)`
   width: 90%;
 
   li {
-    flex: 1 1 50%;
+    flex: 1 1 40%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -55,6 +55,9 @@ const StyledList = styled(List)`
   }
   // * largish screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
+    position: relative;
+    top: 2.75rem;
+
     li {
       flex: 0 1 auto;
       animation: ${appear} 1000ms backwards ease-out;

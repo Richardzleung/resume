@@ -1,16 +1,35 @@
 import React, { forwardRef } from 'react';
-// import Tilt from 'components/Tilt';
+
 import Card from 'components/Card';
 import projectStyles from 'styles/projectsPage.module.css';
+import { projects } from 'shared/constants';
 
 const ProjectsPage = forwardRef((props,ref) => (
-  <section ref={ref} className='vh-100 project--container' {...props}>
-    <h3 className='project--header'>
+  <section ref={ref} className={`vh-100 ${projectStyles.container}`} {...props}>
+    <h2 className={projectStyles.header}>
       Projects
-    </h3>
-    <div className={projectStyles.grid}>
-      <Card projectID="RATE_REPOSITORIES_APP" className={projectStyles.card}/>
-      <Card projectID="PATIENATOR_APP" className={projectStyles.card}/>
+    </h2>
+    <div className='row space-evenly'>
+      {projects.map(({ id, description, title, image, src, dependencies }) => (
+        <Card image={image ? image : src} key={id}>
+          <Card.Content >
+            <Card.Title >
+              {title}
+            </Card.Title> 
+            <Card.Body>
+              {description}
+              <ul className={projectStyles.dependencyListContainer}>
+                {dependencies.map((dependency, i) => (
+                  <li key={i}>
+                    {dependency}
+                  </li>
+                ))}
+              </ul>
+            </Card.Body> 
+            <Card.Button/>
+          </Card.Content>
+        </Card>
+      ))}
     </div>
   </section>
 ));

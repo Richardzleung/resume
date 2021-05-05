@@ -10,8 +10,10 @@ import {
   SiCodewars,
   SiSass
 } from "react-icons/si";
+import spotifyClone from 'static/images/spotify-clone.png';
 import native from 'static/images/rate-repository-thumbnail.svg';
-import smallPatientator from 'static/images/patientator/patientator_cibnxs_c_scale,w_190.png';
+import normPatientator from 'static/images/patientator/patientator.png';
+import smallPatientator from 'static/images/patientator/patientator_small.png';
 import largePatientator from 'static/images/patientator/patientator_cibnxs_c_scale,w_1080.png';
 import expressIcon from 'static/images/expressjs-icon.svg';
 import octupus from 'static/images/octopus-64x64.png';
@@ -45,10 +47,10 @@ const navLinks = [
 const projects = [
   {
     id: "RATE_REPOSITORIES_APP",
-    description: "Make a review your favorite public GitHub repositories",
+    description: "Create reviews about GitHub repositories",
     title: "Rate Repository App",
     githubLink: "https://github.com/Richardzleung/rate-repository-app",
-    dependencies:  ['React Native', 'Formik', 'Yup'],
+    dependencies:  ['React Native', 'GraphQL', 'Yup'],
     projectLiveSite: 'https://stormy-plains-60070.herokuapp.com',
     image: native
   },
@@ -60,8 +62,17 @@ const projects = [
     dependencies: ['Typescript', 'Express', 'Cors'],
     projectLiveSite:'https://mighty-fjord-81735.herokuapp.com',
     srcset:`${smallPatientator} 190w, ${largePatientator} 1080w`,
-    src: largePatientator
+    src: normPatientator
   },
+  {
+    id: "SPOTIFY_REDESIGN",
+    description: "A redesign of the spotify web app (WIP)",
+    title: "Spotify Redesign",
+    githubLink: "https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack",
+    dependencies: ['Typescript', 'Express', 'Next.js'],
+    projectLiveSite:'',
+    image: spotifyClone
+  }
 ];
 
 const handles = [
