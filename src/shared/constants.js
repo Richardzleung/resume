@@ -66,7 +66,7 @@ const projects = [
   },
   {
     id: "SPOTIFY_REDESIGN",
-    description: "A redesign of the spotify web app (WIP)",
+    description: "A redesign of the Spotify web app (WIP)",
     title: "Spotify Redesign",
     githubLink: "https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack",
     dependencies: ['Typescript', 'Express', 'Next.js'],

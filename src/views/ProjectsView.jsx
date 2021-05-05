@@ -18,7 +18,7 @@ const ProjectsPage = forwardRef((props,ref) => (
             </Card.Title> 
             <Card.Body>
               {description}
-              <ul className={projectStyles.dependencyListContainer}>
+              <ul style={{ listStylePosition: 'inside' }}>
                 {dependencies.map((dependency, i) => (
                   <li key={i}>
                     {dependency}

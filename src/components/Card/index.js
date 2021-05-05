@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Content, Title, Button, Body } from './card';
+import { Container, Content, Title, Button, Body } from './card.styled';
 
 const Card = ({ children, ...rest }) => (
   <Container {...rest} >

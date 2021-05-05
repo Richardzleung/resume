@@ -76,6 +76,10 @@
 	justify-content: space-evenly;
 }
 
+.small-gap {
+	gap: 2rem;
+}
+
 .vh-50 {
 	min-height: 50vh;
 }
@@ -148,7 +152,7 @@
 .technology--container {
 	padding-top: 1rem;
   position: relative;
-  bottom: 6rem;
+  bottom: 3rem;
 }
 .skill-icon {
 	width: 2rem;
