@@ -36,13 +36,18 @@ const Button = styled.button`
     transform: translate3d(0, 0.75em, -1em);
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
   }
-  &:hover {
+  &:hover{
     background:#ffe9e9;
     transform: translate(0, 0.25em);
     &::before {
       box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
       transform: translate3d(0, 0.5em, -1em);
     }
+  }
+  &:focus-visible {
+    box-shadow: 
+      0 0 0 10px #ffe3e2,
+      0 0 0 15px #b18597; 
   }
   &:active {
     background:#ffe9e9;
@@ -52,9 +57,7 @@ const Button = styled.button`
       transform: translate3d(0, 0, -1em);
     }
   }
-  &:focus {
-
-  }
+  
 `;
 
 export default Button;

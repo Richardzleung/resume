@@ -60,6 +60,7 @@
 .row {
 	flex-wrap: wrap;
 }
+
 .column > h2 {
 	margin-top: 2.5em;
 }
@@ -145,12 +146,9 @@
 }
 /** 4. Technology Skills */
 .technology--container {
-	/* background-color: ;
-	*/
-	/* clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
-	*/
-	height: auto;
-	padding-top: 5rem;
+	padding-top: 1rem;
+  position: relative;
+  bottom: 6rem;
 }
 .skill-icon {
 	width: 2rem;
@@ -219,12 +217,6 @@
 }
 
 /** 7. Projecy & Card*/
-.project--container {
-	padding: 0 5rem 5rem;
-}
-.project--header {
-	padding-top: 2rem;
-}
 .dependency--item {
 	margin: .25rem 1rem;
 }

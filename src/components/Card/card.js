@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.article`
+  /* background-attachment: fixed; */
   background-image: ${props => `url(${props.image})`};
   background-size: cover;
   border-radius: .75rem;
@@ -13,65 +14,74 @@ const Container = styled.article`
   min-height: 45ch;
   padding: 10em 0;
   position: relative;
-  transition: transform 500ms ease;
   width: 100%;
   overflow: hidden;
 
-  &:hover {
-    transform: scale(1.02);
-
+  &:hover,
+  &:focus-within {
     .card-title::after {
       transform: scaleX(1);
     }
     .card-content {
       transform: translateY(0);
+      transition-delay: 275ms;
     }
   }
 `;
 
 const Content = styled.div`
   --padding: 1.25rem;
-  background: linear-gradient(
-    hsl(0 0% 0% / .75),
-    hsl(25 0% 00% / 0.3) 20%,
-    hsl(0 0% 0% / 1)
-  );
   bottom:0;
   padding: var(--padding);
   position: absolute;
-  transform: translateY(67%);
+  transform: translateY(70%);
   transition: transform 500ms ease, opacity 500ms ease;
+  width: 100%;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 1000px rgba(255, 255, 255, 1);
+    filter: blur(1rem);
+    z-index: -1;
+    margin: 0 -2rem -2rem;
+  }
 `;
 
 const Title = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.55rem;
+  font-weight: 620;
   position: relative;
   width: max-content;
   
   &::after {
     background: red;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     bottom: -2px;
     content:'';
     height: 4px;
     left: calc(var(--padding) * -1);
-    position: absolute;
-    /* transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 600ms ease; */
-    width: calc(100% + 3em);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 500ms ease;
+    position: absolute;
+    width: calc(100% + 2em);
   }
 `;
 
 const Button = styled.a`
   background-color: white;
   border-radius: .25em;
-  /* clear: left; */
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.10), 
+    0 1px 2px rgba(0,0,0,0.30);
   cursor: pointer;
   display: block;
-  /* float: left;  */
   margin-bottom: .5em;
   padding: 0.25em 0.5em;
   position: relative;
@@ -85,7 +95,11 @@ const Button = styled.a`
 `;
 
 const Body = styled.div`
-  color: rgb(255 255 255/0.8);
+  color: black;
+  font-weight: 525;
+  padding-top: .25rem;
+  padding-left: .5rem;
+  text-align: left;
 `;
 
 export {

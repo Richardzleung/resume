@@ -29,6 +29,10 @@ body {
   --scroll-down-color:  	hsl(60, 100%, 97%);
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

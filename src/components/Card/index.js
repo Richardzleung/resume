@@ -3,7 +3,7 @@ import React from 'react'
 import { Container, Content, Title, Button, Body } from './card';
 
 const Card = ({ children, ...rest }) => (
-  <Container {...rest}>
+  <Container {...rest} >
     {children}
   </Container>
 );
@@ -15,7 +15,7 @@ Card.Content = ({ children, ...rest }) => (
 );
 
 Card.Title = ({ children, ...rest }) => (
-  <Title {...rest} className='card-title'>
+  <Title {...rest} className='card-title' >
     {children}
   </Title>
 );
