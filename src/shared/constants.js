@@ -8,7 +8,8 @@ import {
   SiRedux,
   SiJest,
   SiCodewars,
-  SiSass
+  SiSass,
+  SiGit
 } from "react-icons/si";
 import spotifyClone from 'static/images/spotify-clone.png';
 import native from 'static/images/rate-repository-thumbnail.svg';
@@ -180,12 +181,17 @@ const databaseSkills = [
   }
 ];
 
-const mobileSkills = [
+const miscSkills = [
   {
     label: 'React Native',
-    icon: <SiReact size='32px' title='React Native logo'/>,
+    icon: <SiReact size='32px' title='React Native logo' style={{ color: '#61DBFB' }} />,
     style: { animationDelay: '0ms' }
   },
+  {
+    label: 'Git',
+    icon: <SiGit size='32px' title='Git logo' style={{ color: '#F1502F' }}/>,
+    style: { animationDelay: '250ms' }
+  }
 ];
 
-export { navLinks, projects, handles, frontEndSkills, databaseSkills, backEndSkills, mobileSkills };
+export { navLinks, projects, handles, frontEndSkills, databaseSkills, backEndSkills, miscSkills };
