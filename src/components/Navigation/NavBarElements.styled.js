@@ -60,7 +60,7 @@ const StyledMenu = styled.nav`
     background-color: inherit;
   }
 
-  a, button, .navbar-item {
+  a, button, span {
     cursor: pointer;
     font: inherit;
     font-size: 2rem;
@@ -94,7 +94,7 @@ const StyledMenu = styled.nav`
       font-size: 2em;
       font-weight: 900;
     }
-    a, .navbar-item {
+    a,span  {
       background: linear-gradient(to right, midnightblue, midnightblue 50%, white 50%);
       background-clip: text;
       background-size: 200% 100%;
@@ -109,7 +109,7 @@ const StyledMenu = styled.nav`
       padding: .5em;
       transition: background-position 275ms ease;
     }
-    a:hover, .navbar-item:hover {
+    a:hover, span:hover {
       background-position: 0 100%;
     }
     button {
