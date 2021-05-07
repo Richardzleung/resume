@@ -46,9 +46,9 @@ const Content = styled.div`
     right: 0;
     bottom: 0;
     box-shadow: inset 0 0 1000px rgba(255, 255, 255, 1);
-    filter: blur(1rem);
+    filter: blur(10px);
     z-index: -1;
-    margin: 0 -1rem -1rem;
+    /* margin: 0 -1rem -1rem; */
   }
 
   @media (hover) {

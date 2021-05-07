@@ -109,7 +109,15 @@
 	/* display: flex;
 	flex-direction: column;
 } */
-
+.nav--home {
+  color: var(--scroll-down-color);
+  font-size: clamp(1.5rem, 1.3vw + 1.2rem, 2rem);
+  position: absolute;
+  text-decoration: none;
+  top: 1rem;
+  left: 1rem;
+  z-index: 20;
+}
 /** 2. Contact Form */
 .contact-view--container{
   animation: gradient 60s ease-in infinite;
