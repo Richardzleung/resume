@@ -39,7 +39,7 @@ const StyledBurger = styled.button`
 `;
 
 // * Small Screen default
-const StyledMenu = styled.nav`
+const StyledMenu = styled.div`
   background: ${({ theme }) => theme.base};
   display: flex;
   flex-direction: column;
@@ -59,7 +59,8 @@ const StyledMenu = styled.nav`
     border: 0;
     background-color: inherit;
   }
-
+  /* need to style all 3 because i want some items to smooth scroll and some are in a new view
+   need span because safari bug */
   a, button, span {
     cursor: pointer;
     font: inherit;
@@ -77,7 +78,6 @@ const StyledMenu = styled.nav`
 
   // * largish Screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
-    /* background-color: hsl(240, 100%, 70%); */
     background-color: initial;
     flex-direction: row;
     flex-wrap: wrap;

@@ -37,7 +37,7 @@ const MenuItem = ({ children, href, emoji, className, ...props }) => {
 MenuItem.propTypes = {
   href: PropTypes.string.isRequired,
   emoji: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   children: PropTypes.string,
 };
 
