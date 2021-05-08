@@ -7,7 +7,6 @@ import TextField from '@material-ui/core/TextField'
 import { CSSTransition } from 'react-transition-group';
 
 import ContactService from '../../services/ContactService';
-import { Notification } from './FormElements.styled.js';
 
 const validationSchema = yup.object({
   name: yup
