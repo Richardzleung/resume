@@ -4,7 +4,6 @@ import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import { RiMailSendFill } from "react-icons/ri";
 import TextField from '@material-ui/core/TextField'
-import { CSSTransition } from 'react-transition-group';
 
 import ContactService from '../../services/ContactService';
 

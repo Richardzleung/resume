@@ -28,7 +28,7 @@ const NavBar = ({ scrollToProjectsView }) => {
       <Link to={'/'} className='nav--home'>Richard Leung</Link>
 
       {/* these elements collapse when small screeen */}
-      <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+      <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} aria-label='hamburger'/>
       <StyledMenu open={openMenu}>
         { displayProjectTab &&
           <ScrollItem 
