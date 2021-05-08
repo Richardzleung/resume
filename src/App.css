@@ -40,7 +40,11 @@
 		background-position: 0% 50%;
 	}
 }
-/** UTILITIES */
+
+/* =============== 
+  * UTILITIES 
+==================*/
+
 .grid--col,.grid--row {
 	display: grid;
 }
@@ -97,15 +101,20 @@
 	position: relative;
 }
 
-/** Table of contents
+/* ============================
+
+* Table of contents
 1. App
 2. ContactForm
 3. Footer
 4. Technology Skills
 5. Tooltip
-*/
 
-/** 1. App */
+==================================*/
+
+/* =================
+  * 1. App 
+====================*/
 	/* display: flex;
 	flex-direction: column;
 } */
@@ -118,6 +127,7 @@
   left: 1rem;
   z-index: 20;
 }
+
 /** 2. Contact Form */
 .contact-view--container{
   animation: gradient 60s ease-in infinite;
