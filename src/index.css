@@ -38,6 +38,10 @@ code {
     monospace;
 }
 
+:focus {
+  outline: 5px solid var(--bg-secondary-color);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::after,

@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
-import { backEndSkills, frontEndSkills, mobileSkills, databaseSkills } from 'shared/constants';
+import { backEndSkills, frontEndSkills, miscSkills, databaseSkills } from 'shared/constants';
 
 // * renders the list
 const List = ({ className, array, ...props }) => (
   <ul className={className} {...props} >
     {array.map(({ label, icon, style }, i) => (
     // i know this index is technically bad for keys but i ain't modifying the array so its ok
-      <li key={i} style={style}>
+      <li key={i} style={style} title={label}>
         {icon}
-        {label}
       </li>
     ))}
   </ul>
@@ -52,7 +51,14 @@ const StyledList = styled(List)`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+
+    &::after {
+      content: attr(title);
+      position: absolute;
+      top: 60%;
+    }
   }
+
   // * largish screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
     position: relative;
@@ -69,13 +75,13 @@ const StyledList = styled(List)`
 //* lists with each array passed in
 const FrontEndSkillsList = props => <StyledList array={frontEndSkills} {...props}/>
 const BackEndSkillsList = props => <StyledList array={backEndSkills} {...props}/>
-const MobileSkillsList =  props => <StyledList array={mobileSkills} {...props}/>
+const MiscSkillsList =  props => <StyledList array={miscSkills} {...props}/>
 const DatabaseSkillsList = props => <StyledList array={databaseSkills} {...props}/>
 
 export { 
   FrontEndSkillsList, 
   BackEndSkillsList, 
-  MobileSkillsList, 
+  MiscSkillsList, 
   DatabaseSkillsList 
 }
 

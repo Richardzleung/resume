@@ -5,7 +5,7 @@ import Button from 'components/TechButton';
 import { 
   FrontEndSkillsList,
   BackEndSkillsList, 
-  MobileSkillsList, 
+  MiscSkillsList, 
   DatabaseSkillsList 
 } from 'components/Technologies';
 
@@ -24,15 +24,15 @@ const SkillsPage = () => {
         <BackEndSkillsList/>
         <h3>Databases</h3>
         <DatabaseSkillsList/>
-        <h3>Mobile</h3>
-        <MobileSkillsList/>
+        <h3>Other</h3>
+        <MiscSkillsList/>
       </section>
     );
   }
   const isFrontEndDisplayActive = skillToDisplay === 'front-end';
   const isBackEndDisplayActive = skillToDisplay === 'back-end';
   const isDatbaseDisplayActive = skillToDisplay === 'database';
-  const isMobileDisplayActive = skillToDisplay === 'mobile';
+  const isMiscDisplayActive = skillToDisplay === 'misc';
 
   // * For larger views--display skills via button
   return (
@@ -42,12 +42,12 @@ const SkillsPage = () => {
         <Button onClick={() => setSkillToDisplay('front-end')} role='tab'>Front-End</Button>
         <Button onClick={() => setSkillToDisplay('back-end')} role='tab'>Back-End</Button>
         <Button onClick={() => setSkillToDisplay('database')} role='tab'>Databases</Button>
-        <Button onClick={() => setSkillToDisplay('mobile')} role='tab'> Mobile</Button>
+        <Button onClick={() => setSkillToDisplay('misc')} role='tab'>{'  '} Other{'  '}</Button>
       </div>
       {isFrontEndDisplayActive && <FrontEndSkillsList />}
       {isBackEndDisplayActive && <BackEndSkillsList />}
       {isDatbaseDisplayActive && <DatabaseSkillsList />}
-      {isMobileDisplayActive && <MobileSkillsList />}
+      {isMiscDisplayActive && <MiscSkillsList />}
     </section>
   );
 };
