@@ -9,9 +9,8 @@ const List = ({ className, array, ...props }) => (
   <ul className={className} {...props} >
     {array.map(({ label, icon, style }, i) => (
     // i know this index is technically bad for keys but i ain't modifying the array so its ok
-      <li key={i} style={style}>
+      <li key={i} style={style} title={label}>
         {icon}
-        {label}
       </li>
     ))}
   </ul>
@@ -49,11 +48,17 @@ const StyledList = styled(List)`
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: .75ch;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+
+    &::after {
+      content: attr(title);
+      position: absolute;
+      top: 60%;
+    }
   }
+
   // * largish screen
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
     position: relative;
