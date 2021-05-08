@@ -48,7 +48,7 @@ const navLinks = [
 const projects = [
   {
     id: "RATE_REPOSITORIES_APP",
-    description: "Create reviews about GitHub repositories",
+    description: "Create reviews about repositories",
     title: "Rate Repository App",
     githubLink: "https://github.com/Richardzleung/rate-repository-app",
     dependencies:  ['React Native', 'GraphQL', 'Yup'],
