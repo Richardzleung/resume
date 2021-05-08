@@ -23,7 +23,7 @@ const validationSchema = yup.object({
 });
 
 const Form = () => {
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [formState, setFormState] = useState({ status:'idle', data: '' });
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -32,11 +32,19 @@ const Form = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      setIsFormSubmitted(true)
-      ContactService(values)
-      setTimeout(() => {
-        setIsFormSubmitted(false)
-      }, 5000)
+      try {
+        setFormState({ status: 'loading' })
+        ContactService(values)
+        setFormState({ status: 'sucess' })
+        setTimeout(() => {
+          setFormState({ status: 'idle' })
+        }, 5000)
+      } catch (error) {
+        setFormState({ status: 'error', data: error })
+        setTimeout(() => {
+          setFormState({ status: 'idle' })
+        }, 5000)
+      }
     }
   });
 
@@ -76,6 +84,7 @@ const Form = () => {
 
   return (
     <>
+    {formState.status === 'idle' &&
       <form onSubmit={formik.handleSubmit} className='grid--col'>
         <div className='contact--name'>
           <InputField {...nameFieldProps} />
@@ -97,13 +106,7 @@ const Form = () => {
           </Button>
         </div>
       </form>
-      <CSSTransition
-        in={isFormSubmitted}
-        timeout={400}
-        classNames='techTransitions'
-      >
-        <>{isFormSubmitted && <Notification />}</>
-      </CSSTransition>
+    }
     </>
 )};
 

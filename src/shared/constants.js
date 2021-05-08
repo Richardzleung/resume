@@ -11,13 +11,11 @@ import {
   SiSass,
   SiGit
 } from "react-icons/si";
-import spotifyClone from 'static/images/spotify-clone.png';
-import native from 'static/images/rate-repository-thumbnail.svg';
-import normPatientator from 'static/images/patientator/patientator.png';
-import smallPatientator from 'static/images/patientator/patientator_small.png';
-import largePatientator from 'static/images/patientator/patientator_cibnxs_c_scale,w_1080.png';
+import spotifyClone from 'static/images/spotify-clone.webp';
+import native from 'static/images/rate-repository-thumbnail.webp';
+import patientator from 'static/images/patientator.webp';
 import expressIcon from 'static/images/expressjs-icon.svg';
-import octupus from 'static/images/octopus-64x64.png';
+import octupus from 'static/images/octopus-64x64.webp';
 import mongoDB from 'static/images/mongodb-icon-1.svg'
 import css from 'static/images/css.svg';
 import html from 'static/images/HTML5.svg'
@@ -62,8 +60,7 @@ const projects = [
     githubLink: "https://github.com/Richardzleung/Fullstack-Open/tree/master/part9/patientator-fullstack",
     dependencies: ['Typescript', 'Express', 'Cors'],
     projectLiveSite:'https://mighty-fjord-81735.herokuapp.com',
-    srcset:`${smallPatientator} 190w, ${largePatientator} 1080w`,
-    src: normPatientator
+    image: patientator
   },
   {
     id: "SPOTIFY_REDESIGN",
