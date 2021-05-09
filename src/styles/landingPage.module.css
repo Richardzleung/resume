@@ -4,20 +4,11 @@
   position: absolute;
 }
 
-/* images & background */
+/* background */
 .background {
   background-image: url(../static/images/landingBackground.svg);
   /* background from svgbackrounds */
   background-size: cover;
-}
-
-.scribble {
-  top: 4%;
-  left: 5%;
-}
-.scribble2 {
-  bottom: 10%;
-  right: 10%;
 }
 
 /* text containers */
@@ -40,6 +31,11 @@
   position: relative;
   top: 50%;
   transform: translateY(-25%);
+}
+.titleContainer::after{
+  content: url(../static/images/82.svg);
+  position: absolute;
+  left: 50%;
 }
 
 .name {
@@ -120,6 +116,10 @@
   .titleContainer {
     place-self: center;
     transform: translateY(-50%);
+  }
+  .titleContainer::after {
+    left:100%;
+    top: 100%;
   }
   .about {
     position: relative;

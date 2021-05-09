@@ -112,20 +112,28 @@
 
 ==================================*/
 
-/* =================
-  * 1. App 
-====================*/
+/* * 1. App  */
 	/* display: flex;
 	flex-direction: column;
 } */
 .nav--home {
   color: var(--scroll-down-color);
+  font-family: 'Itim', sans-serif;
   font-size: clamp(1.5rem, 1.3vw + 1.2rem, 2rem);
   position: absolute;
   text-decoration: none;
   top: 1rem;
   left: 1rem;
-  z-index: 20;
+  z-index: 4;
+}
+
+.nav--home::after {
+  content: url(./static/images/3.svg);
+  pointer-events: none;
+  transform: rotate(13deg);
+  position: absolute;
+  top: 110%;
+  left:0;
 }
 
 /** 2. Contact Form */

@@ -1,4 +1,9 @@
+/* =========================
+* UNIVERSAL STYLES
+==============================*/
+
 html { 
+  box-sizing: border-box;
   scroll-behavior: smooth; 
 } 
 
@@ -14,7 +19,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
   text-align: left;
   background-color: var(--bg-tertiary-color);
 }
@@ -38,7 +42,7 @@ code {
     monospace;
 }
 
-:focus {
+:focus-visible {
   outline: 5px solid var(--bg-secondary-color);
 }
 
