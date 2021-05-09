@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useWindowSize from 'hooks/useWindowSize';
 
 
@@ -27,10 +27,18 @@ ScrollItem.propTypes = {
 const MenuItem = ({ children, href, emoji, className, ...props }) => {
   const { isLargishScreen } = useWindowSize();
   return (
-    <Link to={href} className={className} {...props}>
+    <NavLink 
+      to={href} 
+      className={className} 
+      activeStyle={{
+        backgroundPosition: '0 100%',
+        fontWeight: 'bold'
+      }}
+      {...props}
+    >
       {!isLargishScreen && <span role='img'> {emoji} </span>}
       {children}
-    </Link>
+    </NavLink>
   )
 };
 

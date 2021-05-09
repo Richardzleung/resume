@@ -18,7 +18,7 @@ const NavBar = ({ scrollToProjectsView }) => {
 
   const handleProjectClick = () => {
     scrollToProjectsView();
-    setOpenMenu(null);
+    setOpenMenu(false);
   };
   
   return (
@@ -43,6 +43,7 @@ const NavBar = ({ scrollToProjectsView }) => {
           aria-label='my blog'
           href='/blog'
           emoji='&#x1F4BB;'
+          onClick={() => setOpenMenu(false)}
         >
           blog
         </MenuItem>
@@ -50,6 +51,7 @@ const NavBar = ({ scrollToProjectsView }) => {
           aria-label='contact me'
           href='/contact'
           emoji='&#x1f4e9;'
+          onClick={() => setOpenMenu(false)}
         >
           contact
         </MenuItem>

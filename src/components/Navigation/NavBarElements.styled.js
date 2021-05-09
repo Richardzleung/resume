@@ -9,7 +9,7 @@ const StyledBurger = styled.button`
   top: 15px;
   right: 20px;
   width: 2rem;
-  z-index: 20;
+  z-index: 1;
 
   div {
     background-color: ${({ theme }) => theme.night};
@@ -53,7 +53,7 @@ const StyledMenu = styled.nav`
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   scroll-padding: 1rem 0 0 0;
   width: auto;
-  z-index: 10;
+  z-index: 2;
 
   button {
     border: 0;

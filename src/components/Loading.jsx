@@ -40,7 +40,7 @@ const Loading = styled.div`
     width: 3em;
     background-color: ${({ theme }) => theme.lightBlush};
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     outline: 1px solid transparent;
     animation: ${smallBoxAnim} 1.25s alternate infinite ease-in-out;
   }
