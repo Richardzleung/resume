@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyledBurger } from './NavBarElements.styled.js';
 
-const Burger = props => (
+// eslint-disable-next-line react/prop-types
+const Burger = ({ open, ...props }) => (
   <StyledBurger {...props}>
-    <div />
-    <div />
-    <div />
+    <span className={!open ? "hamburger-box hamburger--spring" : "hamburger-box hamburger--spring is-active"}>
+      <span className="hamburger-inner"></span>
+    </span>
   </StyledBurger>
 )
 
