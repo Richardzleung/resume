@@ -51,11 +51,13 @@ const StyledList = styled(List)`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    margin-bottom: 1rem;
 
     &::after {
       content: attr(title);
       position: absolute;
-      top: 60%;
+      bottom: -.5rem;
+      white-space: nowrap;
     }
   }
 
@@ -67,7 +69,6 @@ const StyledList = styled(List)`
     li {
       flex: 0 1 auto;
       animation: ${appear} 1000ms backwards ease-out;
-      padding-bottom:3rem;
     }
   }
 `;
