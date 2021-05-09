@@ -154,7 +154,9 @@
   letter-spacing: .25ch;
   line-height: 2rem;
   padding: 1rem 1rem 2rem;
-  text-shadow: 1px 1px #ff073a
+  position: relative;
+  text-shadow: 1px 1px #ff073a;
+  z-index: 1;
 }
 .contact--button {
 	grid-column-start: 12;
