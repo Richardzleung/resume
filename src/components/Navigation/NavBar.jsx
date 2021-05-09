@@ -1,18 +1,17 @@
 import React, { useState, useRef } from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, NavLink,useRouteMatch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { StyledMenu } from './NavBarElements.styled.js';
-import { ScrollItem, MenuItem } from './MenuElements';
 import Burger from './Burger'
 import useOutsideClick from 'hooks/useOutsideClick';
+import useWindowSize from 'hooks/useWindowSize';
 
 const NavBar = ({ scrollToProjectsView }) => {
   const [openMenu, setOpenMenu] = useState(null);
   const clickRef = useRef();
+  const { isLargishScreen } = useWindowSize();
 
-  /* I want to match this because 'project' will only be displayed in main view 
-    since clicking project will scroll to view
-  */
+  /* matching so 'project' will only be displayed in main view */
   const { isExact: displayProjectTab } = useRouteMatch('/');
   useOutsideClick(clickRef, () => setOpenMenu(false));
 
@@ -24,37 +23,33 @@ const NavBar = ({ scrollToProjectsView }) => {
   return (
    <header ref={clickRef} className='header'>
     <nav>
-      {/* navigate back to home & this always remains on screen*/}
+      {/* navigate to home & always remains on screen*/}
       <Link to={'/'} className='nav--home'>Richard Leung</Link>
 
       {/* these elements collapse when small screeen */}
       <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} aria-label='hamburger'/>
       <StyledMenu open={openMenu}>
+        {/** this element scrolls to my projects */}
         { displayProjectTab &&
-          <ScrollItem 
-            aria-label='projects' 
-            emoji='&#128214;'
-            onClick={handleProjectClick}
-          >
-            projects
-          </ScrollItem>
+          <button onClick={handleProjectClick}>
+            {!isLargishScreen && 
+              <span role='img' aria-label='projects'> 
+                &#128214; 
+              </span>
+            }
+            {/* need to wrap span because safari bug with text animation */}
+            <span>projects</span>
+          </button>
         }
-        <MenuItem 
-          aria-label='my blog'
-          href='/blog'
-          emoji='&#x1F4BB;'
-          onClick={() => setOpenMenu(false)}
-        >
+        {/** these elemnents are in a different page */}
+        <NavLink to='/blog' activeStyle={{ backgroundPosition: '0 100%' }}>
+          {!isLargishScreen && <span role='img' aria-label='blog'> &#x1F4BB; </span>}
           blog
-        </MenuItem>
-        <MenuItem 
-          aria-label='contact me'
-          href='/contact'
-          emoji='&#x1f4e9;'
-          onClick={() => setOpenMenu(false)}
-        >
+        </NavLink>
+        <NavLink to='contact' activeStyle={{ backgroundPosition: '0 100%' }}>
+          {!isLargishScreen && <span role='img' aria-label='contact me'> &#x1f4e9; </span>}
           contact
-        </MenuItem>
+        </NavLink>
       </StyledMenu>
     </nav>
   </header>
