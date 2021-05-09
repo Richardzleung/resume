@@ -42,11 +42,19 @@ const NavBar = ({ scrollToProjectsView }) => {
           </button>
         }
         {/** these elemnents are in a different page */}
-        <NavLink to='/blog' activeStyle={{ backgroundPosition: '0 100%' }}>
+        <NavLink 
+          to='/blog' 
+          activeStyle={{ backgroundPosition: '0 100%' }} 
+          onClick={() => setOpenMenu(null)}
+        >
           {!isLargishScreen && <span role='img' aria-label='blog'> &#x1F4BB; </span>}
           blog
         </NavLink>
-        <NavLink to='contact' activeStyle={{ backgroundPosition: '0 100%' }}>
+        <NavLink 
+          to='contact' 
+          activeStyle={{ backgroundPosition: '0 100%' }}
+          onClick={() => setOpenMenu(null)}  
+        >
           {!isLargishScreen && <span role='img' aria-label='contact me'> &#x1f4e9; </span>}
           contact
         </NavLink>
