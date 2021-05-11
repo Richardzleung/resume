@@ -124,6 +124,7 @@
   text-decoration: none;
   top: 1rem;
   left: 1rem;
+  z-index: 2;
 }
 
 .nav--home::after {
@@ -233,7 +234,7 @@
 	bottom: 8vh;
 	justify-self: center;
 	width: 32px;
-  z-index: 999;
+  z-index: 4;
 }
 .scroll-down:before {
 	border: 2px solid var(--scroll-down-color);

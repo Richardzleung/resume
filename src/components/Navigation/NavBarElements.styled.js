@@ -11,7 +11,7 @@ const StyledBurger = styled.button`
   position: absolute;
   right: 5%;
   top: 3%;
-  z-index: 1;
+  z-index: 999;
 
   // hamburger container
   .hamburger-box {
@@ -61,8 +61,9 @@ const StyledBurger = styled.button`
 
       &::before {
         top: calc(var(--hamburger-layer-spacing) + var(--hamburger-layer-spacing));
-        transition: top 100ms 200ms cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-                    transform 130ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transition: 
+          top 100ms 200ms cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+          transform 130ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
       }
 
       &::after {
@@ -108,9 +109,9 @@ const StyledMenu = styled.nav`
   background: ${({ theme }) => theme.base};
   display: flex;
   flex-direction: column;
+  font-size: 2rem;
   min-height: 100vh;
-  justify-content: center;
-  padding: 0 2rem 2rem;
+  padding: 5rem 2rem 2rem 5rem;
   position: fixed;
   left: 0;
   top: 0;
@@ -118,25 +119,45 @@ const StyledMenu = styled.nav`
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   scroll-padding: 1rem 0 0 0;
   width: auto;
-  z-index: 2;
-
+  z-index: 5;
+  // button reset
   button {
-    border: 0;
     background-color: inherit;
+    border: 0;
   }
+  // container for side bar nav item
+  button, a {
+    margin-bottom: 2rem;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
 
-  a, button, span{
+    &::before {
+      background-color: grey;
+      box-shadow: 
+        0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);;
+      content: '';
+      bottom: -.5rem;
+      left: -10%;
+      position: absolute;
+      height: 4px;
+      width: 90%;
+    }
+
+    &::after {
+      content: attr(data-content);
+      position: absolute;
+      left: -30%;
+      bottom: 11%;
+    }
+  }
+  a, span {
     cursor: pointer;
-    font: inherit;
-    font-size: 2rem;
     text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: 800;
-    letter-spacing: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.25ch;
     color: ${({ theme }) => theme.indigo};
-    text-align: left;
     text-decoration: none;
-    transition: color 0.3s linear;
   }
   
 
@@ -146,12 +167,18 @@ const StyledMenu = styled.nav`
     background-color: initial;
     flex-direction: row;
     flex-wrap: wrap;
+    font-size: 1.3rem;
     justify-content: flex-end;
     min-height: initial;
     right: 0;
-    padding: .25rem;
+    padding: 1rem 2rem 0 0;
     transform: translateX(0);
     width: 100%;
+    z-index: 1;
+
+    button::after, button::before, a::after,a::before {
+      display: none;
+    }
 
     a, span {
       background: linear-gradient(to right, midnightblue, midnightblue 50%, white 50%);
@@ -161,8 +188,7 @@ const StyledMenu = styled.nav`
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: inline-block;
-      font-size: 1.3rem;
-      font-weight: 600;
+      /* font-weight: 1000; */
       letter-spacing: .05em;
       overflow: hidden;
       padding: .5em;
@@ -170,9 +196,6 @@ const StyledMenu = styled.nav`
     }
     a:hover, span:hover {
       background-position: 0 100%;
-    }
-    button {
-      padding: 0;
     }
   }
 `;
