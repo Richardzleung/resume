@@ -4,10 +4,8 @@ import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import { RiMailSendFill } from "react-icons/ri";
 import TextField from '@material-ui/core/TextField'
-import { CSSTransition } from 'react-transition-group';
 
 import ContactService from '../../services/ContactService';
-import { Notification } from './FormElements.styled.js';
 
 const validationSchema = yup.object({
   name: yup
@@ -23,7 +21,7 @@ const validationSchema = yup.object({
 });
 
 const Form = () => {
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [formState, setFormState] = useState({ status:'idle', data: '' });
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -32,11 +30,19 @@ const Form = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      setIsFormSubmitted(true)
-      ContactService(values)
-      setTimeout(() => {
-        setIsFormSubmitted(false)
-      }, 5000)
+      try {
+        setFormState({ status: 'loading' })
+        ContactService(values)
+        setFormState({ status: 'sucess' })
+        setTimeout(() => {
+          setFormState({ status: 'idle' })
+        }, 5000)
+      } catch (error) {
+        setFormState({ status: 'error', data: error })
+        setTimeout(() => {
+          setFormState({ status: 'idle' })
+        }, 5000)
+      }
     }
   });
 
@@ -76,6 +82,7 @@ const Form = () => {
 
   return (
     <>
+    {formState.status === 'idle' &&
       <form onSubmit={formik.handleSubmit} className='grid--col'>
         <div className='contact--name'>
           <InputField {...nameFieldProps} />
@@ -97,13 +104,7 @@ const Form = () => {
           </Button>
         </div>
       </form>
-      <CSSTransition
-        in={isFormSubmitted}
-        timeout={400}
-        classNames='techTransitions'
-      >
-        <>{isFormSubmitted && <Notification />}</>
-      </CSSTransition>
+    }
     </>
 )};
 

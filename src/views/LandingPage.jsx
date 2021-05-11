@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import theme from 'styles/landingPage.module.css';
-import scribble from 'static/images/3.svg';
-import scribble2 from 'static/images/82.svg'
 
 const HomeBase = ({ scrollToProjectsView }) => (
   <>
     <section className={`vh-100 grid--col ${theme.background}`} >
-      <img src={scribble} className={theme.scribble} alt='scribble'/>
-      <img src={scribble2} className={theme.scribble2} alt='scribble 2'/>
       <h1 className={theme.titleContainer}>
         <span className={theme.name}>Richard Leung</span>
         <span className={theme.message}>

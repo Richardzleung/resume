@@ -1,38 +1,103 @@
 import styled from 'styled-components';
 
+// got this from jonathon suh
 const StyledBurger = styled.button`
-  background-color: inherit;
-  border: none;
+  --hamburger-layer-spacing: .25rem;
+  --hamgburger-width: 2rem;
+  background-color: transparent;
+  border: 0;
   cursor: pointer;
-  height: 2rem;
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  width: 2rem;
-  z-index: 20;
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  top: 3%;
+  z-index: 1;
 
-  div {
-    background-color: ${({ theme }) => theme.night};
-    border-radius: 10px;
-    height: 0.25rem;
-    margin: 0.25rem;
-    transform-origin: 4.65px;
-    transition: opacity 0.3s ease;
-    transition: transform 0.3s ease;
-    width: 2rem;
+  // hamburger container
+  .hamburger-box {
+    width: var(--hamgburger-width);
+    height: var(--hamgburger-width);
+    display: inline-block;
+    position: relative;
+  }
 
-    &:first-child {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+  // inside .hamburger box
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: calc(1rem / -2);
+
+    &,
+    &::before,
+    &::after {
+      width: var(--hamgburger-width);
+      height: var(--hamburger-layer-spacing);
+      background-color: black;
+      border-radius: 20px;
+      position: absolute;
+      transition: transform 150ms ease;
     }
-    &:nth-child(2) {
-      opacity: ${({ open }) => open ? 0 : 1};
-      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
     }
-    &:nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+
+    &::before {
+      top: var(--hamburger-layer-spacing)*2;
+    }
+
+    &::after {
+      bottom: var(--hamburger-layer-spacing) * 2;
     }
   }
-  // * Not so small screen
+
+  // animation
+  .hamburger--spring {
+    .hamburger-inner {
+      top: calc(var(--hamburger-layer-spacing) / 2);
+      transition: background-color 0ms 130ms linear;
+
+      &::before {
+        top: calc(var(--hamburger-layer-spacing) + var(--hamburger-layer-spacing));
+        transition: top 100ms 200ms cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+                    transform 130ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+
+      &::after {
+        top: calc(calc(var(--hamburger-layer-spacing) * 2) + calc(var(--hamburger-layer-spacing) * 2));
+        transition: 
+          top 200ms 200ms cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+          transform 130ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+    }
+  }
+
+  // When it looks like 'X'
+  .is-active {
+    .hamburger-inner {
+      transition-delay: 220ms;
+      background-color: transparent !important;
+
+      &::before {
+        top: 0;
+        transition: 
+          top 100ms 150ms cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+          transform 130ms 220ms cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, var(--hamburger-layer-spacing), 0) rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transition: 
+          top 200ms cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+          transform 130ms 220ms cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, var(--hamburger-layer-spacing), 0) rotate(-45deg);
+      }
+    }
+  }
+
   @media (min-width: ${({ theme }) => theme.largishScreen}) {
     display: none;
   }
@@ -53,7 +118,7 @@ const StyledMenu = styled.nav`
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   scroll-padding: 1rem 0 0 0;
   width: auto;
-  z-index: 10;
+  z-index: 2;
 
   button {
     border: 0;

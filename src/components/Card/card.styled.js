@@ -10,10 +10,9 @@ const Container = styled.article`
   height: 100%;
   line-height: 1.6;
   margin-top: 1.5em;
-  max-width: 40ch;
-  min-height: 40ch;
+  max-width: 42ch;
+  min-height: 42ch;
   overflow: hidden;
-  padding: 10em 0;
   position: relative;
   width: 100%;
   

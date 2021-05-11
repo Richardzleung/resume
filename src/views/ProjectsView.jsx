@@ -10,8 +10,8 @@ const ProjectsPage = forwardRef((props,ref) => (
       Projects
     </h2>
     <div className='row space-evenly'>
-      {projects.map(({ id, description, title, image, src, dependencies }) => (
-        <Card image={image ? image : src} key={id}>
+      {projects.map(({ id, description, title, image, dependencies }) => (
+        <Card image={image} key={id}>
           <Card.Content >
             <Card.Title >
               {title}

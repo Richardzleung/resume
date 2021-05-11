@@ -5,12 +5,10 @@
 ## Features
 * CI/CD via GitHub Actions
 
-## Languages
+## Stuff I used
 * Javascript (ES6)
 * CSS
 * HTML5
-
-## Libraries used
 * React
 * Material UI
 * Formik
