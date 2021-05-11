@@ -1,0 +1,30 @@
+const mdx = require('@mdx-js/mdx')
+
+const result = mdx(`
+---
+title: "Random funny generic title",
+tags: Introduction, Programming, Hey there!
+---
+
+# Hello, MDX
+
+I <3 Markdown and JSX
+
+<p>Welcome to this this little corner of the internet! Who knows what brought you here but hopefully it's through my website as that means it's receiving some traffic. Now onto what this blog's all about.</p>
+
+<p>It's about truth, it's about justice, it's about the spiraling descent into 3am cat video as my search for an entry level developer job continues. I have seen a lot of cats. But besides that, the blog is about me and whatever that means. It probably means some mix of programming struggles, memes, social issues, rants and MCU references.  </p>
+
+> I’m pretty sure the answer is “I am Groot.”
+
+<p>Now for a quick intro! I'm a recent college grad looking for a front-end/full-stack developer job and currently live in the Bay Area.There that's my intro. That and Safari sucks for developing. I'm sorry Apple I like you, I have your products but damn why you gotta be so special.Just today I had some bug with making some nice looking text with --webkit-text-fill-color: transparent but no. Works on chrome, works on firefox, works on edge but not you. I had to wrap my text in a span, for those less familiar with HTML its the equivalent of putting on glasses so Clark Kent can live as a normal person. That analogy doesn't really work but i'm rolling with it. Well that's it for now and if you've actually stayed this long may I interest you in some string cheese and a juice box?</p>
+
+`)
+
+const transpile = async () => {
+  const jsx = await mdx(result)
+  return jsx
+}
+
+transpile().then(console.log)
+
+module.exports = result

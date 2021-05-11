@@ -1,5 +1,7 @@
 const express = require('express');
+const fs = require('fs');
 const favicon = require('express-favicon');
+const mdx = require('@mdx-js/mdx')
 const path = require('path');
 const cors = require('cors');
 const nodemailer = require('nodemailer'); 
@@ -20,16 +22,28 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.static('build'));
 app.use(express.json());
 
-app.get('/api/posts', (_, response) => {
+app.get('/api/load-posts', (_, res) => {
+  const filenames = fs.readdirSync(path.join(__dirname, 'blog'));
+  console.log("\nCurrent directory filenames:");
+  filenames.forEach(file => {
+    const mdxText = fs.readFileSync(path.join(__dirname, 'blog', file), 'utf-8')
+    const jsx = mdx.sync(mdxText)
+
+    console.log({ jsx })
+  });
+  return res.send('hi')
+});
+
+app.get('/api/posts', (_, res) => {
   Blog.find({}).then(posts => {
-    response.json(posts)
+    res.json(posts)
   })
 });
-app.get('/api/posts/:id', (request, response, next) => {
-  Blog.findById(request.params.id)
+app.get('/api/posts/:id', (req, res, next) => {
+  Blog.findById(req.params.id)
     .then(post => {
-      if (post) response.json(post);
-      else response.status(404).end();
+      if (post) res.json(post);
+      else res.status(404).end();
     })
     .catch (error => next(error))
 });
