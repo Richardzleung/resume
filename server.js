@@ -12,6 +12,10 @@ app.use(favicon(__dirname + '/build/favicon.ico'));
 app.use(express.static('build'));
 app.use(express.json())
 
+
+app.get('/sitemap.xml', (_,res) => {
+  return res.contentType('application/xml').sendFile(path.join(__dirname , 'sitemap.xml'));
+})
 app.get('/ping', (req, res) => {
  return res.send('pong');
 });
